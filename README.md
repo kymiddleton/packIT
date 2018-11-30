@@ -13,7 +13,6 @@ Create an application in which users have a pre-compiled packing list based on a
 
 3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. (Pawan)
 
-
 ### Additonal Functionality
 4. As a user, I want to be able to share packing lists with others. 
 
