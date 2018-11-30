@@ -1,0 +1,22 @@
+{
+  "name": "packit",
+  "version": "1.0.0",
+  "description": "An application to generate items to pack for travel locations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kymiddleton/packIT.git"
+  },
+  "author": "Robert Doughtery, Pawan Jada, Kyla Middleton, Juliana Tyler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kymiddleton/packIT/issues"
+  },
+  "homepage": "https://github.com/kymiddleton/packIT#readme",
+  "dependencies": {
+    "node": "^11.2.0"
+  }
+}
