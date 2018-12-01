@@ -18,28 +18,28 @@ describe('GET /api/examples', function () {
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
-        // return db.mongoose.connect({
-        //     useNewUrlParser: true
-        // });
+        return db.mongoose.connect({
+            useNewUrlParser: true
+        });
     });
 
     it('should find all examples', function (done) {
         // Add some examples to the db to test with
-        db.User.create([{
-                listname: 'Paris',
-                items: []
+        db.User.insertMany([{
+                tripname: 'Paris',
+                list: []
             },
             {
-                listname: 'Seattle',
-                items: []
+                tripname: 'Seattle',
+                list: []
             },
             {
-                listname: 'Tokyo',
-                items: []
+                tripname: 'Tokyo',
+                list: []
             },
             {
-                listname: 'Havana',
-                items: []
+                tripname: 'Havana',
+                list: []
             },
         ]).then(function () {
             // Request the route that returns all examples
@@ -60,29 +60,29 @@ describe('GET /api/examples', function () {
                 expect(responseBody[0])
                     .to.be.an('object')
                     .that.includes({
-                        listname: 'Paris',
-                        items: []
+                        tripname: 'Paris',
+                        list: []
                     });
 
                 expect(responseBody[1])
                     .to.be.an('object')
                     .that.includes({
-                        listname: 'Seattle',
-                        items: []
+                        tripname: 'Seattle',
+                        list: []
                     });
 
                 expect(responseBody[2])
                     .to.be.an('object')
                     .that.includes({
-                        listname: 'Tokyo',
-                        items: []
+                        tripname: 'Tokyo',
+                        list: []
                     });
 
                 expect(responseBody[3])
                     .to.be.an('object')
                     .that.includes({
-                        listname: 'Havana',
-                        items: []
+                        tripname: 'Havana',
+                        list: []
                     });
 
                 // The `done` function is used to end any asynchronous tests
@@ -102,8 +102,8 @@ describe('POST /api/trips', function () {
 
     it('should save an example', function (done) {
         var reqBody = {
-            listname: 'Athens',
-            items: []
+            tripname: 'Athens',
+            list: []
         };
 
         // POST the request body to the server
@@ -127,6 +127,49 @@ describe('POST /api/trips', function () {
                 // The `done` function is used to end any asynchronous tests
                 done();
             });
+    });
+});
+
+describe('/PUT/:id trips', () => {
+    it('it should UPDATE a book given the id', (done) => {
+        let trip = new trip({
+            tripname: "Cancun",
+            list: []
+        })
+        trip.save((err, book) => {
+            chai.request(server)
+                .put('/trips/' + trip.id)
+                .send({
+                    tripname: "Miami",
+                    list: []
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('tripname').to.equal('Miami');
+                    res.body.trip.should.have.property('list').to.equal([]);
+                    done();
+                });
+        });
+    });
+});
+describe('/DELETE/:id trips', () => {
+    it('it should DELETE a trip given the id', (done) => {
+        let trip = new Trip({
+            tripname: "Prague",
+            list: []
+        })
+        trip.save((err, trip) => {
+            chai.request(server)
+                .delete('/trips/' + trip.id)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('Prague').to.equal('Prague');
+                    res.body.result.should.have.property('list').to.equal([]);
+                    done();
+                });
+        });
     });
 });
 //Unit Tests

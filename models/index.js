@@ -3,5 +3,5 @@ module.exports = {
     user: require("./userLog"),
     list: require("./listLog"),
     trips: require("./tripsLog"),
-    
+
 };

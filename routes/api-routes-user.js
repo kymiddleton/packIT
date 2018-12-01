@@ -30,7 +30,7 @@ module.exports = function (app) {
     // PUT request: Route for updating users
     app.put('/api/userLog', function (req, res) { 
         console.log('----> updating <----');
-        db.user.findOneAndUpdate({ _id: req.body.id }, { $set: { userName: req.body.userName, email: req.body.email } })
+        db.user.findOneAndUpdate({ _id: req.body.id }, { $set: { userName: req.body.userName, email: req.body.email, password: req.body.password } })
             .then(function (dbuser) {
                 res.json(dbuser);
             })

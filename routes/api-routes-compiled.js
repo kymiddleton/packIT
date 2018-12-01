@@ -6,7 +6,7 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving links from the database.
     app.get('/api/packlist/:weather/:packing/:destination/:travel', function (req, res) { //Works
-        db.list.find({  
+        db.list.find({ 
                         weather: req.params.weather,
                         packing: req.params.pack,
                         destination: req.params.destination,
