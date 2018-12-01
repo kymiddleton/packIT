@@ -28,19 +28,19 @@ describe('travelList', function(){
 //DOM testing
 describe('travelList', function () {
 
+  beforeEach(function (){
+    display = none;
+  })
    
 
   
-    it('displays pre-compiled list after 4 are selected', function () {
+    it('should displays pre-compiled list after 4 are selected', function () {
        
-    });
-  
         $('#weather').trigger('click');
         $('#type').trigger('click'); 
         $('#location').trigger('click');
         $('#travelLevel').trigger('click');
   
-      server.respond();
-  
       expect($('#content').text()).to.equal('Paris');
+      });
     });
