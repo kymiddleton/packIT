@@ -8,7 +8,12 @@ const TripsSchema = new Schema({
         trim: true
     },
     tripList: {
-        type: Object,
+        clothing: Array,
+        footwear: Array,
+        personal: Array,
+        documents: Array,
+        gadgets: Array,
+        miscellaneous: Array,
         trim: true,
     },
 
