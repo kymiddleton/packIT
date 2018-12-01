@@ -19,6 +19,8 @@ The attached images illustrate a homescreen and sample packing list combinations
 
 ![Sample2]()
 
+# Testing
+
 # Dependencies
 The following applications need to be installed in order to run the `packIT` app.
 - Node.js
@@ -28,8 +30,13 @@ The following applications need to be installed in order to run the `packIT` app
 # Getting Started
 To start this project clone a copy of the project repository from Github onto your machine.  Once the repository is cloned run `npm install` which is needed to run the app.  Then install the additional Node packages below: 
 
-- NPM express
-- NPM mongoose
+- npm:
+    * express
+    * mongoose
+    * mongoose-unique-validator
+    * crypto
+    * jsonwebtoken
+    * dotenv
 
 Once completed run `node server.js` or `nodemon server.js`.
 
@@ -56,28 +63,17 @@ Other
 - README.md:  Project Overview
 
 # Authors
-- Alex Dominy - Clock 
-- Robert Doughty - Links
-- Sean Hance - Todo
+- Robert Doughty - Login
+- Pawan Jada - Customization / Adding & Deleting Packing List Items
+- Juliana Tyler - Pre-compiled Packing List
 - Kyla Middleton - Lead Architect
     * Created base HTML and CSS
     * Configured/tested models and routes.
     * Seeded database
-    * Created greetings by time of day
-    * Created inspirational quote.
 
 # Acknowledgements
 - Unsplash Photos
     * Photo by Martin Login on Unsplash (https://unsplash.com/photos/A33S9-Ih0qQ)
--Icons
-    * Icon made by [https://www.freepik.com/] from www.flaticon.com which is licensed by Creative Commons BY 3.0 [http://creativecommons.org/licenses/by/3.0/]
 
-
-
-
-
-    As a user, I want to be able to login, so that I can see all of my trips and packing lists. (Robert)
-
-2. As a user, I want to be able to generate a pre-compiled packing list based on choices I select for weather, setting, and packing preferences. (Juliana)
-
-3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. (Pawan)
+- Icons
+    * Icon made by [https://www.freepik.com/] from [www.flaticon.com] which is licensed by Creative Commons BY 3.0 [http://creativecommons.org/licenses/by/3.0/].

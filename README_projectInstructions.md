@@ -6,11 +6,11 @@ Create an application in which users have a pre-compiled packing list based on a
 
 ## MVP
 
-1. As a user, I want to be able to login, so that I can see all of my trips and packing lists. (Robert)
+1. As a user, I want to be able to login, so that I can see all of my trips and packing lists. 
 
-2. As a user, I want to be able to generate a pre-compiled packing list based on choices I select for weather, setting, and packing preferences. (Juliana)
+2. As a user, I want to be able to generate a pre-compiled packing list based on choices I select for weather, setting, and packing preferences. 
 
-3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. (Pawan)
+3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. 
 
 ### Additonal Functionality
 4. As a user, I want to be able to share packing lists with others. 
@@ -18,7 +18,6 @@ Create an application in which users have a pre-compiled packing list based on a
 ## Deliverables
 
 ### Day 1
-
 1. Elect a team lead. 
 2. Pick a name for your application.
 3. If you'd like to create a custom design, you have 24 hours to turn in original design documents for approval. They must be approved by the entire instructional staff. 
@@ -30,13 +29,10 @@ Create an application in which users have a pre-compiled packing list based on a
 9. Write all tests.  
 
 ### Day 2
-
 All API tests must pass. 
 A rough UI should be in place. 
 
-
 ### Day 6
-
 1. A deployed fully functional application with all MVP points accomplished and design files matched. 
 
 # Lead Engineer
