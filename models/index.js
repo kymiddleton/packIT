@@ -1,7 +1,6 @@
 // Exporting an object containing all of our models
 module.exports = {
-    user: require("./userLog"),
-    list: require("./listLog"),
-    trips: require("./tripsLog"),
-
+    user: require("./user-schema"),
+    packingItem: require("./item-schema"),
+    trips: require("./trips-schema"),
 };

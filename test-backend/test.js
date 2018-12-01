@@ -18,14 +18,11 @@ describe('GET /api/examples', function () {
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
-        return db.mongoose.connect({
-            useNewUrlParser: true
-        });
     });
 
     it('should find all examples', function (done) {
         // Add some examples to the db to test with
-        db.User.insertMany([{
+        db.user.create({
                 tripname: 'Paris',
                 list: []
             },
@@ -40,8 +37,7 @@ describe('GET /api/examples', function () {
             {
                 tripname: 'Havana',
                 list: []
-            },
-        ]).then(function () {
+            }).then(function () {
             // Request the route that returns all examples
             request.get('/api/trips').end(function (err, res) {
                 let responseStatus = res.status;
