@@ -29,14 +29,13 @@ require('./routes/api-routes-compiled.js')(app);
 require('./routes/api-routes-customize.js')(app);
 require('./routes/api-routes-user.js')(app);
 require('./routes/html-routes.js')(app);
-  
+
 //Set up promises with mongoose
 mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh",
-  {
+  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", {
     useMongoClient: true
   }
 );
