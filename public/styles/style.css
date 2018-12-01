@@ -1,0 +1,12 @@
+body {
+    /* height: 50vh; */
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1527609021742-5d461b38e32e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=497e1a0bf3827249c34bc63bb0e9d474&auto=format&fit=crop&w=1650&q=80");
+    /* color: rgb(107, 209, 245); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* padding-top: 100px;
+    padding-left: 60px;
+    padding-right: 60px; */
+}
