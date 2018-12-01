@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Back End Test
 
 
@@ -132,4 +130,3 @@ describe('POST /api/trips', function () {
     });
 });
 //Unit Tests
->>>>>>> d49bede3743316ac365a0431b982c60f2010b43e
