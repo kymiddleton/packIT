@@ -4,15 +4,15 @@
 describe('myTrips', function () {
 
     const data = [
-        { name: 'Paris', 
+        { listname: 'Paris', 
             packinglist: {
-                clothes: ['jacket', 'pants'],
+                clothing: ['jacket', 'pants'],
                 footwear: ['sneakers', 'loafers']
             }, 
         },
-        { name: 'Miami',
+        { listname: 'Miami',
             packinglist: {
-                clothes: ['shorts', 'tshirts'],
+                clothing: ['shorts', 'tshirts'],
                 footwear: ['boots', 'flops']
             }, 
         },
