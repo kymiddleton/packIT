@@ -153,7 +153,7 @@ describe('/PUT/:id trips', () => {
         });
     });
 });
-describe('/DELETE/:id trip', () => {
+describe('/DELETE/:id trips', () => {
     it('it should DELETE a trip given the id', (done) => {
         let trip = new Trip({
             tripname: "Prague",
