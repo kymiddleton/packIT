@@ -34,7 +34,7 @@ describe('travelList', function () {
    
 
   
-    it('should displays pre-compiled list after 4 are selected', function () {
+    it('should displays pre-compiled list after selection 4 icons', function () {
        
         $('#weather').trigger('click');
         $('#type').trigger('click'); 
