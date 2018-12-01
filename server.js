@@ -11,10 +11,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.json());
 
 //Sets the server to use the public directory for static assets
@@ -38,6 +42,6 @@ mongoose.connect(
 );
 
 // Starts our server on the predefined PORT
-app.listen(PORT, function(){
-    console.log(`App is now listening on PORT ${PORT}`)
-  })
+app.listen(PORT, function () {
+  console.log(`App is now listening on PORT ${PORT}`)
+})
