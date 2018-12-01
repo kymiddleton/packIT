@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving links from the database.
-    app.get('/api/packlist/:weather/:packing/:destination/:travel', function (req, res) { //Works
+    app.get('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) { //Works
         db.list.find({ 
                         weather: req.params.weather,
                         packing: req.params.pack,
@@ -20,7 +20,7 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new content, adding a new Link entry to the database.
-    app.post('/api/packlist/:weather/:packing/:destination/:travel', function (req, res) {  //working
+    app.post('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) {  //working
         console.log('------Adding Link in mongo');
         db.links.create()
             .then(function (dblinks) {
@@ -31,29 +31,30 @@ module.exports = function (app) {
             });
     });
 
-    // PUT request: Route for updating link content / saving updates 
-    app.put('/api/linksLog', function (req, res) { //Works!
+    // PUT request: Route for updating List content / saving updates 
+    app.put('/api/listLog', function (req, res) { 
         console.log('----> updating <----');
-        db.links.findOneAndUpdate({ _id: req.body.id }, { $set: { url: req.body.url, linkName: req.body.linkName } })
-            .then(function (dblinks) {
-                res.json(dblinks);
+        db.list.findOneAndUpdate({ _id: req.body.id }, )
+            .then(function (dblist) {
+                res.json(dblist);
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    // DELETE request: Deletes link content
-    app.delete('/api/linksLog/:link_id', function (req, res) {  //works!
+    // DELETE request: Deletes List content
+    app.delete('/api/listLog/:list_id', function (req, res) {  
         console.log('--------deleting--------');
-        db.links.findByIdAndRemove(req.params.link_id, function (err, links) {
+        db.list.findByIdAndRemove(req.params.list_id, function (err, list) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
-                message: "Link successfully deleted",
-                id: links._id
+                message: "List successfully deleted",
+                id: list._id
             };
             return res.status(200).send(response);
         });
     });
+
 };
