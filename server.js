@@ -35,9 +35,7 @@ mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://momentum.clone:Bc102018@ds121593.mlab.com:21593/heroku_ms45c2jm", {
-    useMongoClient: true
-  }
+  process.env.MONGODB_URI || "mongodb://momentum.clone:Bc102018@ds121593.mlab.com:21593/heroku_ms45c2jm"
 );
 
 // Starts our server on the predefined PORT
