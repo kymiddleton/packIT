@@ -4,23 +4,27 @@ const db = require('../models');
 // ROUTING
 module.exports = function (app) {
 
-    // GET request: Route for retrieving List Items from the database.
-    app.get('/api/listLog', function (req, res) { 
-        db.list.find({})
-            .then(function (dblist) {
-                res.json(dblist);
+    // GET request: Route for retrieving links from the database.
+    app.get('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) { //Works
+        db.list.find({ 
+                        weather: req.params.weather,
+                        packing: req.params.pack,
+                        destination: req.params.destination,
+                        travel: req.params.travlevel})
+            .then(function (data) {
+                res.json(data);
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    // POST request: Route for creating new List Items in the database.
-    app.post('/api/linksLog', function (req, res) {  
+    // POST request: Route for creating new content, adding a new Link entry to the database.
+    app.post('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) {  //working
         console.log('------Adding Link in mongo');
-        db.list.create(req.body)
-            .then(function (dblist) {
-                res.json(dblist);
+        db.links.create()
+            .then(function (dblinks) {
+                res.json(dblinks);
             })
             .catch(function (err) {
                 res.json(err);
@@ -52,4 +56,5 @@ module.exports = function (app) {
             return res.status(200).send(response);
         });
     });
+
 };
