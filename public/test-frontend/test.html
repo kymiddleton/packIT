@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.css" />
+  <style>
+    #app {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <p>cups:</p>
+    <button id="cup-btn" class="btn" value="cup">add</button>
+    <p>plates:</p>
+    <button id="plate-btn" class="btn" value="plate">add</button>
+    <p>utensils:</p>
+    <button id="utensil-btn" class="btn" value="utensil">add</button>
+    <div id="total"></div>
+  </div>
+
+  <div id="mocha"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- <script src="app.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js"></script>
+  <script src="https://sinonjs.org/releases/sinon-6.1.4.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    const expect = chai.expect;
+  </script>
+  <script src="test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

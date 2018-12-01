@@ -1,44 +1,79 @@
-# packIT
-# Travel Packing Application
+# packIT - A packing companion for busy travelers
+This is a group project for a Full Stack Web Development Bootcamp. 
 
-## Scope
+The `packIT` application is the perfect companion for travelers who need a simplified approach to packing.  Users select four attributes:
+    * Weather:  Hot, Rainy, Cold
+    * Transportation: Plane, Car, Transit
+    * Destination: Beach, Outdoor, City
+    * Packing Style: Minimal, Typical, Diva
 
-Create an application in which users have a pre-compiled packing list based on a destination's weather, setting, etc. Users can customize their packing list by adding and deleting the pre-compiled list. Users should be able to log in and access their information. 
+The combination selected provides users with a pre-compiled packing list to eliminate guess work and expidite packing.  Users also have the ability to customize their list by adding and deleting items.
 
-## MVP
+A secure log-in provides users with the ability to store and access their lists per trip type.   
 
-1. As a user, I want to be able to login, so that I can see all of my trips and packing lists. (Robert)
+The attached images illustrate a homescreen and sample packing list combinations: 
 
-2. As a user, I want to be able to generate a pre-compiled packing list based on choices I select for weather, setting, and packing preferences. (Juliana)
+![HomeScreen:]()
 
-3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. (Pawan)
+![Sample1]()
 
-### Additonal Functionality
-4. As a user, I want to be able to share packing lists with others. 
+![Sample2]()
 
+# Testing
 
-## Deliverables
+# Dependencies
+The following applications need to be installed in order to run the `packIT` app.
+- Node.js
+- Express
+- Mongoose
 
-### Day 1
+# Getting Started
+To start this project clone a copy of the project repository from Github onto your machine.  Once the repository is cloned run `npm install` which is needed to run the app.  Then install the additional Node packages below: 
 
-1. Elect a team lead. 
-2. Pick a name for your application.
-3. If you'd like to create a custom design, you have 24 hours to turn in original design documents for approval. They must be approved by the entire instructional staff. 
-4. A repository with all teammates as contributers. 
-5. A heroku deployment.
-6. Divy up user stories.
-7. Create and assign issues. 
-8. Create a Kanban board. 
-9. Write all tests.  
+- npm:
+    * express
+    * mongoose
+    * mongoose-unique-validator
+    * crypto
+    * jsonwebtoken
+    * dotenv
 
+Once completed run `node server.js` or `nodemon server.js`.
 
+# Deployment
+The project is deployed with Heroku.
+- Heroku add-ons:  mLab MongoDB
 
-### Day 2
+# Code Structure
+Models
 
-All API tests must pass. 
-A rough UI should be in place. 
+Public Files
 
+Routes
 
-### Day 6
+Testing
 
-1. A deployed fully functional application with all MVP points accomplished and design files matched. 
+Other
+- server.js
+- node_modules
+- .gitignore
+- package-lock.json
+- package.json
+- README_projectInstructions
+- README.md:  Project Overview
+
+# Authors
+- Robert Doughty - Login
+- Pawan Jada - Customization / Adding & Deleting Packing List Items
+- Juliana Tyler - Pre-compiled Packing List
+- Kyla Middleton - Lead Architect
+    * Created base HTML and CSS
+    * Configured/tested models and routes.
+    * Seeded database
+
+# Acknowledgements
+- Unsplash Photos
+    * Photo by Martin Login on Unsplash (https://unsplash.com/photos/A33S9-Ih0qQ)
+
+- Icons
+    * Icon made by [https://www.freepik.com/] from [www.flaticon.com] which is licensed by Creative Commons BY 3.0 [http://creativecommons.org/licenses/by/3.0/].
