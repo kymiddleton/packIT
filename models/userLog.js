@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-const secret = require('../config').secret;
 
 const Schema = mongoose.Schema;
 
@@ -36,7 +35,7 @@ const UserSchema = new Schema({
         },
 }, { timestamps: true });
 
-mySchema.plugin(uniqueValidator);
+// mySchema.plugin(uniqueValidator);
 UserSchema.plugin(uniqueValidator, { message: 'is already taken.' });
 
 UserSchema.methods.setPassword = function (password) {
@@ -68,5 +67,5 @@ UserSchema.methods.toAuthJSON = function () {
 
 // This creates our model from the above schema, using Mongoose's model method
 const user = mongoose.model("userLog", UserSchema);
-// Export the Todo model
+// Export the User model
 module.exports = user;
