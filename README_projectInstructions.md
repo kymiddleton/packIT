@@ -6,11 +6,12 @@ Create an application in which users have a pre-compiled packing list based on a
 
 ## MVP
 
-1. As a user, I want to be able to login, so that I can see all of my trips and packing lists. 
+1. As a user, I want to be able to login, so that I can see all of my trips and packing lists.  Robert testing: GET
 
 2. As a user, I want to be able to generate a pre-compiled packing list based on choices I select for weather, setting, and packing preferences. 
+Juliana testing: POST
 
-3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. 
+3. As a user, I want to be able to customize my pre-compiled list by adding and deleting items. Pawan: testing PUT/DELETE
 
 ### Additonal Functionality
 4. As a user, I want to be able to share packing lists with others. 

@@ -6,7 +6,11 @@ const ListSchema = new Schema({
 
     item: {
         type: String,
-        trim: true,
+        trim: true
+    },
+    category: {
+        type: String,
+        trim: true
     },
     weather: {
         type: Array,

@@ -25,17 +25,18 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-// require('./routes/api-routes-links.js')(app);
-// require('./routes/api-routes-quotes.js')(app);
-// require('./routes/api-routes-todo.js')(app);
-// require('./routes/html-routes.js')(app);
-
+require('./routes/api-routes-compiled.js')(app);
+require('./routes/api-routes-customize.js')(app);
+require('./routes/api-routes-user.js')(app);
+require('./routes/html-routes.js')(app);
+  
 //Set up promises with mongoose
 mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://momentum.clone:Bc102018@ds121593.mlab.com:21593/heroku_ms45c2jm", {
+  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh",
+  {
     useMongoClient: true
   }
 );
