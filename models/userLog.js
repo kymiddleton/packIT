@@ -23,6 +23,17 @@ const UserSchema = new Schema({
         trim: true,
         required: "Valid Email Address is Required"
     },
+    password: {
+        type: String,
+        lowercase: true,
+        required: "String is Required",
+        validate: [
+            function (input) {
+              return input.length >= 6;
+            },
+            "Longstring should be longer."
+          ],
+        },
 }, { timestamps: true });
 
 mySchema.plugin(uniqueValidator);
