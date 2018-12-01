@@ -1,7 +1,5 @@
-const chai = require('chai')
-expect = chai.expect,
-should = chai.should();
-const packingList = require('./index.js').packingList;
+const expect = require('chai').expect;
+// should = chai.should();
 
 describe('packingList', function(){
   it('should only show item from selected icons', function() {
@@ -11,9 +9,10 @@ describe('packingList', function(){
       personalCare: 'toothpaste', 
       documents: 'driverslicense', 
       gadgets: 'camera', 
-      misc: 'charger'}
-      ))
-      .to.equal(
+      misc: 'charger'
+    })
+    )
+      .to.eql( 
         {
           clothing:'bathingsuit',
           footWare: 'flip flops',
@@ -26,12 +25,6 @@ describe('packingList', function(){
 });
 
 //DOM testing
-
-// var should = require('chai').should();
-// var doc = 
-//   should.exist(doc);
-//   doc.should.be.an('object');
-
 
 // describe('packingList', function () {
   

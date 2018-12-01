@@ -5,10 +5,14 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving links from the database.
-    app.get('/api/linksLog', function (req, res) { //Works
-        db.links.find({})
-            .then(function (dblinks) {
-                res.json(dblinks);
+    app.get('/api/packlist/:weather/:packing/:destination/:travel', function (req, res) { //Works
+        db.list.find({  
+                        weather: req.params.weather,
+                        packing: req.params.pack,
+                        destination: req.params.destination,
+                        travel: req.params.travlevel})
+            .then(function (data) {
+                res.json(data);
             })
             .catch(function (err) {
                 res.json(err);
@@ -16,9 +20,9 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new content, adding a new Link entry to the database.
-    app.post('/api/linksLog', function (req, res) {  //working
+    app.post('/api/packlist/:weather/:packing/:destination/:travel', function (req, res) {  //working
         console.log('------Adding Link in mongo');
-        db.links.create(req.body)
+        db.links.create()
             .then(function (dblinks) {
                 res.json(dblinks);
             })
