@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/kymiddleton/packIT#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14",
     "node": "^11.2.0"
   }
 }
