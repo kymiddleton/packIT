@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ListSchema = new Schema({
+const PackingItemSchema = new Schema({
 
     item: {
         type: String,
@@ -30,6 +30,6 @@ const ListSchema = new Schema({
     }
 });
     // This creates our model from the above schema, using Mongoose's model method
-    const list = mongoose.model("listLog", ListSchema);
+    const packingItem = mongoose.model("packingItem", PackingItemSchema);
     // Export the links model
-    module.exports = list;
+    module.exports = packingItem;

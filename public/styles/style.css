@@ -1,12 +1,101 @@
 body {
-    /* height: 50vh; */
-    display: block;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
+    /* font-size: 25px; */
     background-image: url("https://images.unsplash.com/photo-1527609021742-5d461b38e32e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=497e1a0bf3827249c34bc63bb0e9d474&auto=format&fit=crop&w=1650&q=80");
-    /* color: rgb(107, 209, 245); */
     background-size: cover;
-    background-repeat: no-repeat;
-    /* padding-top: 100px;
-    padding-left: 60px;
-    padding-right: 60px; */
+    background-repeat: repeat;
 }
+
+h1 {
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+h4 {
+    font-size: 15px;
+    bottom: 0px;
+}
+
+span{
+    color: rgb(76, 172, 245);
+}
+
+.wrap {
+    width: 700px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(63, 62, 62);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-gap: 15px; */
+    grid-gap: 52px 55px;
+    color: white;    
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.container>div {
+    background-color: rgba(43, 43, 43, 0.6);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 20px;
+}
+
+.img {
+    color:  rgb(76, 172, 245);
+    font: 25px;
+    display:block;
+}
+
+
+.happy-sun {
+    background: url("../../assets/happy-sun.png");
+}
+.umbrella {
+    background: url("./assets/umbrella.png");
+}
+.snowflake {
+    background: url("/assets/snowflake.png");
+} 
+.plane {
+    background: url("./assets/plane.png");
+}                     
+.taxi {
+    background: url("./assets/taxi.png");
+}
+.icon {
+    background: url("./assets/icon.png");
+}                    
+.sun-umbrella {
+    background: url("./assets/sun-umbrella.png");
+} 
+.trees {
+    background: url("./assets/trees.png");
+}                     
+.skyline {
+    background: url("./assets/skyline.png");
+} 
+.backpack {
+    background: url("./assets/backpack.png");
+}                  
+.luggage {
+    background: url("./assets/luggage.png");
+} 
+.crown {
+    background: url("./assets/crown.png");
+}                     
+
+                    

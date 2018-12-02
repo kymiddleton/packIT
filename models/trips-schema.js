@@ -13,12 +13,11 @@ const TripsSchema = new Schema({
         personal: Array,
         documents: Array,
         gadgets: Array,
-        miscellaneous: Array,
-        trim: true,
+        miscellaneous: Array
     },
 
 });
 // This creates our model from the above schema, using Mongoose's model method
-const trips = mongoose.model("tripsLog", TripsSchema);
+const trips = mongoose.model("trips-schema", TripsSchema);
 // Export the Todo model
 module.exports = trips;

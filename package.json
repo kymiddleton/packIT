@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kymiddleton/packIT#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",

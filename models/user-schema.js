@@ -66,6 +66,6 @@ UserSchema.methods.toAuthJSON = function () {
 };
 
 // This creates our model from the above schema, using Mongoose's model method
-const user = mongoose.model("userLog", UserSchema);
+const user = mongoose.model("user-schema", UserSchema);
 // Export the User model
 module.exports = user;

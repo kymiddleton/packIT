@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 require('./routes/api-routes-compiled.js')(app);
-require('./routes/api-routes-customize.js')(app);
+require('./routes/api-routes-trips.js')(app);
 require('./routes/api-routes-user.js')(app);
 require('./routes/html-routes.js')(app);
 
@@ -44,3 +44,5 @@ mongoose.connect(
 app.listen(PORT, function () {
   console.log(`App is now listening on PORT ${PORT}`)
 })
+
+module.exports = app;
