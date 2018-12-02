@@ -5,8 +5,13 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
-    app.get('/api/item-schema', function (req, res) { 
-        db.packingItem.find({})
+    app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) {
+        db.packingItem.find({
+            weather: req.params.weather,
+            packing: req.params.pack,
+            destination: req.params.destination,
+            travel: req.params.travlevel
+        })
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
             })
@@ -16,7 +21,7 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new Packing List Items in the database.
-    app.post('/api/item-schema', function (req, res) {  
+    app.post('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) {
         console.log('------Adding Link in mongo');
         db.packingItem.create(req.body)
             .then(function (dbpackingItem) {
@@ -27,10 +32,11 @@ module.exports = function (app) {
             });
     });
 
+
     // PUT request: Route for updating Packing List content / saving updates 
-    app.put('/api/item-schema', function (req, res) { 
+    app.put('/api/item-schema', function (req, res) {
         console.log('----> updating <----');
-        db.packingIem.findOneAndUpdate({ _id: req.body.id }, )
+        db.packingIem.findOneAndUpdate({ _id: req.body.id })
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
             })
@@ -40,7 +46,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Packing List content
-    app.delete('/api/item-schema/:packingItem_id', function (req, res) {  
+    app.delete('/api/item-schema/:packingItem_id', function (req, res) {
         console.log('--------deleting--------');
         db.packingItem.findByIdAndRemove(req.params.packingItem_id, function (err, packingItem) {
             if (err) return res.status(500).send(err);
