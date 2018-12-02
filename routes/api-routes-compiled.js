@@ -4,57 +4,58 @@ const db = require('../models');
 // ROUTING
 module.exports = function (app) {
 
-    // GET request: Route for retrieving links from the database.
-    app.get('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) { //Works
-        db.list.find({ 
-                        weather: req.params.weather,
-                        packing: req.params.pack,
-                        destination: req.params.destination,
-                        travel: req.params.travlevel})
-            .then(function (data) {
-                res.json(data);
+    // GET request: Route for retrieving Packing List Items from the database.
+    app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) {
+        db.packingItem.find({
+            weather: req.params.weather,
+            packing: req.params.pack,
+            destination: req.params.destination,
+            travel: req.params.travlevel
+        })
+            .then(function (dbpackingItem) {
+                res.json(dbpackingItem);
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    // POST request: Route for creating new content, adding a new Link entry to the database.
-    app.post('/api/listLog/:weather/:packing/:destination/:travel', function (req, res) {  //working
+    // POST request: Route for creating new Packing List Items in the database.
+    app.post('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) {
         console.log('------Adding Link in mongo');
-        db.links.create()
-            .then(function (dblinks) {
-                res.json(dblinks);
+        db.packingItem.create(req.body)
+            .then(function (dbpackingItem) {
+                res.json(dbpackingItem);
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    // PUT request: Route for updating List content / saving updates 
-    app.put('/api/listLog', function (req, res) { 
+
+    // PUT request: Route for updating Packing List content / saving updates 
+    app.put('/api/item-schema', function (req, res) {
         console.log('----> updating <----');
-        db.list.findOneAndUpdate({ _id: req.body.id }, )
-            .then(function (dblist) {
-                res.json(dblist);
+        db.packingIem.findOneAndUpdate({ _id: req.body.id })
+            .then(function (dbpackingItem) {
+                res.json(dbpackingItem);
             })
             .catch(function (err) {
                 res.json(err);
             });
     });
 
-    // DELETE request: Deletes List content
-    app.delete('/api/listLog/:list_id', function (req, res) {  
+    // DELETE request: Deletes Packing List content
+    app.delete('/api/item-schema/:packingItem_id', function (req, res) {
         console.log('--------deleting--------');
-        db.list.findByIdAndRemove(req.params.list_id, function (err, list) {
+        db.packingItem.findByIdAndRemove(req.params.packingItem_id, function (err, packingItem) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
                 message: "List successfully deleted",
-                id: list._id
+                id: packingItem._id
             };
             return res.status(200).send(response);
         });
     });
-
 };
