@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving users from the database.
-    app.get('/api/userLog', function (req, res) { 
+    app.get('/api/user-schema', function (req, res) { 
         db.user.find({})
             .then(function (dbuser) {
                 res.json(dbuser);
@@ -16,7 +16,7 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new users in the database.
-    app.post('/api/userLog', function (req, res) {  
+    app.post('/api/user-schema', function (req, res) {  
         console.log('------Adding Link in mongo');
         db.user.create(req.body)
             .then(function (dbuser) {
@@ -28,7 +28,7 @@ module.exports = function (app) {
     });
 
     // PUT request: Route for updating users
-    app.put('/api/userLog', function (req, res) { 
+    app.put('/api/user-schema', function (req, res) { 
         console.log('----> updating <----');
         db.user.findOneAndUpdate({ _id: req.body.id }, { $set: { userName: req.body.userName, email: req.body.email, password: req.body.password } })
             .then(function (dbuser) {
@@ -40,7 +40,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes user content
-    app.delete('/api/userLog/:user_id', function (req, res) { 
+    app.delete('/api/user-schema/:user_id', function (req, res) { 
         console.log('--------deleting--------');
         db.user.findByIdAndRemove(req.params.user_id, function (err, user) {
             if (err) return res.status(500).send(err);
