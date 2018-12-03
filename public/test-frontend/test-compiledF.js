@@ -1,9 +1,9 @@
 const expect = require('chai').expect;
+// const packingList = require('./public/compiled.js').packingList;
 
-// should = chai.should();
 
 describe('packingList', function(){
-  it('should only show item from selected icons', function() {
+  it('should return a list of items matching selections', function() {
     expect(packingList({
       clothing:'bathingsuit',
       footWare: 'flip flops',
@@ -23,14 +23,30 @@ describe('packingList', function(){
           misc: 'charger'
         });
   });
+  it('', function(){
+    expect()
+  })
 });
 
-//DOM testing
 
-// describe('packingList', function () {
-  
-//     it('should ask for name once list is reviewed and modified', function () {
+//functional testing
 
-//       expect(('#content').text()).to.equal();
-//       });
-// });
+describe('packingList', function () {
+  //only allow one click on each row
+    it('should allow user to only click one icon in each row', function () {
+      $('.row1').trigger('click');  
+      $('.row2').trigger('click');
+      $('.row3').trigger('click');
+      $('.row4').trigger('click');
+//once all rows have one selection it should create pre compiled list
+       expect($('.container').assert({
+      clothing:'bathingsuit',
+       footWare: 'flip flops',
+       personalCare: 'toothpaste', 
+       documents: 'driverslicense', 
+       gadgets: 'camera', 
+       misc: 'charger'
+       }))
+      
+})
+})
