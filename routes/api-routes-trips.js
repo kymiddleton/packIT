@@ -30,14 +30,9 @@ module.exports = function (app) {
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { 
         console.log('----> updating <----');
-        db.links.findOneAndUpdate({
-                _id: req.body.id
-            }, {
-                $set: {
-                    url: req.body.url,
-                    linkName: req.body.linkName
-                }
-            })
+        console.log(req.body.tripList);
+        console.log(req.body.tripName);
+        db.trips.findOneAndUpdate({_id: req.body.id}, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
             .then(function (dbtrips) {
                 res.json(dbtrips);
             })
@@ -47,13 +42,13 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Trip content
-    app.delete('/api/trips-schema/:trips_id', function (req, res) { 
+    app.delete('/api/trips-schema/:id', function (req, res) { 
         console.log('--------deleting--------');
-        db.trips.findByIdAndRemove(req.params.trip_id, function (err, trip) {
+        db.trips.findByIdAndRemove(req.params.trips_id, function (err, trips) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
-                message: "Link successfully deleted",
+                message: "Trip successfully deleted",
                 id: trips._id
             };
             return res.status(200).send(response);

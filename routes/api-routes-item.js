@@ -8,9 +8,9 @@ module.exports = function (app) {
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) {
         db.packingItem.find({
             weather: req.params.weather,
-            packing: req.params.pack,
+            packing: req.params.packing,
             destination: req.params.destination,
-            travel: req.params.travlevel
+            travel: req.params.travel
         })
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
