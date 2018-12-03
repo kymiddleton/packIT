@@ -1,43 +1,39 @@
 // Generate compiled packing list based on user selection
 
 $(function () {
-
+    //
+    // $('#submit').on('click', newList);
 
     const packingList = function () {
-        // let weather =
-        // let packing =
-        // let destination = 
-        // let travel =
-            $.ajax({ url: `/api/listLog/${weather}/${packing}/${destination}/${travel}`, method: 'GET' })
-                .then(function (packingList) {
-                //restrict selection to 4 icons/buttons
-                    $(".selection").change(function() {
-                        let button = $(this).next("button");
-                        if (this.value == "4") {
-                          button.prop("disabled", false);
-                        } else {
-                          button.prop("disabled", true)
-                        } 
-                      });
-                    packingList.filter(e => { $(`#container`).append() })
-                    console.log(packingList)
-                });
+
+
+        $.ajax({ url: `/api/listLog/${weather}/${packing}/${destination}/${travel}`, method: 'GET' })
+            .then(function (packingList) {
+                let selection = { row1: none, row2: none, row3: none, row4: none }
+                // let weather = document.getElemenybyId('.row1).val()
+                // let packing = document.getElemenybyId('.row4).val()
+                // let destination = document.getElemenybyId('.row3).val()
+                // let travel = document.getElemenybyId('.row2).val()
+                $('.myGridClass').on('click', function (e) {
+                    console.log('clicked')
+                    selection[$(e.target).data(row)] = e.target.id
+                })
+                packingList.filter(e => { $(`#container`).append() })
+                console.log(packingList)
+            });
     }
 
     packingList();
     const newList = function (newtodo) {
         $.ajax({ url: `/api/listLog/${weather}/${packing}/${destination}/${travel}`, method: 'POST', data: newtodo })
             .then(function () {
-                let newList = $('input').val();
-                $('#container').append($())
+
             })
 
-
-        $('#container')
-    }    
-    $('#submit').on('click', function () {
-      
-    })
+    }
     newList();
+
 })
 
+
+// It's like says selection[row] = hotday
