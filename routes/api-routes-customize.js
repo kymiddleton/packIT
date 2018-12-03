@@ -47,7 +47,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes link content
-    app.delete('/api/linksLog/:link_id', function (req, res) { //works!
+    app.delete('/api/trips/:trip_id', function (req, res) { //works!
         console.log('--------deleting--------');
         db.links.findByIdAndRemove(req.params.link_id, function (err, links) {
             if (err) return res.status(500).send(err);
