@@ -1,7 +1,6 @@
 body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-    /* font-size: 25px; */
     background-image: url("https://images.unsplash.com/photo-1527609021742-5d461b38e32e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=497e1a0bf3827249c34bc63bb0e9d474&auto=format&fit=crop&w=1650&q=80");
     background-size: cover;
     background-repeat: repeat;
@@ -36,9 +35,11 @@ span{
 
 .container {
     display: grid;
+    justify-content: space-evenly;
     height: 100%;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: 80px 200px auto 30px; */
     /* grid-gap: 15px; */
     grid-gap: 52px 55px;
     color: white;    
@@ -54,48 +55,12 @@ span{
     font-size: 20px;
 }
 
-.img {
+img {
     color:  rgb(76, 172, 245);
-    font: 25px;
-    display:block;
+    margin: 0;
+    border: 0;
+    padding: 3px;
+    height: 46px;
 }
 
 
-.happy-sun {
-    background: url("../../assets/happy-sun.png");
-}
-.umbrella {
-    background: url("./assets/umbrella.png");
-}
-.snowflake {
-    background: url("/assets/snowflake.png");
-} 
-.plane {
-    background: url("./assets/plane.png");
-}                     
-.taxi {
-    background: url("./assets/taxi.png");
-}
-.icon {
-    background: url("./assets/icon.png");
-}                    
-.sun-umbrella {
-    background: url("./assets/sun-umbrella.png");
-} 
-.trees {
-    background: url("./assets/trees.png");
-}                     
-.skyline {
-    background: url("./assets/skyline.png");
-} 
-.backpack {
-    background: url("./assets/backpack.png");
-}                  
-.luggage {
-    background: url("./assets/luggage.png");
-} 
-.crown {
-    background: url("./assets/crown.png");
-}                     
-
-                    
