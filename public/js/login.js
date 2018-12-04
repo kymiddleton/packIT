@@ -37,7 +37,7 @@ const myTrips = function () {
             e.tripList.miscellaneous.forEach(function(element) {  
                 console.log(element);   
                 htmlstr += `<h5 id="miscellaneous">${element}</h5>`   
-            });   
+            });  
           
        
     });
