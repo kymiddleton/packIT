@@ -10,13 +10,13 @@ h1 {
     text-align: left;
     font-size: 30px;
     color: white;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
 }
 
 h4 {
-    font-size: 15px;
-    bottom: 0px;
+    font-size: 20px;
 }
 
 span{
@@ -24,13 +24,15 @@ span{
 }
 
 .wrap {
+    height: auto;
     width: 700px;
-    height: 700px;
+    /* height: 700px; */
+    /* height: 755px; */
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(63, 62, 62);
     text-align: center;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .container {
@@ -39,27 +41,27 @@ span{
     height: 100%;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-columns: 80px 200px auto 30px; */
-    /* grid-gap: 15px; */
     grid-gap: 52px 55px;
     color: white;    
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 50px;
     margin-right: 50px;
+    padding-bottom: 20px;
 }
+
 .container>div {
     background-color: rgba(43, 43, 43, 0.6);
     text-align: center;
-    padding: 25px 0;
-    font-size: 20px;
+    padding: 15px 0;
 }
 
 img {
-    color:  rgb(76, 172, 245);
-    margin: 0;
-    border: 0;
+    /* color:  rgb(76, 172, 245); */
+    /* margin: 0;
+    border: 0; */
     padding: 3px;
+    padding-bottom: 26px;
     height: 46px;
 }
 
