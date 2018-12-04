@@ -1,5 +1,3 @@
-//=======================TRIPS MODEL TESTING=======================//
-
 //Back End Test
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -18,54 +16,39 @@ describe('GET /api/examples', function () {
     beforeEach(function () {
         request = chai.request(server);
     });
-    
-    afterEach(function () {
-        db.dropcollection("trips");
-    });
 
     it('should find all examples', function (done) {
         // Add some examples to the db to test with
-        db.trips.create([
+        db.trips.create (
             { tripName: 'Seattle', tripList: {} },
             { tripName: 'Tokyo', tripList: {} },
             { tripName: 'Havana', tripList: {} }
-        ]).then(function () {
-
+        ).then(function () {
             // Request the route that returns all examples
             request.get('/api/trips-schema').end(function (err, res) {
                 let responseStatus = res.status;
                 let responseBody = res.body;
                 console.log(responseBody, "this is response from get trips")
-
+                
                 // Run assertions on the response
                 expect(err).to.be.null;
                 expect(responseStatus).to.equal(200);
-                expect(responseBody).to.be.an('array').that.has.lengthOf(3);
-                expect(responseBody[0]).to.be.an('object').that.includes({
-                    tripName: 'Seattle',
-                    // _id: '5c057ea82dade57fceddadf6',
-                    tripList:{}
-                    // {
-                        // clothing: [],
-                        // footwear: [],
-                        // personal: [],
-                        // documents: [],
-                        // gadgets: [],
-                        // miscellaneous: []
-                    // }
-                });
 
-                // expect(responseBody[1]).to.be.an('object').that.includes(
-                //     { tripName: '', tripList: [] }      
-                // );
+                expect(responseBody).to.be.an('array').that.has.lengthOf(4);
 
-                // expect(responseBody[2]).to.be.an('object').that.includes(
-                //     { tripName: '', tripList: [] }
-                // );
+                expect(responseBody[0]).to.be.an('object').that.includes (
+                    { tripname: 'Paris', list: [] }
+                );
+                expect(responseBody[1]).to.be.an('object').that.includes(
+                    { tripName: 'Seattle', tripList: [] }      
+                );
+                expect(responseBody[2]).to.be.an('object').that.includes(
+                    {  tripName: 'Tokyo', tripList: [] }  
+                );
 
-                // expect(responseBody[3]).to.be.an('object').that.includes(
-                //     { tripName: '', tripList: [] }
-                // );
+                expect(responseBody[3]).to.be.an('object').that.includes(
+                    { tripName: 'Havana', tripList: [] }   
+                );
 
                 // The `done` function is used to end any asynchronous tests
                 done();
@@ -83,11 +66,8 @@ describe('GET /api/examples', function () {
 //     });
 
 //     it('should save an example', function (done) {
-//         var reqBody = {
-//             tripname: 'Athens',
-//             list: []
-//         };
-
+//         var reqBody = { tripname: 'Athens', list: [] };
+//             
 //         // POST the request body to the server
 //         request
 //             .post('/api/trips')
@@ -99,13 +79,10 @@ describe('GET /api/examples', function () {
 //                 // Run assertions on the response
 
 //                 expect(err).to.be.null;
-
 //                 expect(responseStatus).to.equal(200);
 
-//                 expect(responseBody)
-//                     .to.be.an('object')
-//                     .that.includes(reqBody);
-
+//                 expect(responseBody).to.be.an('object').that.includes(reqBody);
+//                    
 //                 // The `done` function is used to end any asynchronous tests
 //                 done();
 //             });
@@ -114,17 +91,12 @@ describe('GET /api/examples', function () {
 
 // describe('/PUT/:id trips', () => {
 //     it('it should UPDATE a book given the id', (done) => {
-//         let trip = new trip({
-//             tripname: "Cancun",
-//             list: []
-//         })
+//         let trip = new trip({ tripname: "Cancun", list: [] })
+//             
 //         trip.save((err, book) => {
 //             chai.request(server)
 //                 .put('/trips/' + trip.id)
-//                 .send({
-//                     tripname: "Miami",
-//                     list: []
-//                 })
+//                 .send({ tripname: "Miami", list: [] }) 
 //                 .end((err, res) => {
 //                     res.should.have.status(200);
 //                     res.body.should.be.a('object');
@@ -137,14 +109,10 @@ describe('GET /api/examples', function () {
 // });
 // describe('/DELETE/:id trips', () => {
 //     it('it should DELETE a trip given the id', (done) => {
-//         let trip = new Trip({
-//             tripname: "Prague",
-//             list: []
-//         })
+//         let trip = new Trip({ tripname: "Prague", list: [] })
+//          
 //         trip.save((err, trip) => {
-//             chai.request(server)
-//                 .delete('/trips/' + trip.id)
-//                 .end((err, res) => {
+//             chai.request(server).delete('/trips/' + trip.id).end((err, res) => {
 //                     res.should.have.status(200);
 //                     res.body.should.be.a('object');
 //                     res.body.should.have.property('Prague').to.equal('Prague');
@@ -154,4 +122,3 @@ describe('GET /api/examples', function () {
 //         });
 //     });
 // });
-// //Unit Tests

@@ -67,6 +67,7 @@ describe('decrement', function () {
         expect($('#count').text()).to.equal('-2');
     });
 
+<<<<<<< HEAD
 });
 
 // -------------------------------------------------
@@ -123,3 +124,6 @@ const getTrip = function () {
         })
 }
 getTrip();
+=======
+});
+>>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c

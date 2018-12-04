@@ -11,21 +11,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Sets the server to use the public directory for static assets
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-require('./routes/api-routes-compiled.js')(app);
+require('./routes/api-routes-item.js')(app);
 require('./routes/api-routes-trips.js')(app);
 require('./routes/api-routes-user.js')(app);
 require('./routes/html-routes.js')(app);
@@ -35,7 +31,8 @@ mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", {
+  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", 
+  {
     useMongoClient: true
   }
 );
