@@ -4,16 +4,24 @@
 describe('myTrips', function () {
 
     const data = [
-        { name: 'Paris', 
-            packinglist: {
-                clothes: ['jacket', 'pants'],
-                footwear: ['sneakers', 'loafers']
+        { tripName: 'Paris', 
+            tripList: {
+                clothing: ['jacket', 'pants'],
+                footwear: ['sneakers', 'loafers'],
+                personal: ['lotion', 'hand sanitizer', 'lysol'],
+                documents: ['passport', 'boarding pass'],
+                gadgets: ['luggage scale', 'plug adapter', 'pocket translator'],
+                miscellaneous: ['neck pillow']
             }, 
         },
-        { name: 'Miami',
-            packinglist: {
-                clothes: ['shorts', 'tshirts'],
-                footwear: ['boots', 'flops']
+        { tripName: 'Miami',
+            tripList: {
+                clothing: ['shorts', 'tshirts'],
+                footwear: ['boots', 'flops'],
+                personal: ['lotion', 'hand sanitizer', 'lysol'],
+                documents: ['passport', 'boarding pass'],
+                gadgets: ['luggage scale'],
+                miscellaneous: ['neck pillow']
             }, 
         },
       ];
@@ -37,28 +45,69 @@ describe('myTrips', function () {
         $('#showtrips').trigger('click');
         server.respond();
 
-        expect($('#trips').text()).to.equal('Paris Miami');
+        expect($('#tripname').text()).to.equal('Paris');
     });
-    it('should display suitcase when clicking on a trip', function () {
-        server.respondWith('GET', '/myTrips/name/suitcase', [
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
             200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
           ]);
       
-        $('#trip').trigger('click');
+        $('#showtrips').trigger('click');
         server.respond();
 
-        expect($('#suitcase').text()).to.equal('clothes footwear');
+        expect($('#footwear').text()).to.equal('sneakers');
     });
 
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips/name/suitcase', [
+        server.respondWith('GET', '/myTrips', [
             200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
           ]);
       
-        $('#clothes').trigger('click');
+        $('#showtrips').trigger('click');
         server.respond();
 
-        expect($('.clotheslist').text()).to.equal('shorts tshirts');
+        expect($('#clothing').text()).to.equal('jacket');
     });
 
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
+            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
+          ]);
+      
+        $('#showtrips').trigger('click');
+        server.respond();
+
+        expect($('#personal').text()).to.equal('lotion');
+    });
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
+            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
+          ]);
+      
+        $('#showtrips').trigger('click');
+        server.respond();
+
+        expect($('#documents').text()).to.equal('passport');
+    });
+
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
+            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
+          ]);
+      
+        $('#showtrips').trigger('click');
+        server.respond();
+
+        expect($('#gadgets').text()).to.equal('luggage scale');
+    });
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
+            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
+          ]);
+      
+        $('#showtrips').trigger('click');
+        server.respond();
+
+        expect($('#miscellaneous').text()).to.equal('neck pillow');
+    });
 });
