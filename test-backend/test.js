@@ -18,6 +18,10 @@ describe('GET /api/examples', function () {
     beforeEach(function () {
         request = chai.request(server);
     });
+    
+    afterEach(function () {
+        db.dropcollection("trips");
+    });
 
     it('should find all examples', function (done) {
         // Add some examples to the db to test with
@@ -36,9 +40,7 @@ describe('GET /api/examples', function () {
                 // Run assertions on the response
                 expect(err).to.be.null;
                 expect(responseStatus).to.equal(200);
-
                 expect(responseBody).to.be.an('array').that.has.lengthOf(3);
-
                 expect(responseBody[0]).to.be.an('object').that.includes({
                     tripName: 'Seattle',
                     // _id: '5c057ea82dade57fceddadf6',
