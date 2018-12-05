@@ -38,7 +38,7 @@ describe('myTrips', function () {
 
 
     it('should display list of trips when clicking myTrips', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
           ]);
       
