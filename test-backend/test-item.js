@@ -1,6 +1,5 @@
 //====================ITEM MODEL TESTING==================//
 
-
 "use strict";
 
 // NPM install mongoose and chai. Make sure mocha is globally installed
