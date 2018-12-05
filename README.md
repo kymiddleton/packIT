@@ -63,7 +63,7 @@ Other
 - README.md:  Project Overview
 
 # Authors
-- Robert Doughty - Login
+- Robert Doughty - Login, Saving User Trip Profiles
 - Pawan Jada - Customization / Adding & Deleting Packing List Items
 - Juliana Tyler - Pre-compiled Packing List
 - Kyla Middleton - Lead Architect

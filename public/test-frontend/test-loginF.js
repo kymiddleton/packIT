@@ -1,6 +1,3 @@
-
-
-
 describe('myTrips', function () {
 
     const data = [
@@ -24,17 +21,17 @@ describe('myTrips', function () {
                 miscellaneous: ['neck pillow']
             }, 
         },
-      ];
+    ];
 
-      let server;
+    let server;
 
-  beforeEach(function () {
-    server = sinon.fakeServer.create();
-  });
+    beforeEach(function () {
+        server = sinon.fakeServer.create();
+    });
 
-  afterEach(function () {
-    server.restore();
-  });
+    afterEach(function () {
+        server.restore();
+    });
 
 
     it('should display list of trips when clicking myTrips', function () {
