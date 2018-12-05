@@ -22,7 +22,7 @@ describe('GET /api/user-schema', function () {
         // Add some examples to the db to test with
         db.user.create({
             userName: 'Minnie',
-            email: 'kyla@fmiddleton.com',
+            email: 'minnie@yahoo.com',
             password: 'home1234'
         })
             .then(function (result) {
@@ -37,63 +37,66 @@ describe('GET /api/user-schema', function () {
                     expect(responseStatus).to.equal(200);
                     expect(responseBody).to.be.an('array').that.has.lengthOf(1);
                     expect(responseBody[0]).to.be.an('object').that.includes(
-                        { userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` }
+                        { userName: [], email: [], password: [] }
                     );
-                    // expect(responseBody[1]).to.be.an('object').that.includes(
-                    //     { tripname: 'Seattle', list: [] }
-                    // );
-
-                    // The `done` function is used to end any asynchronous tests
-                    done();
                 });
+                // The `done` function is used to end any asynchronous tests
+                done();
             });
     });
 });
 
 describe('POST /api/user-schema', function () {
-    beforeEach(function () {
+    beforeEach(function (done) {
         request = chai.request(server);
-        // return db.mongoose.connect({
-        //     useNewUrlParser: true
-        // });
+        db.user.deleteMany({}).then(() => {
+            db.user.create([
+                { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` }
+            ]).then(() => done())
+        })
     });
 
     it('should save an example', function (done) {
-        let reqBody = { userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` };
+        let reqBody = { userName: [], email: [], password: [] };
 
         // POST the request body to the server
         request.post('/api/user-schema').send(reqBody).end(function (err, res) {
             var responseStatus = res.status;
             var responseBody = res.body;
+            console.log(responseBody, "POST response from users")
 
             // Run assertions on the response
             expect(err).to.be.null;
             expect(responseStatus).to.equal(200);
-            expect(responseBody).to.be.an('object').that.includes(reqBody);
-
+            expect(responseBody).to.be.an('array').that.has.lengthOf();
+            expect(responseBody).to.be.an('object').to.have.deep.keys({
+                userName: [],
+                email: [],
+                password: [],
+            });
             // The `done` function is used to end any asynchronous tests
             done();
         });
     });
 });
 
-describe('/PUT/:id user', function () {
-    it('it should UPDATE the user id', (done) => {
-        let user = new User({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
+// describe('/PUT/:id user', function () {
+//     it('it should UPDATE the user id', (done) => {
+//         let user = new User({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
 
-            chai.request(server)
-                .put('/trips/' + trip.id)
-                .send({ tripname: "Miami", list: [] })
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('object');
-                    res.body.should.have.property('tripname').to.equal('Miami');
-                    res.body.trip.should.have.property('list').to.equal([]); 
-                });
-                done();
-        });
-    });
-});
+//             chai.request(server)
+//                 .put('/trips/' + trip.id)
+//                 .send({ tripname: "Miami", list: [] })
+//                 .end((err, res) => {
+//                     res.should.have.status(200);
+//                     res.body.should.be.a('object');
+//                     res.body.should.have.property('tripname').to.equal('Miami');
+//                     res.body.trip.should.have.property('list').to.equal([]); 
+//                 });
+//                 done();
+//         });
+//     });
+// });
 
 // describe('/DELETE/:id user', () => {
 //     it('it should DELETE a user given the id', (done) => {

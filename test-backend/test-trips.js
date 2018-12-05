@@ -13,7 +13,7 @@ let request;
 
 describe('GET /api/examples', function () {
     // Before each test begins, create a new request server for testing
-    // & delete all examples from the db]
+    // & delete all examples from the db
 
     beforeEach(function (done) {
         request = chai.request(server);
@@ -78,7 +78,7 @@ describe('POST /api/trips-schema', function () {
         request.post('/api/trips-schema').send(reqBody).end(function (err, res) {
             let responseStatus = res.status;
             let responseBody = res.body;
-            console.log(responseBody, "this is response from post trips")
+            console.log(responseBody, "POST response from trips")
 
             // Run assertions on the response
             expect(err).to.be.null;
@@ -115,7 +115,8 @@ describe('/PUT/:id trips', function () {
     it('it should UPDATE a tripName and tripList', (done) => {
         let trip = new db.trips({ tripName: 'Cancun', tripList: [] })
         request.put('/api/trips-schema').send(trip).end((err, res) => {
-            res.should.have.status(200);
+            expect(responseStatus).to.equal(200);
+            // res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.should.have.property('tripName').to.equal('Cancun');
             res.body.trip.should.have.property('tripList').to.equal([]);
@@ -136,8 +137,15 @@ describe('/DELETE/api/trips-schema/:id', function () {
 
     it('it should DELETE a tripName and tripList by id', (done) => {
         let trip = new db.trips({ tripName: 'Prague', tripList: [] })
+
         request.delete('/api/trips-schema').send(trip).end((err, res) => {
-            res.should.have.status(200);
+            
+            let responseStatus = res.status;
+            // let responseBody = res.body;
+
+            expect(err).to.be.null;
+            expect(responseStatus).to.equal(200);
+            // res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.should.have.property('tripName').to.equal('Prague');
             res.body.result.should.have.property('tripList').to.equal([]);
