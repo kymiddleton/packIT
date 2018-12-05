@@ -50,66 +50,55 @@ describe('GET /api/user-schema', function () {
     });
 });
 
-// describe('POST /api/user-schema', function () {
-//     beforeEach(function () {
-//         request = chai.request(server);
-//         // return db.mongoose.connect({
-//         //     useNewUrlParser: true
-//         // });
-//     });
+describe('POST /api/user-schema', function () {
+    beforeEach(function () {
+        request = chai.request(server);
+        // return db.mongoose.connect({
+        //     useNewUrlParser: true
+        // });
+    });
 
-//     it('should save an example', function (done) {
-//         let reqBody = { userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` };
+    it('should save an example', function (done) {
+        let reqBody = { userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` };
 
-//         // POST the request body to the server
-//         request
-//             .post('/api/user-schema')
-//             .send(reqBody)
-//             .end(function (err, res) {
-//                 var responseStatus = res.status;
-//                 var responseBody = res.body;
+        // POST the request body to the server
+        request.post('/api/user-schema').send(reqBody).end(function (err, res) {
+            var responseStatus = res.status;
+            var responseBody = res.body;
 
-//                 // Run assertions on the response
-//                 expect(err).to.be.null;
-//                 expect(responseStatus).to.equal(200);
-//                 expect(responseBody).to.be.an('object').that.includes(reqBody);
+            // Run assertions on the response
+            expect(err).to.be.null;
+            expect(responseStatus).to.equal(200);
+            expect(responseBody).to.be.an('object').that.includes(reqBody);
 
-//                 // The `done` function is used to end any asynchronous tests
-//                 done();
-//             });
-//     });
-// });
+            // The `done` function is used to end any asynchronous tests
+            done();
+        });
+    });
+});
 
-// describe('/PUT/:id user', () => {
-//     it('it should UPDATE the user id', (done) => {
-//         let trip = new trip({
-//             tripname: "Cancun",
-//             list: []
-//         })
-//         trip.save((err, book) => {
-//             chai.request(server)
-//                 .put('/trips/' + trip.id)
-//                 .send({
-//                     tripname: "Miami",
-//                     list: []
-//                 })
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');
-//                     res.body.should.have.property('tripname').to.equal('Miami');
-//                     res.body.trip.should.have.property('list').to.equal([]);
-//                     done();
-//                 });
-//         });
-//     });
-// });
+describe('/PUT/:id user', function () {
+    it('it should UPDATE the user id', (done) => {
+        let user = new User({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
+
+            chai.request(server)
+                .put('/trips/' + trip.id)
+                .send({ tripname: "Miami", list: [] })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    res.body.should.have.property('tripname').to.equal('Miami');
+                    res.body.trip.should.have.property('list').to.equal([]); 
+                });
+                done();
+        });
+    });
+});
 
 // describe('/DELETE/:id user', () => {
 //     it('it should DELETE a user given the id', (done) => {
-//         let trip = new Trip({
-//             tripname: "Prague",
-//             list: []
-//         })
+//         let trip = new Trip({ tripname: "Prague", list: [] })
+//             
 //         user.save((err, trip) => {
 //             chai.request(server)
 //                 .delete('/user/' + user.id)
