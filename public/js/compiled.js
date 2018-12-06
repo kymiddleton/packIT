@@ -8,18 +8,19 @@ $(document).ready(function () {
 
     const selections =  function(){
         select = $(this).data('category')
-        console.log(select)
-        if (select === weather) {
-            weather = $(this).attr('id');
+        if (select === 'weather') {
+            weather = $(this).attr('value');
             console.log(weather)
-        } else if (select === destination) {
-            destination = $(this).id();
-        } else if (select === travel){
-            travel = $(this).id();
-        } else if (select === packing){
-                packing = $(this).id();
+        } else if (select === 'destination') {
+            destination = $(this).attr('value');
+            console.log(destination)
+        } else if (select === 'travel'){
+            travel = $(this).attr('value');
+            console.log(travel)
+        } else if (select === 'packing'){
+                packing = $(this).attr('value');
+                console.log(packing)
         };
-
 if (weather && destination && travel && packing){
     showModal();
 }
@@ -27,17 +28,16 @@ if (weather && destination && travel && packing){
     $('.image').on('click', selections);
 })
 
-$.ajax({ url:`/api/item-schema/${weather}/${travel}/${destination}/${packing}`, method: 'GET', data: data})
-console.log(weather)
+
+$.ajax({ url:`/api/item-schema/items`, method: 'PUT', 
+data: { weather: 'rain',
+        packing: 'diva',
+        destination:'city',
+        travel:'car'}})
+
 .then(function(data){
-let clothing = [];
-let footWare = [];
-let personal = [];
-let documents = [];
-let gadgets = [];
-let miscellaneous = [];
+    console.log(data)
 
-
-     $('.container').html(content);
+    
 
 })
