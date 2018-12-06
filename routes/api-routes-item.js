@@ -16,7 +16,7 @@ module.exports = function (app) {
             travel: req.body.travel
         })
             .then(function (dbpackingItem) {
-                console.log(res.body.weather)
+                console.log(res.body)
                 res.json(dbpackingItem);
             })
             .catch(function (err) {
@@ -25,9 +25,9 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new Packing List Items in the database.
-    app.post('/api/trips-schema', function (req, res) { //Works
+    app.post('/api/item-schema', function (req, res) { //Works
         console.log('------Adding Link in mongo');
-        db.trips.create(req.body)
+        db.packingItem.create(req.body)
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
             })

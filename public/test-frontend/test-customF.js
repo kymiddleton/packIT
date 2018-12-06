@@ -67,21 +67,20 @@ describe('decrement', function () {
         expect($('#count').text()).to.equal('-2');
     });
 
-<<<<<<< HEAD
 });
 
 // -------------------------------------------------
 
 //shows modal container
-const showModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').show();
-}
-//hides modal container
-const hideModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').hide();
-}
+// const showModal = function (e) {
+//     e.preventDefault();
+//     $('.modal-container').show();
+// }
+// //hides modal container
+// const hideModal = function (e) {
+//     e.preventDefault();
+//     $('.modal-container').hide();
+// }
 //saves value of the textarea when button is pressed, and hides modal container
 const saveTrip = function (e) {
     e.preventDefault();
@@ -124,6 +123,3 @@ const getTrip = function () {
         })
 }
 getTrip();
-=======
-});
->>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c

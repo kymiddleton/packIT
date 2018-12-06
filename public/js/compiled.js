@@ -22,6 +22,16 @@ $(document).ready(function () {
                 console.log(packing)
         };
 if (weather && destination && travel && packing){
+    //shows modal container
+const showModal = function (e) {
+    e.preventDefault();
+    $('.modal-container').show();
+}
+//hides modal container
+const hideModal = function (e) {
+    e.preventDefault();
+    $('.modal-container').hide();
+}
     showModal();
 }
     }
@@ -30,14 +40,24 @@ if (weather && destination && travel && packing){
 
 
 $.ajax({ url:`/api/item-schema/items`, method: 'GET', 
-data: { weather: 'rain',
-        packing: 'diva',
-        destination:'city',
-        travel:'car'}})
+data: { weather: 'cold',
+        packing: 'typical',
+        destination: 'outdoors',
+        travel: 'plane'}})
 
 .then(function(data){
     console.log(data)
 
-    
+// let clothing = [];
+// let footware = [];
+// let personal = [];
+// let documents = [];
+// let gadgets = [];
+// let miscelleneous = [];
 
+// if ( this === category){
+// data.forEach(function(item){
+//     clothing.push()
+// })
+// console.log(item)
 })
