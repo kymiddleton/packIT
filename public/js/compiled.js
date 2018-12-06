@@ -1,30 +1,28 @@
 // // Generate compiled packing list based on user selection
 
-$(function () {
-//     // $('#submit').on('click', newList);
+$(document).ready(function () {
+    let weather = '';
+    let destination = '';
+    let travel = '';
+    let packing = '';
 
-    const packingList = function () {
-        $.ajax({ url: `/api/listLog/${weather}/${packing}/${destination}/${travel}`, method: 'GET' })
-//             .then(function (packingList) {
-//                 let selection = { row1: none, row2: none, row3: none, row4: none }
-//                 $('.myGridClass').on('click', function (e) {
-//           
-//                     selection[$(e.target).data(row)] = e.target.id
-//                 })
-//                 console.log(packingList)
-//             });
+    const selections =  function(){
+        category = $(this).data('data-category')
+        console.log(category)
+        if (category === weather) {
+            weather = $(this).id();
+            console.log('clicked')
+        } else if (category === destination) {
+            destination = $(this).id();
+        } else if (category === travel){
+            travel = $(this).id();
+        } else if (category === packing){
+                packing = $(this).id();
+        }
+
+if (weather && destination && travel && packing){
+    showModal();
+}
     }
-
-    packingList();
-//     const newList = function () {
-//         $.ajax({ url: `/api/listLog/${weather}/${packing}/${destination}/${travel}`, method: 'POST', data: newtodo })
-//             .then(function () {
-
-//             })
-
-//     }
-//     newList();
-
+    $('.image').on('click', selections);
 })
-
-
