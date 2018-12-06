@@ -1,22 +1,7 @@
 describe('myTrips', function () {
 
-<<<<<<< HEAD
     const data = [{
-            name: 'Paris',
-            packinglist: {
-                clothes: ['jacket', 'pants'],
-                footwear: ['sneakers', 'loafers']
-            },
-        },
-        {
-            name: 'Miami',
-            packinglist: {
-                clothes: ['shorts', 'tshirts'],
-                footwear: ['boots', 'flops']
-            },
-=======
-    const data = [
-        { tripName: 'Paris', 
+            tripName: 'Paris',
             tripList: {
                 clothing: ['jacket', 'pants'],
                 footwear: ['sneakers', 'loafers'],
@@ -24,9 +9,10 @@ describe('myTrips', function () {
                 documents: ['passport', 'boarding pass'],
                 gadgets: ['luggage scale', 'plug adapter', 'pocket translator'],
                 miscellaneous: ['neck pillow']
-            }, 
+            },
         },
-        { tripName: 'Miami',
+        {
+            tripName: 'Miami',
             tripList: {
                 clothing: ['shorts', 'tshirts'],
                 footwear: ['boots', 'flops'],
@@ -34,8 +20,7 @@ describe('myTrips', function () {
                 documents: ['passport', 'boarding pass'],
                 gadgets: ['luggage scale'],
                 miscellaneous: ['neck pillow']
-            }, 
->>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c
+            },
         },
     ];
 
@@ -63,22 +48,14 @@ describe('myTrips', function () {
 
         expect($('#tripname').text()).to.equal('Paris');
     });
-<<<<<<< HEAD
-    it('should display suitcase when clicking on a trip', function () {
-        server.respondWith('GET', '/myTrips/name/suitcase', [
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
             200, {
                 'Content-Type': 'application/json'
             },
             JSON.stringify(data)
         ]);
 
-        $('#trip').trigger('click');
-=======
-    it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -87,9 +64,12 @@ describe('myTrips', function () {
 
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -98,9 +78,12 @@ describe('myTrips', function () {
 
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -108,42 +91,39 @@ describe('myTrips', function () {
     });
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
-        $('#showtrips').trigger('click');
->>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c
-        server.respond();
-
-        expect($('#documents').text()).to.equal('passport');
-    });
-
-    it('should display list when clicking on a category', function () {
-<<<<<<< HEAD
-        server.respondWith('GET', '/myTrips/name/suitcase', [
             200, {
                 'Content-Type': 'application/json'
             },
             JSON.stringify(data)
         ]);
 
-        $('#clothes').trigger('click');
-=======
-        server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
         $('#showtrips').trigger('click');
->>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c
+        server.respond();
+
+        expect($('#documents').text()).to.equal('passport');
+    });
+
+    it('should display list when clicking on a category', function () {
+        server.respondWith('GET', '/myTrips', [
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
+        $('#showtrips').trigger('click');
         server.respond();
 
         expect($('#gadgets').text()).to.equal('luggage scale');
     });
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
