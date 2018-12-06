@@ -27,8 +27,11 @@
                 <h1>pack <span>IT</span></h1>
 
                 <div class="container" id="grid">
-                    <div class="image happy-sun">
-                          <img src="./assets/happy-sun.png" alt="sun" id=hotday data-row=row1 class=myGridClass> 
+                    <div class="image happy-sun white">
+                        <img src="./assets/happy-sun.png" alt="sun" id=happy-sun_white data-row=row1 class=myGridClass>
+                        <img src="./assets/umbrella.png" alt="umbrella" id=happy-sun_gold data-row=row1 class=myGridClass
+                            hidden>
+
                         <h4>HOT</h4>
                     </div>
                     <div class="image umbrella">
@@ -79,9 +82,22 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    
+
+    <div class='modal-container hide'>
+        <div class='modal'>
+            <h2> Confirm your selections <span class='close-modal'>X</span></h2>
+            <textarea id='triplocation' rows='3' cols='30' placeholder="where are you going?"></textarea>
+            <button class='trip-button2' id='gotrip'> Next </button>
+            <button class='trip-button2' id='notrip'> Next </button>
+        </div>
+    </div>
+
+    <div class='pagetwo'></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="./js/login.js"></script>
     <script src="./js/compiled.js"></script>
     <script src="./js/customizedList.js"></script>
 </body>
+
 </html>
