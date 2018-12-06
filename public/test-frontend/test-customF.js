@@ -68,6 +68,9 @@ describe('decrement', function () {
     });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> UI front end work
 });
 
 // -------------------------------------------------
@@ -82,6 +85,7 @@ const hideModal = function (e) {
     e.preventDefault();
     $('.modal-container').hide();
 }
+<<<<<<< HEAD
 //saves value of the textarea when button is pressed, and hides modal container
 const saveTrip = function (e) {
     e.preventDefault();
@@ -89,6 +93,33 @@ const saveTrip = function (e) {
     $('#tripmaker').val('')
     hideModal(e);
 
+=======
+
+const showPage2 = function (e) {
+    e.preventDefault();
+    $('.pagetwo').show();
+}
+
+const hidePage2 = function (e) {
+    e.preventDefault();
+    $('.pagetwo').hide();
+}
+$('gotrip').on('click', hideModal)
+$('gotrip').on('click', showPage2)
+$('notrip').on('click', hideModal)
+
+
+//saves value of the textarea when button is pressed, and hides modal container
+const saveTrip = function (e) {
+    e.preventDefault();
+    const inputTrip = $('#triplocation').val();
+    $('#triplocation').val('')
+    hideModal(e);
+    const tripData = {
+        tripName: inputTrip,
+        tripList: [],
+    }
+>>>>>>> UI front end work
     $.post('/api/trip', tripData)
         .then(function (data) {
             render(data)
@@ -124,6 +155,30 @@ const getTrip = function () {
         })
 }
 getTrip();
+<<<<<<< HEAD
 =======
 });
 >>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c
+=======
+
+
+$(".image").on("click", function () {
+    $(this).css("background-color", "gold");
+});
+// let count = 0
+
+// const counter = function () {
+//     count = count + 1;
+//     return count;
+// }
+// const hideform = function () {
+//     if (count === 4) {
+//         $('#form').hide();
+//         $('#modal').show();
+//     }
+// }
+// $('.weather').on('click', counter)
+// $('.travel').on('click', counter)
+// $('.destination').on('click', counter)
+// $('.expense').on('click', counter)
+>>>>>>> UI front end work
