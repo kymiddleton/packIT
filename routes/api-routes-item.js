@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
-    app.put('/api/item-schema/items', function (req, res) { //Works
+    app.get('/api/item-schema/items', function (req, res) { //Works
         
         // console.log(req.body)
         // res.send(true)
@@ -16,6 +16,7 @@ module.exports = function (app) {
             travel: req.body.travel
         })
             .then(function (dbpackingItem) {
+                console.log(res.body.weather)
                 res.json(dbpackingItem);
             })
             .catch(function (err) {

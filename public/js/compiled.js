@@ -29,7 +29,7 @@ if (weather && destination && travel && packing){
 })
 
 
-$.ajax({ url:`/api/item-schema/items`, method: 'PUT', 
+$.ajax({ url:`/api/item-schema/items`, method: 'GET', 
 data: { weather: 'rain',
         packing: 'diva',
         destination:'city',
