@@ -23,6 +23,7 @@ $(document).ready(function () {
         };
         if (weather && destination && travel && packing) {
             //shows modal container
+            showModal();
             const showModal = function (e) {
                 e.preventDefault();
                 $('.modal-container').show();
@@ -32,7 +33,6 @@ $(document).ready(function () {
                 // e.preventDefault();
                 $('.modal-container').hide();
             }
-            showModal();
             hideModal();
         }
     }
