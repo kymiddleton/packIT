@@ -5,18 +5,19 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
-    app.get('/api/item-schema/items', function (req, res) { //Works
+    app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
         
-        // console.log(req.body)
+        console.log(req.params)
         // res.send(true)
-        db.packingItem.find({
-            weather: req.body.weather,
-            packing: req.body.packing,
-            destination: req.body.destination,
-            travel: req.body.travel
-        })
+        // console.log(req.body)
+        db.packingItem.find({$and :[
+           {weather: req.params.weather},
+            {packing: req.params.packing},
+            {destination: req.params.destination},
+            {travel: req.params.travel}
+        ]})
             .then(function (dbpackingItem) {
-                console.log(res.body.weather)
+                console.log(dbpackingItem)
                 res.json(dbpackingItem);
             })
             .catch(function (err) {
@@ -25,9 +26,9 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new Packing List Items in the database.
-    app.post('/api/trips-schema', function (req, res) { //Works
+    app.post('/api/item-schema', function (req, res) { //Works
         console.log('------Adding Link in mongo');
-        db.trips.create(req.body)
+        db.packingItem.create(req.body)
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
             })

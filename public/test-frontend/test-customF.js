@@ -67,12 +67,17 @@ describe('decrement', function () {
         expect($('#count').text()).to.equal('-2');
     });
 
-
 });
 
 // -------------------------------------------------
 
 //shows modal container
+const saveTrip = function (e) {
+    e.preventDefault();
+    const inputTrip = $('#tripmaker').val();
+    $('#tripmaker').val('')
+    hideModal(e);
+    
 const showModal = function (e) {
     e.preventDefault();
     $('.modal-container').show();
@@ -174,4 +179,5 @@ const saveTrip = function (e) {
     // $('.travel').on('click', counter)
     // $('.destination').on('click', counter)
     // $('.expense').on('click', counter)
+}
 }
