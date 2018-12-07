@@ -7,22 +7,37 @@ $(document).ready(function () {
     let packing = '';
 
     const selections =  function(){
-        category = $(this).data('data-category')
-        console.log(category)
-        if (category === weather) {
-            weather = $(this).id();
-            console.log('clicked')
-        } else if (category === destination) {
-            destination = $(this).id();
-        } else if (category === travel){
-            travel = $(this).id();
-        } else if (category === packing){
-                packing = $(this).id();
-        }
-
+        select = $(this).data('category')
+        if (select === 'weather') {
+            weather = $(this).attr('value');
+            console.log(weather)
+        } else if (select === 'destination') {
+            destination = $(this).attr('value');
+            console.log(destination)
+        } else if (select === 'travel'){
+            travel = $(this).attr('value');
+            console.log(travel)
+        } else if (select === 'packing'){
+                packing = $(this).attr('value');
+                console.log(packing)
+        };
 if (weather && destination && travel && packing){
     showModal();
 }
     }
     $('.image').on('click', selections);
+})
+
+
+$.ajax({ url:`/api/item-schema/items`, method: 'GET', 
+data: { weather: 'rain',
+        packing: 'diva',
+        destination:'city',
+        travel:'car'}})
+
+.then(function(data){
+    console.log(data)
+
+    
+
 })
