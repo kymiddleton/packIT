@@ -1,7 +1,7 @@
 describe('myTrips', function () {
 
     const data = [
-        { tripName: 'Paris', 
+        {   tripName: 'Paris', 
             tripList: {
                 clothing: ['jacket', 'pants'],
                 footwear: ['sneakers', 'loafers'],
@@ -11,7 +11,7 @@ describe('myTrips', function () {
                 miscellaneous: ['neck pillow']
             }, 
         },
-        { tripName: 'Miami',
+        {   tripName: 'Miami',
             tripList: {
                 clothing: ['shorts', 'tshirts'],
                 footwear: ['boots', 'flops'],

@@ -42,7 +42,7 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Trip content
-    app.delete('/api/trips-schema/:id', function (req, res) { 
+    app.delete('/api/trips-schema/:trips_id', function (req, res) { 
         console.log('--------deleting--------');
         db.trips.findByIdAndRemove(req.params.trips_id, function (err, trips) {
             if (err) return res.status(500).send(err);
@@ -54,4 +54,18 @@ module.exports = function (app) {
             return res.status(200).send(response);
         });
     });
+
+    app.delete('/api/trips-schema/:trips_id', function (req, res) { 
+        console.log('--------deleting--------');
+        db.trips.findByIdAndRemove(req.params.trips_id, function (err, trips) {
+            if (err) return res.status(500).send(err);
+            // We'll create a simple object to send back with a message and the id of the document that was removed
+            const response = {
+                message: "Trip successfully deleted",
+                id: trips._id
+            };
+            return res.status(200).send(response);
+        });
+    });
+
 };

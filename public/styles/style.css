@@ -65,3 +65,24 @@ img {
     height: 46px;
 }
 
+/* #suitcase {
+    display: none;
+    border: 1px solid white;
+} */
+
+#header {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 50px 100px;
+}
+.category {
+    display: none;
+}
+
+.pieces {
+    display: none;  
+}
+
+.show {
+    display: grid;
+} 
