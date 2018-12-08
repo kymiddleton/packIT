@@ -67,118 +67,183 @@ describe('decrement', function () {
         expect($('#count').text()).to.equal('-2');
     });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> UI front end work
+
 });
 
 // -------------------------------------------------
 
 //shows modal container
-const showModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').show();
-}
-//hides modal container
-const hideModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').hide();
-}
-<<<<<<< HEAD
-//saves value of the textarea when button is pressed, and hides modal container
 const saveTrip = function (e) {
     e.preventDefault();
     const inputTrip = $('#tripmaker').val();
     $('#tripmaker').val('')
     hideModal(e);
 
-=======
-
-const showPage2 = function (e) {
-    e.preventDefault();
-    $('.pagetwo').show();
-}
-
-const hidePage2 = function (e) {
-    e.preventDefault();
-    $('.pagetwo').hide();
-}
-$('gotrip').on('click', hideModal)
-$('gotrip').on('click', showPage2)
-$('notrip').on('click', hideModal)
-
-
-//saves value of the textarea when button is pressed, and hides modal container
-const saveTrip = function (e) {
-    e.preventDefault();
-    const inputTrip = $('#triplocation').val();
-    $('#triplocation').val('')
-    hideModal(e);
-    const tripData = {
-        tripName: inputTrip,
-        tripList: [],
+    const showModal = function (e) {
+        e.preventDefault();
+        $('.modal-container').show();
     }
->>>>>>> UI front end work
-    $.post('/api/trip', tripData)
-        .then(function (data) {
-            render(data)
-        })
+    //hides modal container
+    const hideModal = function (e) {
+        e.preventDefault();
+        $('.modal-container').hide();
+    }
 
-}
-
-$('.main-feed').on('click', '#delete', function () {
-    const id = $(this).data('id')
-    $.ajax({
-            method: 'delete',
-            url: `/api/Trip/${id}`
-
-        })
-        .then(getTrip());
-})
-//targets Trip button on homepage to show modal window when pressed
-$('#newTrip').on('click', showModal);
-//closes modal window when x button is pressed on that window
-$('.close-modal').on('click', hideModal);
-//closes modal window when Trip is made
-$('#Trippost').on('click', saveTrip);
+    //saves value of the textarea when button is pressed, and hides modal container
+    const saveTrip = function (e) {
+        e.preventDefault();
+        const inputTrip = $('#tripmaker').val();
+        $('#tripmaker').val('')
+        hideModal(e);
 
 
-//get route, that pulls the Trip data from database, and renders it to the page as individual Trips. Creates a timeline of Trips by looping through all the Trips in database.
-const getTrip = function () {
-    $('.center-feed').empty()
-    $.get('/api/Trip')
-        .then(function (serverData) {
-            for (let i = 0; i < serverData.length; i++) {
-                render(serverData[i]);
+        const showPage2 = function (e) {
+            e.preventDefault();
+            $('.pagetwo').show();
+        }
+
+        const hidePage2 = function (e) {
+            e.preventDefault();
+            $('.pagetwo').hide();
+        }
+        $('gotrip').on('click', hideModal)
+        $('gotrip').on('click', showPage2)
+        $('notrip').on('click', hideModal)
+
+
+        //saves value of the textarea when button is pressed, and hides modal container
+        const saveTrip = function (e) {
+            e.preventDefault();
+            const inputTrip = $('#triplocation').val();
+            $('#triplocation').val('')
+            hideModal(e);
+            const tripData = {
+                tripName: inputTrip,
+                tripList: [],
             }
+        }
+
+        $.post('/api/trip', tripData)
+            .then(function (data) {
+                render(data)
+            })
+
+
+        const showPage2 = function (e) {
+            e.preventDefault();
+            $('.pagetwo').show();
+        }
+
+        const hidePage2 = function (e) {
+            e.preventDefault();
+            $('.pagetwo').hide();
+        }
+
+        getTrip();
+
+    };
+
+
+    $(".image").on("click", function () {
+        $(this).css("background-color", "gold");
+    });
+    // let count = 0
+
+    // const counter = function () {
+    //     count = count + 1;
+    //     return count;
+    // }
+    // const hideform = function () {
+    //     if (count === 4) {
+    //         $('#form').hide();
+    //         $('#modal').show();
+    //     }
+    // }
+    // $('.weather').on('click', counter)
+    // $('.travel').on('click', counter)
+    // $('.destination').on('click', counter)
+    // $('.expense').on('click', counter)
+
+    $('gotrip').on('click', hideModal)
+    $('gotrip').on('click', showPage2)
+    $('notrip').on('click', hideModal)
+
+
+    //saves value of the textarea when button is pressed, and hides modal container
+    const saveTrip = function (e) {
+        e.preventDefault();
+        const inputTrip = $('#triplocation').val();
+        $('#triplocation').val('')
+        hideModal(e);
+        const tripData = {
+            tripName: inputTrip,
+            tripList: [],
+        }
+
+        //saves value of the textarea when button is pressed, and hides modal container
+        const saveTrip = function (e) {
+            e.preventDefault();
+            const inputTrip = $('#tripmaker').val();
+            $('#tripmaker').val('')
+            hideModal(e);
+
+
+            $.post('/api/trip', tripData)
+                .then(function (data) {
+                    render(data)
+                })
+
+        }
+
+        $('.main-feed').on('click', '#delete', function () {
+            const id = $(this).data('id')
+            $.ajax({
+                    method: 'delete',
+                    url: `/api/Trip/${id}`
+
+                })
+                .then(getTrip());
         })
+        //targets Trip button on homepage to show modal window when pressed
+        $('#newTrip').on('click', showModal);
+        //closes modal window when x button is pressed on that window
+        $('.close-modal').on('click', hideModal);
+        //closes modal window when Trip is made
+        $('#Trippost').on('click', saveTrip);
+
+
+        //get route, that pulls the Trip data from database, and renders it to the page as individual Trips. Creates a timeline of Trips by looping through all the Trips in database.
+        const getTrip = function () {
+            $('.center-feed').empty()
+            $.get('/api/Trip')
+                .then(function (serverData) {
+                    for (let i = 0; i < serverData.length; i++) {
+                        render(serverData[i]);
+                    }
+                })
+        }
+        getTrip();
+
+
+
+        $(".image").on("click", function () {
+            $(this).css("background-color", "gold");
+        });
+        // let count = 0
+
+        // const counter = function () {
+        //     count = count + 1;
+        //     return count;
+        // }
+        // const hideform = function () {
+        //     if (count === 4) {
+        //         $('#form').hide();
+        //         $('#modal').show();
+        //     }
+        // }
+        // $('.weather').on('click', counter)
+        // $('.travel').on('click', counter)
+        // $('.destination').on('click', counter)
+        // $('.expense').on('click', counter)
+    }
 }
-getTrip();
-<<<<<<< HEAD
-=======
-});
->>>>>>> bb9eb31234cb35844632612ae5b55ad2ddaf3b2c
-=======
-
-
-$(".image").on("click", function () {
-    $(this).css("background-color", "gold");
-});
-// let count = 0
-
-// const counter = function () {
-//     count = count + 1;
-//     return count;
-// }
-// const hideform = function () {
-//     if (count === 4) {
-//         $('#form').hide();
-//         $('#modal').show();
-//     }
-// }
-// $('.weather').on('click', counter)
-// $('.travel').on('click', counter)
-// $('.destination').on('click', counter)
-// $('.expense').on('click', counter)
->>>>>>> UI front end work
