@@ -42,9 +42,9 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Trip content
-    app.delete('/api/trips-schema/:id', function (req, res) { //NOT working
+    app.delete('/api/trips-schema/:trips_id', function (req, res) { //NOT working
         console.log('--------deleting trip--------');
-        db.trips.findByIdAndDelete(req.params.trips_id, function (err, trips) {
+        db.trips.findByIdAndRemove(req.params.trips_id, function (err, trips) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {

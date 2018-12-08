@@ -5,8 +5,13 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
-    app.get('/api/item-schema', function (req, res) { //works
-        db.packingItem.find({})
+    app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
+        db.packingItem.find({$and :[
+           {weather: req.params.weather},
+            {packing: req.params.packing},
+            {destination: req.params.destination},
+            {travel: req.params.travel}
+        ]})
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
             })
@@ -14,7 +19,7 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
-
+    
     // POST request: Route for creating new Packing List Items in the database.
     app.post('/api/item-schema', function (req, res) { //Works
         console.log('------Adding Item in mongo');

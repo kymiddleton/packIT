@@ -12,6 +12,7 @@ const UserSchema = new Schema({
         type: String,
         lowercase: true,
         match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
+        unique: true,
         index: true,
         trim: true,
         required: "User Name is Required"

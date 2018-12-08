@@ -12,119 +12,78 @@ chai.use(chaiHttp);
 let request;
 
 // GET route for retrieving users from the database.
-describe('GET /api/user-schema', function () {
+describe('API Routes', function () {
     // Before each test begins, create a new request server for testing
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
+        db.users.remove({}).then(() => {
+            // db.trips.create({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
+                // .then(() => done())
+                done();
+        })
     });
 
-    it('should find all examples', function (done) {
+    it('should find all examples', function () {
         // Add some examples to the db to test with
-        db.user.create({
-            userName: 'Minnie',
-            email: 'minnie@yahoo.com',
-            password: 'minnie1234'
-        })
-            .then(function (result) {
-                console.log(result, "test result");
+        db.user.create({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
+            .then(function () {
                 // Request the route that returns all examples
                 request.get('/api/user-schema').end(function (err, res) {
-                    // let responseStatus = res.status;
-                    let responseBody = res.body;
 
                     // Run assertions on the response
                     expect(err).to.be.null;
-                    expect(responseStatus).to.equal(200);
-                    // expect(responseBody).to.be.an('string').that.has.lengthOf(1);
-                    expect(responseStatus).to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234'});
-                    expect(responseBody[0]).to.be.an('object').to.have.deep.keys(
-                        { userName: '', email: '', password: '' }
-                    );
+                    expect(res.status).to.equal(200);
+                    expect(res.body[0]).to.be.an('object').to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234' });
+                    // The `done` function is used to end any asynchronous tests
+                    done();
                 });
-                // The `done` function is used to end any asynchronous tests
-                done();
             });
     });
-});
 
-// POST route for creating new users in the database.
-describe('POST /api/user-schema', function () {
-    beforeEach(function (done) {
-        request = chai.request(server);
-        // db.user.deleteMany({}).then(() => {
-        //     // db.user.create([
-        //     //     { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` }
-        //     // ]).then(() => done())
-        // })
-    });
 
     it('should POST new user details in the database', function (done) {
-        let reqBody = { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` };
-        console.log(res)
-        // let reqBody = { userName: '', email: '', password: '' };
+        let reqBody = { userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' };
 
         // POST the request body to the server
         request.post('/api/user-schema').send(reqBody).end(function (err, res) {
-            let responseStatus = res.status;
-            let responseBody = res.body;
-            console.log(responseBody, "POST response from users")
+            console.log(res);
 
             // Run assertions on the response
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
-            expect(responseBody).to.be.an('string').that.has.lengthOf();
-            expect(responseStatus).to.include({ userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` });
-            expect(responseBody).to.be.an('object').that.includes({
-                userName: '',
-                email: '',
-                password: '',
-            });
-            // expect(responseBody).to.be.an('object').to.have.deep.keys({
-            //     userName: '',
-            //     email: '',
-            //     password: '',
-            // });
+            expect(res.status).to.equal(200);
+            // expect(res.body).to.be.an('string').that.has.lengthOf();
+            expect(res.body).to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234' });
+
             // The `done` function is used to end any asynchronous tests
             done();
         });
     });
+
+    //PUT route for updating users
+    it('it should UPDATE the user id', (done) => {
+        let user = new db.user({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
+
+        request.put('/api/user-schema').send(user).end((err, res) => {
+            expect(res.status).to.equal(200);
+            console.log("-----------UPDATE", res.body)
+            expect(res.body).to.be.an('object');
+        });
+        done();
+    });
+
+    // DELETE route to delete user content
+    it('it should DELETE a user given the id', (done) => {
+        console.log("------------------IT---------------")
+        let trip = new db.user({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
+
+        request.delete('/api/user-schema/Minnie').end((err, res) => {
+            console.log("---------delete response", res.body)
+            expect(err).to.be.null;
+            expect(res.status).to.equal(200);
+            expect(res.body).to.be.a('object');
+            expect(res.body).to.have.property('message').to.equal('User successfully deleted');
+            done();
+        });
+    });
 });
-
-// PUT route for updating users
-// describe('/PUT/:id user', function () {
-//     it('it should UPDATE the user id', (done) => {
-//         let user = new User({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
-
-//             chai.request(server)
-//                 .put('/trips/' + trip.id)
-//                 .send({ tripname: "Miami", list: [] })
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');
-//                     res.body.should.have.property('tripname').to.equal('Miami');
-//                     res.body.trip.should.have.property('list').to.equal([]); 
-//                 });
-//                 done();
-//         });
-//     });
-// });
-
-// DELETE route to delete user content
-// describe('/DELETE/:id user', () => {
-//     it('it should DELETE a user given the id', (done) => {
-//         let trip = new Trip({ tripname: "Prague", list: [] })
-//             
-//         user.save((err, trip) => {
-//             chai.request(server)
-//                 .delete('/user/' + user.id)
-//                 .end((err, res) => {
-//                     res.should.have.status(200);
-//                     res.body.should.be.a('object');
-//                     res.body.should.have.property('Prague').to.equal('Prague');
-//                     res.body.result.should.have.property('list').to.equal([]);
-//                     done();
-//                 });
-//         });
-//     });
-// });
