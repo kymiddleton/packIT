@@ -112,22 +112,23 @@ describe('/PUT/:id trips', function () {
                 "clothing": "bbbbbalue"
             }
         }
-        db.trips.create(trip).then(function(err, res) {
+        db.trips.create(trip).then(function (err, res) {
             request.put('/api/trips-schema').send({
                 "tripName": "updated",
                 "tripList": {
                     "clothing": "updated value"
-                }}).end((err, res) => {
-            // console.log('response', res);
-            expect(res.status).to.equal(200);
-            expect(res.body).to.be.an('object');
-            expect(res.body).to.have.property('tripName').to.equal('Cancun');
-            expect(res.body).trip.to.have.property('tripList').to.equal([]);
-            
-        });
-        done();
+                }
+            }).end((err, res) => {
+                // console.log('response', res);
+                expect(res.status).to.equal(200);
+                expect(res.body).to.be.an('object');
+                expect(res.body).to.have.property('tripName').to.equal('Cancun');
+                expect(res.body).trip.to.have.property('tripList').to.equal([]);
+
+            });
+            done();
         })
-                    
+
     });
 });
 
@@ -149,14 +150,14 @@ describe('/DELETE/api/trips-schema/:id', function () {
                 clothing: "shirts"
             }
         })
-        trip.save().then(function(err, res) {
+        trip.save().then(function (err, res) {
             request.delete(`/api/trips-schema/Prague`).end((err, res) => {
-            expect(err).to.be.null;
-            expect(res.status).to.equal(200);
-            res.body.should.be.a('object');
-            res.body.should.have.property('message').to.equal('Trip successfully deleted');
-        });
-        done();
+                expect(err).to.be.null;
+                expect(res.status).to.equal(200);
+                res.body.should.be.a('object');
+                res.body.should.have.property('message').to.equal('Trip successfully deleted');
+            });
+            done();
         })
     });
 });

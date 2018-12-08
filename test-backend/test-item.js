@@ -17,7 +17,7 @@ describe('GET/api/item-schema', function () {
     // & delete all examples from the db
     beforeEach(function (done) {
         request = chai.request(server);
-        db.item.deleteOne({}).then(() => {
+        db.packingItem.deleteMany({}).then(() => {
             db.item.create([
                 {
                     item: '',
@@ -54,6 +54,7 @@ describe('GET/api/item-schema', function () {
                         destination: '',
                         travel: '',
                     });
+                    
                 });
                 done(); // The `done` function is used to end any asynchronous tests
             });
@@ -74,43 +75,45 @@ describe('POST /api/item-schema', function () {
                     destination: 'outdoor',
                     travel: 'car',
                 }
-            ]).then(() => done())
+            // ]).then(() => done())
+            ]).then(() => {
+            done();
         })
     });
 
     it('should POST new item details in the database', function (done) {
         let reqBody = {
-            item: 'Rain boots',
+            item: 'Snow boots',
             category: 'footwear',
             weather: 'rainy',
             packing: 'typical',
             destination: 'outdoor',
             travel: 'car',
-        },
-    });
+        }
 
-    // POST the request body to the server
-    request.post('/api/item-schema').send(reqBody).end(function (err, res) {
-        // console.log(res)
-        // console.log(res.body, "POST response from users")
+        // POST the request body to the server
+        request.post('/api/item-schema').send(reqBody).end(function (err, res) {
+            // console.log(res)
+            // console.log(res.body, "POST response from users")
 
-        // Run assertions on the response
-        expect(err).to.be.null;
-        expect(res.status).to.equal(200);
-        // expect(res.status).to.be.an('string').that.has.lengthOf();
-        // expect(res.body).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
-        expect(res.body).to.be.an('object').to.have.deep.keys(
-            {
-                item: 'Rain boots',
-                category: 'footwear',
-                weather: 'rainy',
-                packing: 'typical',
-                destination: 'outdoor',
-                travel: 'car',
-            }
-        );
+            // Run assertions on the response
+            expect(err).to.be.null;
+            expect(res.status).to.equal(200);
+            // expect(res.status).to.be.an('string').that.has.lengthOf();
+            // expect(res.body).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
+            expect(res.body).to.be.an('object').to.have.deep.keys(
+                {
+                    item: 'Snow boots',
+                    category: 'footwear',
+                    weather: 'rainy',
+                    packing: 'typical',
+                    destination: 'outdoor',
+                    travel: 'car',
+                }
+            );
 
-        done(); // The `done` function is used to end any asynchronous tests
+            done(); // The `done` function is used to end any asynchronous tests
+        });
     });
 });
 

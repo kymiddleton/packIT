@@ -56,7 +56,7 @@ module.exports = function (app) {
     // DELETE request: Deletes Packing List content
     app.delete('/api/item-schema/:item', function (req, res) { //Working
         // console.log('--------deleting item --------');
-        db.packingItem.findOneAndRemove(req.params.tripsitem, function (err, packingItem) {
+        db.packingItem.findOneAndRemove({item: req.params.item}, function (err, packingItem) {
             if (err) return res.status(500).send(err);
             const response = {
                 message: "Item successfully deleted",
