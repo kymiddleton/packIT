@@ -29,7 +29,7 @@ describe('GET /api/examples', function () {
     it('should find all examples', function (done) {
         // Request the route that returns all examples
         request.get('/api/trips-schema').end(function (err, res) {
-            console.log(res.body, "this is response from get trips")
+            // console.log(res.body, "this is response from get trips")
 
             // Run assertions on the response
             expect(err).to.be.null;
@@ -59,18 +59,18 @@ describe('POST /api/trips-schema', function () {
     beforeEach(function (done) {
         request = chai.request(server);
         db.trips.deleteMany({}).then(() => {
-            db.trips.create([
+            db.trips.create(
                 { tripName: 'Seattle', tripList: {} }
-            ]).then(() => done())
+            ).then(() => done())
         })
     });
 
     it('should save an example', function (done) {
-        let reqBody = { tripName: 'Athens', tripList: [] };
+        let reqBody = { tripName: 'Athens', tripList: {} };
 
         // POST the request body to the server
         request.post('/api/trips-schema').send(reqBody).end(function (err, res) {
-            console.log(res.body, "POST response from trips")
+            // console.log(res.body, "POST response from trips")
 
             // Run assertions on the response
             expect(err).to.be.null;
@@ -98,48 +98,65 @@ describe('/PUT/:id trips', function () {
     beforeEach(function (done) {
         request = chai.request(server);
         db.trips.deleteMany({}).then(() => {
-            db.trips.update([
-                { tripName: 'Cancun', tripList: {} }
-            ]).then(() => done())
+            done()
+            // db.trips.create(
+            //     { tripName: 'Cancun', tripList: {} }
+            // ).then(() => done())
         })
     });
 
     it('it should UPDATE a tripName and tripList', (done) => {
-        let trip = new db.trips({ tripName: 'Cancun', tripList: [] })
-        request.put('/api/trips-schema').send(trip).end((err, res) => {
+        let trip = {
+            "tripName": "vvvvvatlanta",
+            "tripList": {
+                "clothing": "bbbbbalue"
+            }
+        }
+        db.trips.create(trip).then(function(err, res) {
+            request.put('/api/trips-schema').send({
+                "tripName": "updated",
+                "tripList": {
+                    "clothing": "updated value"
+                }}).end((err, res) => {
+            // console.log('response', res);
             expect(res.status).to.equal(200);
-            // res.should.have.status(200);
             expect(res.body).to.be.an('object');
             expect(res.body).to.have.property('tripName').to.equal('Cancun');
             expect(res.body).trip.to.have.property('tripList').to.equal([]);
+            
         });
         done();
+        })
+                    
     });
 });
 
 describe('/DELETE/api/trips-schema/:id', function () {
     beforeEach(function (done) {
         request = chai.request(server);
-        db.trips.deleteMany({}).then(() => {
-            db.trips.update([
-                { tripName: 'Prague', tripList: {} }
-            ]).then(() => done())
-        })
+        // db.trips.deleteMany({}).then(() => {
+        //     // db.trips.create(
+        //     //     { tripName: 'Prague', tripList: {} }
+        //     // ).then(() => done())
+        // })
+        done()
     });
 
     it('it should DELETE a tripName and tripList by id', (done) => {
-        let trip = new db.trips({ tripName: 'Prague', tripList: [] })
-
-        request.delete('/api/trips-schema').send(trip).end((err, res) => {
-
+        const trip = new db.trips({
+            tripName: "atlanta",
+            tripList: {
+                clothing: "shirts"
+            }
+        })
+        trip.save().then(function(err, res) {
+            request.delete(`/api/trips-schema/Prague`).end((err, res) => {
             expect(err).to.be.null;
             expect(res.status).to.equal(200);
             res.body.should.be.a('object');
-            res.body.should.have.property('tripName').to.equal('Prague');
-            res.body.result.should.have.property('tripList').to.equal([]);
-            done();
+            res.body.should.have.property('message').to.equal('Trip successfully deleted');
         });
-
-        
+        done();
+        })
     });
 });

@@ -17,7 +17,7 @@ describe('API Routes', function () {
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
-        db.users.deleteMany({userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234'}).then(() => {
+        db.user.deleteMany({userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234'}).then(() => {
             
             // db.trips.create({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
                 // .then(() => done())
@@ -72,15 +72,16 @@ describe('API Routes', function () {
     // DELETE route to delete user content
     it('it should DELETE a user given the id', (done) => {
         console.log("------------------IT---------------")
-        let trip = new db.user({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
+        let user = new db.user({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
 
-        request.delete('/api/user-schema/Minnie').end((err, res) => {
+        request.delete('/api/user-schema/Minnie').send(user).end((err, res) => {
             console.log("---------delete response", res.body)
             expect(err).to.be.null;
             expect(res.status).to.equal(200);
             expect(res.body).to.be.a('object');
             expect(res.body).to.have.property('message').to.equal('User successfully deleted');
-            done();
+           
         });
+        done();
     });
 });

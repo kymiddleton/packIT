@@ -30,8 +30,9 @@ module.exports = function (app) {
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { //Working
         // console.log('----> updating trip <----');
-        db.trips.findOneAndUpdate({trip_id: req.body.id}, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
+        db.trips.findOneAndUpdate({_id: req.body.id}, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
             .then(function (dbtrips) {
+                // console.log('updated trip', dbtrips)
                 res.json(dbtrips);
             })
             .catch(function (err) {
