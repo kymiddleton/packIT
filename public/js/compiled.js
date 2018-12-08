@@ -43,8 +43,9 @@ $(document).ready(function () {
     $('#gotrip').on('click', function () {
         console.log(weather + packing + destination + travel)
         $.ajax({
-            url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`, method: 'GET'
-        })
+                url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`,
+                method: 'GET'
+            })
             .then(function (data) {
                 console.log(data)
                 data.map(e => {
@@ -66,7 +67,7 @@ $(document).ready(function () {
                 })
 
             })
-          
+
     })
 
 })
