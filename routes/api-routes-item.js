@@ -6,6 +6,13 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
+<<<<<<< HEAD
+=======
+        
+        console.log(req.params)
+        // res.send(true)
+        // console.log(req.body)
+>>>>>>> c8d0a42e9b77d72698322f9dff58217cedb6aacf
         db.packingItem.find({$and :[
            {weather: req.params.weather},
             {packing: req.params.packing},
@@ -13,6 +20,7 @@ module.exports = function (app) {
             {travel: req.params.travel}
         ]})
             .then(function (dbpackingItem) {
+                console.log(dbpackingItem)
                 res.json(dbpackingItem);
             })
             .catch(function (err) {
