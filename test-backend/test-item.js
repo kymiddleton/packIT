@@ -15,20 +15,20 @@ let request;
 describe('GET/api/item-schema', function () {
     // Before each test begins, create a new request server for testing
     // & delete all examples from the db
-    beforeEach(function () {
+    beforeEach(function (done) {
         request = chai.request(server);
-        // db.item.deleteOne({}).then(() => {
-        //     db.item.create([
-        //         {
-        //             item: '',
-        //             category: '',
-        //             weather: '',
-        //             packing: '',
-        //             destination: '',
-        //             travel: '',
-        //         }
-        //     ]).then(() => done())
-        // })
+        db.item.deleteOne({}).then(() => {
+            db.item.create([
+                {
+                    item: '',
+                    category: '',
+                    weather: '',
+                    packing: '',
+                    destination: '',
+                    travel: '',
+                }
+            ]).then(() => done())
+        })
     });
 
     it('should find all examples', function (done) {
@@ -42,9 +42,7 @@ describe('GET/api/item-schema', function () {
             travel: '',
         })
             .then(function (result) {
-                // Request the route that returns all examples
                 request.get('/api/item-schema').end(function (err, res) {
-            
                     // Run assertions on the response
                     expect(err).to.be.null;
                     expect(res.status).to.equal(200);
@@ -64,77 +62,128 @@ describe('GET/api/item-schema', function () {
 
 // POST route for creating new users in the database.
 describe('POST /api/item-schema', function () {
-    beforeEach(function () {
+    beforeEach(function (done) {
         request = chai.request(server);
-        // db.user.deleteMany({}).then(() => {
-        //     // db.user.create([
-        //     //     { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` }
-        //     // ]).then(() => done())
-        // })
+        db.packingItem.deleteMany({}).then(() => {
+            db.packingItem.create([
+                {
+                    item: 'Rain boots',
+                    category: 'footwear',
+                    weather: 'rainy',
+                    packing: 'typical',
+                    destination: 'outdoor',
+                    travel: 'car',
+                }
+            ]).then(() => done())
+        })
     });
 
-    it('should POST new user details in the database', function (done) {
-        let reqBody = { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` };
+    it('should POST new item details in the database', function (done) {
+        let reqBody = {
+            item: 'Rain boots',
+            category: 'footwear',
+            weather: 'rainy',
+            packing: 'typical',
+            destination: 'outdoor',
+            travel: 'car',
+        },
+    });
 
-        // POST the request body to the server
-        request.post('/api/user-schema').send(reqBody).end(function (err, res) {
-            console.log(res)
-            console.log(res.body, "POST response from users")
+    // POST the request body to the server
+    request.post('/api/item-schema').send(reqBody).end(function (err, res) {
+        // console.log(res)
+        // console.log(res.body, "POST response from users")
 
-            // Run assertions on the response
-            expect(err).to.be.null;
-            expect(res.status).to.equal(200);
-            // expect(res.status).to.be.an('string').that.has.lengthOf();
-            expect(res.body).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
+        // Run assertions on the response
+        expect(err).to.be.null;
+        expect(res.status).to.equal(200);
+        // expect(res.status).to.be.an('string').that.has.lengthOf();
+        // expect(res.body).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
+        expect(res.body).to.be.an('object').to.have.deep.keys(
+            {
+                item: 'Rain boots',
+                category: 'footwear',
+                weather: 'rainy',
+                packing: 'typical',
+                destination: 'outdoor',
+                travel: 'car',
+            }
+        );
 
-            done(); // The `done` function is used to end any asynchronous tests
-        });
+        done(); // The `done` function is used to end any asynchronous tests
     });
 });
 
 //PUT route for updating users
-describe('/PUT/:id user', function () {
+describe('/PUT/:id item', function () {
     beforeEach(function (done) {
         request = chai.request(server);
         db.user.deleteMany({}).then(() => {
-            db.user.update([
-                { userName: 'Donald', email: 'donald@yahoo.com', password: `donnie1234` }
-            ]).then(() => done())
+            done()
+            // db.user.update([
+            //     { }
+            // ]).then(() => done())
         })
     });
 
-    it('it should UPDATE the user id', (done) => {
-        let user = new db.user({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
-        request.put('/api/user-schema').send(user).end((err, res) => {
-            expect(res.status).to.equal(200);
-            expect(res.body).to.be.an('object');
-        });
-        done();
+    it('it should UPDATE items in the packing list', (done) => {
+        let item = {
+            "item": "Rain boots",
+            "category": "footwear",
+            "weather": "rainy",
+            "packing": "typical",
+            "destination": "outdoor",
+            "travel": "car",
+        }
+        db.packingItem.create(item).then(function (err, res) {
+            request.put('/api/item-schema').send({
+                "item": "Rain boots",
+                "category": "footwear",
+                "weather": "rainy",
+                "packing": "typical",
+                "destination": "outdoor",
+                "travel": "car"
+            }).end((err, res) => {
+                expect(res.status).to.equal(200);
+                expect(res.body).to.be.an('object');
+            });
+            done();
+        })
     });
 });
 
 
+
 // DELETE route to delete user content
-describe('/DELETE/api/user-schema/:id user', function () {
+describe('/DELETE/api/item-schema/:id user', function () {
     beforeEach(function (done) {
         request = chai.request(server);
-        db.user.deleteMany({}).then(() => {
-            db.user.update([
-                { userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` }
-            ]).then(() => done())
-        })
+        // db.user.deleteMany({}).then(() => {
+        //     db.user.update([
+        //         { }
+        //     ]).then(() => done())
+        // })
+        done()
     });
 
-    it('it should DELETE a user given the id', (done) => {
-        let trip = new db.user({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
+    it('it should DELETE an item by id', (done) => {
+        let item = new db.packingItem({
+            "item": "Rain boots",
+            "category": "footwear",
+            "weather": "rainy",
+            "packing": "typical",
+            "destination": "outdoor",
+            "travel": "car"
+        })
+        item.save().then(function (err, res) {
+            request.delete('/api/item-schema').end((err, res) => {
 
-        request.delete('/api/user-schema').send(user).end((err, res) => {
-
-            expect(err).to.be.null;
-            expect(res.status).to.equal(200);
-            res.body.should.be.a('object');
-            res.body.should.have.property('userName').to.equal('Mickey');
-            res.body.result.should.have.property('email').to.equal([]);
+                expect(err).to.be.null;
+                expect(res.status).to.equal(200);
+                res.body.should.be.a('object');
+                // res.body.should.have.property('userName').to.equal('Mickey');
+                res.body.result.should.have.property('message').to.equal('Trip successfully deleted');
+            });
             done();
         });
     });
