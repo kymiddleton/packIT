@@ -6,6 +6,7 @@ const PackingItemSchema = new Schema({
 
     item: {
         type: String,
+        unique: true,
         trim: true
     },
     category: {
