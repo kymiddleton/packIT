@@ -12,12 +12,13 @@ chai.use(chaiHttp);
 let request;
 
 // GET route for retrieving users from the database.
-describe('API Routes', function () {
-    // Before each test begins, create a new request server for testing
+describe('API Routes', function (done) {
+    // Before each test, create a new request server for testing
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
-        db.users.remove({}).then(() => {
+        db.users.deleteMany({userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234'}).then(() => {
+            
             // db.trips.create({ userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' })
                 // .then(() => done())
                 done();
@@ -35,8 +36,8 @@ describe('API Routes', function () {
                     expect(err).to.be.null;
                     expect(res.status).to.equal(200);
                     expect(res.body[0]).to.be.an('object').to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234' });
-                    // The `done` function is used to end any asynchronous tests
-                    done();
+                    
+                    done();// The `done` function is used to end any asynchronous tests
                 });
             });
     });

@@ -6,13 +6,6 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
-<<<<<<< HEAD
-=======
-        
-        console.log(req.params)
-        // res.send(true)
-        // console.log(req.body)
->>>>>>> c8d0a42e9b77d72698322f9dff58217cedb6aacf
         db.packingItem.find({$and :[
            {weather: req.params.weather},
             {packing: req.params.packing},
@@ -20,7 +13,6 @@ module.exports = function (app) {
             {travel: req.params.travel}
         ]})
             .then(function (dbpackingItem) {
-                console.log(dbpackingItem)
                 res.json(dbpackingItem);
             })
             .catch(function (err) {
@@ -42,10 +34,9 @@ module.exports = function (app) {
 
 
     // PUT request: Route for updating Packing List content / saving updates 
-    // app.post('/api/update/item-schema', function (req, res) {
-    app.put('/api/item-schema', function (req, res) { // NOT working
+    app.put('/api/item-schema', function (req, res) { // Working
         console.log('----> updating item <----');
-        db.packingItem.findOneAndUpdate({ _id: req.body.id }, 
+        db.packingItem.findOneAndUpdate({ item_id: req.body.id }, 
             { $set: {
                 item: req.body.item,
                 category: req.body.category,
@@ -63,16 +54,12 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Packing List content
-    // app.post('/api/delete/item-schema/:packingItem_id', function (req, res) {
-    app.delete('/api/item-schema/:packingItem_id', function (req, res) { //NOT working
+    app.delete('/api/item-schema/:item', function (req, res) { //Working
         console.log('--------deleting item --------');
-        db.packingItem.findByIdAndRemove(req.body.id, function (err, packingItem) {
-        // db.packingItem.findByIdAndRemove(req.params.packingItem_id, function (err, packingItem) {
+        db.packingItem.findOneAndRemove(req.params.tripsitem, function (err, packingItem) {
             if (err) return res.status(500).send(err);
-            // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
-                message: "List successfully deleted",
-                id: packingItem._id
+                message: "Item successfully deleted",
             };
             return res.status(200).send(response);
         });

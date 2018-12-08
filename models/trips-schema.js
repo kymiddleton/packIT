@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const TripsSchema = new Schema({
     tripName: {
         type: String,
+        unique: true,
         trim: true
     },
     tripList: {
