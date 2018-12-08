@@ -31,10 +31,18 @@ $(document).ready(function () {
     }
     $('.image').on('click', selections);
 
-
     $('#gotrip').on('click', function () {
-        // console.log(data)	        
+
+        $('.modal').addClass('hide');
+        $('.preCompiled').removeClass('hide');
+        
         console.log(weather + packing + destination + travel)
+        let clothing = [];
+        let footwear = [];
+        let personal = [];
+        let documents = [];
+        let gadgets = [];
+        let miscelleneous = [];
             $.ajax({
                 url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`, method: 'GET'
             })
@@ -43,23 +51,31 @@ $(document).ready(function () {
                     data.map(e => {
                         for (let i = 0; i < data.length; i++) {
                             if (e.data[i].category === 'clothing') {
-                                $('.clothing').append($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
+                                clothing.push(e.data[i].item)
+                                $('.clothing').append(`<li>${e.data[i].item}</li>`)
                             } else if (e.data[i].category === 'footwear') {
-                                $('.footwear').append($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
+                                footwear.push(e.data[i].item)
+                                $('.footwear').append(e.data[i].item)
                             } else if (e.data[i].category === 'personal') {
-                                $('.personal').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                                personal.push(e.data[i].item)
+                               $('.personl').append(e.data[i].item)
                             } else if (e.data[i].category === 'documents') {
-                                $('.documents').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                                documents.push(e.data[i].item)
+                                $('.documents').append(e.data[i].item)
                             } else if (e.data[i].category === 'gadgets') {
-                                $('.gadgets').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                                gadgets.push(e.data[i].item)
+                                $('.gadgets').append(e.data[i].item)
                             } else if (e.data[i].category === 'miscelleneous') {
-                                $('.miscelleneous').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                                miscelleneous.push(e.data[i].item)
+                                $('.miscelleneous').append(e.data[i].item)
                             }
+                        
                         }
+
                     })
             })
             
-
+            
   
     const cancel = function () {
         $('.modal').addClass('hide')

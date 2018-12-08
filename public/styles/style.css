@@ -83,13 +83,8 @@ img {
 .show {
     display: grid;
 } 
-/* .hide {
-    display: none
-} */
+
 .hide{
     display: none;
 }
 
-.hideList{
-    display: none;
-}
