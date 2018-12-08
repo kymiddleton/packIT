@@ -19,7 +19,7 @@ app.use(express.json());
 
 //Sets the server to use the public directory for static assets
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static('public'));
 // Routes
 require('./routes/api-routes-item.js')(app);
 require('./routes/api-routes-trips.js')(app);

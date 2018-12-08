@@ -1,7 +1,7 @@
 describe('myTrips', function () {
 
-    const data = [
-        {   tripName: 'Paris', 
+    const data = [{
+            tripName: 'Paris',
             tripList: {
                 clothing: ['jacket', 'pants'],
                 footwear: ['sneakers', 'loafers'],
@@ -9,9 +9,10 @@ describe('myTrips', function () {
                 documents: ['passport', 'boarding pass'],
                 gadgets: ['luggage scale', 'plug adapter', 'pocket translator'],
                 miscellaneous: ['neck pillow']
-            }, 
+            },
         },
-        {   tripName: 'Miami',
+        {
+            tripName: 'Miami',
             tripList: {
                 clothing: ['shorts', 'tshirts'],
                 footwear: ['boots', 'flops'],
@@ -19,7 +20,7 @@ describe('myTrips', function () {
                 documents: ['passport', 'boarding pass'],
                 gadgets: ['luggage scale'],
                 miscellaneous: ['neck pillow']
-            }, 
+            },
         },
     ];
 
@@ -35,10 +36,13 @@ describe('myTrips', function () {
 
 
     it('should display list of trips when clicking myTrips', function () {
-        server.respondWith('GET', '/api/trips-schema', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+        server.respondWith('GET', '/myTrips', [
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -46,9 +50,12 @@ describe('myTrips', function () {
     });
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -57,9 +64,12 @@ describe('myTrips', function () {
 
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -68,9 +78,12 @@ describe('myTrips', function () {
 
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -78,9 +91,12 @@ describe('myTrips', function () {
     });
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -89,9 +105,12 @@ describe('myTrips', function () {
 
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 
@@ -99,9 +118,12 @@ describe('myTrips', function () {
     });
     it('should display list when clicking on a category', function () {
         server.respondWith('GET', '/myTrips', [
-            200, { 'Content-Type': 'application/json' }, JSON.stringify(data)
-          ]);
-      
+            200, {
+                'Content-Type': 'application/json'
+            },
+            JSON.stringify(data)
+        ]);
+
         $('#showtrips').trigger('click');
         server.respond();
 

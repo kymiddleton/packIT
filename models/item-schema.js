@@ -31,6 +31,6 @@ const PackingItemSchema = new Schema({
     }
 });
     // This creates our model from the above schema, using Mongoose's model method
-    const packingItem = mongoose.model("packingItem", PackingItemSchema);
+    const packingItem = mongoose.model("item-schema", PackingItemSchema);
     // Export the links model
     module.exports = packingItem;
