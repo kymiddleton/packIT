@@ -13,7 +13,7 @@ $(".image").on("click", function (event) {
         $(this).addClass('gold')
         $(`#${imageName.split(" ")[1]}_gold`).show();
         $(`#${imageName.split(" ")[1]}_white`).hide();
-        $(this).css("color", "gold");
+        $(this).css("color", "rgb(65, 144, 247)");
 
     }
 });

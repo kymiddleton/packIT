@@ -33,6 +33,7 @@ $(document).ready(function () {
                 // e.preventDefault();
                 $('.modal-container').hide();
             }
+            showModal();
             hideModal();
         }
     }
