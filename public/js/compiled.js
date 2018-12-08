@@ -22,46 +22,48 @@ $(document).ready(function () {
             console.log(packing)
         };
         if (weather && destination && travel && packing) {
-            //shows modal container
-            showModal();
-            const showModal = function (e) {
-                e.preventDefault();
-                $('.modal-container').show();
-            }
-            //hides modal container
-            const hideModal = function () {
-                // e.preventDefault();
-                $('.modal-container').hide();
-            }
-            showModal();
-            hideModal();
-        }
-    }
-    $('.image').on('click', selections);
+
+            $('.image').addClass('hide');
+            $('.modal-container').removeClass('hide');
+        } 
+        
+             const cancel = function () {
+          $('.modal').addClass('hide')
+          $('.image').removeClass('hide');
+          $('.image').on('click',selections)
+      }
+      $('#notrip').on('click', cancel);
+
+  }
+  $('.image').on('click', selections);
 
 
-    $('#gotrip').on('click', function () {
+
+    $('#notrip').on('click', function () {
+        console.log('clicked trip')
         console.log(weather + packing + destination + travel)
         $.ajax({
                 url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`,
                 method: 'GET'
             })
             .then(function (data) {
+                $()
                 console.log(data)
                 data.map(e => {
-                    for (let i = 0; i < data.length; i++) {
+                    for (let i = 0; i < e.data.length; i++) { 
+                        console.log(e.data.item + 'items')
                         if (e.data[i].category === 'clothing') {
-                            $('.clothing').append($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
+                            $('.preCompiled').data($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
                         } else if (e.data[i].category === 'footwear') {
-                            $('.footwear').append($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
+                            $('.preCompiled').data($(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`))
                         } else if (e.data[i].category === 'personal') {
-                            $('.personal').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                            $('.preCompiled').data(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
                         } else if (e.data[i].category === 'documents') {
-                            $('.documents').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                            $('.preCompiled').data(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
                         } else if (e.data[i].category === 'gadgets') {
-                            $('.gadgets').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                            $('.gadgets').data(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
                         } else if (e.data[i].category === 'miscelleneous') {
-                            $('.miscelleneous').append(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
+                            $('.miscelleneous').data(`<li><<input class="checkbox" type="checkbox"/>${e.data[i].item}</li>`)
                         }
                     }
                 })

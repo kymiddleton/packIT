@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving users from the database.
-    app.get('/api/user-schema', function (req, res) { //Works
+    app.get('/api/user-schema', function (req, res) { //Working
         // console.log('----retrieving user----');
         db.user.find({})
             .then(function (dbuser) {
@@ -30,12 +30,18 @@ module.exports = function (app) {
     });
 
     // PUT request: Route for updating users
-    app.put('/api/user-schema', function (req, res) { 
+    app.put('/api/user-schema', function (req, res) { //Working
         // console.log('----> updating user <----');
         db.user.findOneAndUpdate({ userName: req.body.userName }, { $set: { userName: req.body.userName, email: req.body.email, password: req.body.password } })
             .then(function (dbuser) {
+                console.log(res.body);
                 //add error handling for null response
-                res.json(dbuser);
+                if (res.body === null){
+                    console.log("must pass in user info");
+                    throw(err);
+                } else {
+                    res.json(dbuser);
+                }
             })
             .catch(function (err) {
                 res.json(err);
@@ -47,7 +53,6 @@ module.exports = function (app) {
         // console.log('------deleting user------');
         db.user.findOneAndDelete({ userName: req.params.username }, function (err, links) {
             if (err) return res.status(500).send(err);
-            // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
                 message: "User successfully deleted"
             };
