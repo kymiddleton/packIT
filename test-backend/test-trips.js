@@ -117,8 +117,8 @@ describe('/PUT/:id trips', function () {
         request.put('/api/trips-schema').send(trip).end((err, res) => {
             expect(responseStatus).to.equal(200);
             // res.should.have.status(200);
-            res.body.should.be.a('object');
-            res.body.should.have.property('tripName').to.equal('Cancun');
+            expect(responseBody).to.be.an('object');
+            expect(responseBody).to.have.property('tripName').to.equal('Cancun');
             res.body.trip.should.have.property('tripList').to.equal([]);
         });
         done();

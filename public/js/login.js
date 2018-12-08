@@ -9,14 +9,14 @@ const myTrips = function () {
             console.log(e.tripList.clothing);
             htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripid=${e._id}></i>`
            
-            htmlstr += `<li><h3 class="clothing category">Clothing</h3></li>`
+            htmlstr += `<li class="clothing category">Clothing</li>`
             htmlstr += `<ul>`
             e.tripList.clothing.forEach(element => {  
                 console.log(element);           
                 htmlstr += `<li class="pieces"><h5 id="clothing">${element}</h5><i class="fas fa-trash-alt" id="delpiece" data-pieceid=${element.id}></i></li>`             
             });  
             htmlstr += `</ul>`             
-            htmlstr += `<li><h3 class="category">Footwear</h3></li>`
+            htmlstr += `<li class="category">Footwear</li>`
             htmlstr += `<ul>`
             e.tripList.footwear.forEach(element =>  {  
                 console.log(element);   

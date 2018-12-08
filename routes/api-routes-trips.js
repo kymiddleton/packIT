@@ -5,7 +5,7 @@ const db = require('../models');
 module.exports = function (app) {
 
     // GET request: Route for retrieving Trips from the database.
-    app.get('/api/trips-schema', function (req, res) { 
+    app.get('/api/trips-schema', function (req, res) { //Working
         db.trips.find({})
             .then(function (dbtrips) {
                 res.json(dbtrips);
@@ -16,8 +16,8 @@ module.exports = function (app) {
     });
 
     // POST request: Route for creating new Trips in the database.
-    app.post('/api/trips-schema', function (req, res) { 
-        console.log('------Adding Link in mongo');
+    app.post('/api/trips-schema', function (req, res) { // Working
+        console.log('------Adding Trip Link in mongo');
         db.trips.create(req.body)
             .then(function (dbtrips) {
                 res.json(dbtrips);
@@ -28,8 +28,8 @@ module.exports = function (app) {
     });
 
     // PUT request: Route for updating Trips content / saving updates 
-    app.put('/api/trips-schema', function (req, res) { 
-        console.log('----> updating <----');
+    app.put('/api/trips-schema', function (req, res) { //NOT Working
+        console.log('----> updating trip <----');
         console.log(req.body.tripList);
         console.log(req.body.tripName);
         db.trips.findOneAndUpdate({_id: req.body.id}, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
