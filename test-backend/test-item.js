@@ -17,9 +17,18 @@ describe('GET/api/item-schema', function () {
     // & delete all examples from the db
     beforeEach(function () {
         request = chai.request(server);
-
-        //empty the db here
-
+        // db.item.deleteOne({}).then(() => {
+        //     db.item.create([
+        //         {
+        //             item: '',
+        //             category: '',
+        //             weather: '',
+        //             packing: '',
+        //             destination: '',
+        //             travel: '',
+        //         }
+        //     ]).then(() => done())
+        // })
     });
 
     it('should find all examples', function (done) {
@@ -35,13 +44,11 @@ describe('GET/api/item-schema', function () {
             .then(function (result) {
                 // Request the route that returns all examples
                 request.get('/api/item-schema').end(function (err, res) {
-                    let responseStatus = res.status;
-                    let responseBody = res.body;
-
+            
                     // Run assertions on the response
                     expect(err).to.be.null;
-                    expect(responseStatus).to.equal(200);
-                    expect(responseBody[0]).to.be.an('object').to.include({ 
+                    expect(res.status).to.equal(200);
+                    expect(res.body[0]).to.be.an('object').to.include({
                         item: '',
                         category: '',
                         weather: '',
@@ -50,8 +57,7 @@ describe('GET/api/item-schema', function () {
                         travel: '',
                     });
                 });
-                // The `done` function is used to end any asynchronous tests
-                done();
+                done(); // The `done` function is used to end any asynchronous tests
             });
     });
 });
@@ -73,18 +79,15 @@ describe('POST /api/item-schema', function () {
         // POST the request body to the server
         request.post('/api/user-schema').send(reqBody).end(function (err, res) {
             console.log(res)
-            let responseStatus = res.status;
-            let responseBody = res.body;
-            console.log(responseBody, "POST response from users")
+            console.log(res.body, "POST response from users")
 
             // Run assertions on the response
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
-            // expect(responseBody).to.be.an('string').that.has.lengthOf();
-            expect(responseBody).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
+            expect(res.status).to.equal(200);
+            // expect(res.status).to.be.an('string').that.has.lengthOf();
+            expect(res.body).to.include({ userName: 'donald', email: 'donald@yahoo.com', password: `donnie1234` });
 
-            // The `done` function is used to end any asynchronous tests
-            done();
+            done(); // The `done` function is used to end any asynchronous tests
         });
     });
 });
@@ -103,8 +106,8 @@ describe('/PUT/:id user', function () {
     it('it should UPDATE the user id', (done) => {
         let user = new db.user({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
         request.put('/api/user-schema').send(user).end((err, res) => {
-            expect(responseStatus).to.equal(200);
-            expect(responseBody).to.be.an('object');
+            expect(res.status).to.equal(200);
+            expect(res.body).to.be.an('object');
         });
         done();
     });
@@ -126,9 +129,9 @@ describe('/DELETE/api/user-schema/:id user', function () {
         let trip = new db.user({ userName: 'Mickey', email: 'mickey@yahoo.com', password: `mickey1234` })
 
         request.delete('/api/user-schema').send(user).end((err, res) => {
-            
+
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
+            expect(res.status).to.equal(200);
             res.body.should.be.a('object');
             res.body.should.have.property('userName').to.equal('Mickey');
             res.body.result.should.have.property('email').to.equal([]);

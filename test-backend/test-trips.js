@@ -27,20 +27,16 @@ describe('GET /api/examples', function () {
     });
 
     it('should find all examples', function (done) {
-        // Add some examples to the db to test with
-
         // Request the route that returns all examples
         request.get('/api/trips-schema').end(function (err, res) {
-            let responseStatus = res.status;
-            let responseBody = res.body;
-            console.log(responseBody, "this is response from get trips")
+            console.log(res.body, "this is response from get trips")
 
             // Run assertions on the response
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
-            expect(responseBody).to.be.an('array').that.has.lengthOf(3);
-            //expect(responseBody[0]).to.be.an('object').to.include.keys('tripName', 'tripList');
-            expect(responseBody[0]).to.be.an('object').to.have.deep.keys({
+            expect(res.status).to.equal(200);
+            expect(res.body).to.be.an('array').that.has.lengthOf(3);
+            //expect(res.body[0]).to.be.an('object').to.include.keys('tripName', 'tripList');
+            expect(res.body[0]).to.be.an('object').to.have.deep.keys({
                 tripList:
                 {
                     clothing: [],
@@ -54,9 +50,7 @@ describe('GET /api/examples', function () {
                 tripName: 'Seattle',
                 __v: 0
             });
-
-            // The `done` function is used to end any asynchronous tests
-            done();
+            done(); // The `done` function is used to end any asynchronous tests
         });
     });
 });
@@ -76,14 +70,12 @@ describe('POST /api/trips-schema', function () {
 
         // POST the request body to the server
         request.post('/api/trips-schema').send(reqBody).end(function (err, res) {
-            let responseStatus = res.status;
-            let responseBody = res.body;
-            console.log(responseBody, "POST response from trips")
+            console.log(res.body, "POST response from trips")
 
             // Run assertions on the response
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
-            expect(responseBody).to.be.an('object').to.have.deep.keys({
+            expect(res.status).to.equal(200);
+            expect(res.body).to.be.an('object').to.have.deep.keys({
                 tripList:
                 {
                     clothing: [],
@@ -115,11 +107,11 @@ describe('/PUT/:id trips', function () {
     it('it should UPDATE a tripName and tripList', (done) => {
         let trip = new db.trips({ tripName: 'Cancun', tripList: [] })
         request.put('/api/trips-schema').send(trip).end((err, res) => {
-            expect(responseStatus).to.equal(200);
+            expect(res.status).to.equal(200);
             // res.should.have.status(200);
-            expect(responseBody).to.be.an('object');
-            expect(responseBody).to.have.property('tripName').to.equal('Cancun');
-            res.body.trip.should.have.property('tripList').to.equal([]);
+            expect(res.body).to.be.an('object');
+            expect(res.body).to.have.property('tripName').to.equal('Cancun');
+            expect(res.body).trip.to.have.property('tripList').to.equal([]);
         });
         done();
     });
@@ -139,17 +131,15 @@ describe('/DELETE/api/trips-schema/:id', function () {
         let trip = new db.trips({ tripName: 'Prague', tripList: [] })
 
         request.delete('/api/trips-schema').send(trip).end((err, res) => {
-            
-            let responseStatus = res.status;
-            // let responseBody = res.body;
 
             expect(err).to.be.null;
-            expect(responseStatus).to.equal(200);
-            // res.should.have.status(200);
+            expect(res.status).to.equal(200);
             res.body.should.be.a('object');
             res.body.should.have.property('tripName').to.equal('Prague');
             res.body.result.should.have.property('tripList').to.equal([]);
+            done();
         });
-        done();
+
+        
     });
 });

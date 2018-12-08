@@ -22,7 +22,7 @@ module.exports = function (app) {
     
     // POST request: Route for creating new Packing List Items in the database.
     app.post('/api/item-schema', function (req, res) { //Works
-        console.log('------Adding Item in mongo');
+        // console.log('------Adding Item in mongo');
         db.packingItem.create(req.body)
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
@@ -35,7 +35,7 @@ module.exports = function (app) {
 
     // PUT request: Route for updating Packing List content / saving updates 
     app.put('/api/item-schema', function (req, res) { // Working
-        console.log('----> updating item <----');
+        // console.log('----> updating item <----');
         db.packingItem.findOneAndUpdate({ item_id: req.body.id }, 
             { $set: {
                 item: req.body.item,
@@ -55,7 +55,7 @@ module.exports = function (app) {
 
     // DELETE request: Deletes Packing List content
     app.delete('/api/item-schema/:item', function (req, res) { //Working
-        console.log('--------deleting item --------');
+        // console.log('--------deleting item --------');
         db.packingItem.findOneAndRemove(req.params.tripsitem, function (err, packingItem) {
             if (err) return res.status(500).send(err);
             const response = {

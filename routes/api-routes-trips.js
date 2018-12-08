@@ -17,7 +17,7 @@ module.exports = function (app) {
 
     // POST request: Route for creating new Trips in the database.
     app.post('/api/trips-schema', function (req, res) { // Working
-        console.log('------Adding Trip Link in mongo');
+        // console.log('------Adding Trip Link in mongo');
         db.trips.create(req.body)
             .then(function (dbtrips) {
                 res.json(dbtrips);
@@ -29,7 +29,7 @@ module.exports = function (app) {
 
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { //Working
-        console.log('----> updating trip <----');
+        // console.log('----> updating trip <----');
         db.trips.findOneAndUpdate({trip_id: req.body.id}, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
             .then(function (dbtrips) {
                 res.json(dbtrips);
@@ -41,7 +41,7 @@ module.exports = function (app) {
 
     // DELETE request: Deletes Trip content
     app.delete('/api/trips-schema/:tripname', function (req, res) { //Working
-        console.log('--------deleting--------');
+        // console.log('--------deleting--------');
         db.trips.findOneAndDelete({tripName:req.params.tripname}, function (err, trips) {
                 if (err) return res.status(500).send(err);
             const response = {

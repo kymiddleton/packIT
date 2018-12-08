@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 let request;
 
 // GET route for retrieving users from the database.
-describe('API Routes', function (done) {
+describe('API Routes', function () {
     // Before each test, create a new request server for testing
     // & delete all examples from the db
     beforeEach(function () {
@@ -36,12 +36,10 @@ describe('API Routes', function (done) {
                     expect(err).to.be.null;
                     expect(res.status).to.equal(200);
                     expect(res.body[0]).to.be.an('object').to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234' });
-                    
                     done();// The `done` function is used to end any asynchronous tests
                 });
             });
     });
-
 
     it('should POST new user details in the database', function (done) {
         let reqBody = { userName: 'Minnie', email: 'minnie@yahoo.com', password: 'minnie1234' };
@@ -55,9 +53,7 @@ describe('API Routes', function (done) {
             expect(res.status).to.equal(200);
             // expect(res.body).to.be.an('string').that.has.lengthOf();
             expect(res.body).to.include({ userName: 'minnie', email: 'minnie@yahoo.com', password: 'minnie1234' });
-
-            // The `done` function is used to end any asynchronous tests
-            done();
+            done(); 
         });
     });
 
