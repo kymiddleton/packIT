@@ -31,12 +31,31 @@ toggleImgColor = function (rowName, imageValue) {
 //     location.reload()
 // })
 
-const selection = {
-    weather: ['hot', 'rainy', 'cold'],
+// const selection = {
+//     weather: ['hot', 'rainy', 'cold'],
 
-    travel: ['plane', 'car', 'transit'],
+//     travel: ['plane', 'car', 'transit'],
 
-    destination: ['beach', 'outdoors', 'city'],
+//     destination: ['beach', 'outdoors', 'city'],
 
-    packing: ['minimal', 'typical', 'diva']
-}
+//     packing: ['minimal', 'typical', 'diva']
+// }
+
+// $(".image").on("click", function (event) {
+//     let imageName = $(this).attr("class");
+//     console.log(imageName)
+//     if (imageName.split(" ")[2] == "gold") {
+//         $(this).removeClass('gold')
+//         $(this).addClass('white')
+//         $(`#${imageName.split(" ")[1]}_gold`).hide();
+//         $(`#${imageName.split(" ")[1]}_white`).show();
+//         $(this).css("color", "white");
+//     } else {
+//         $(this).removeClass('white')
+//         $(this).addClass('gold')
+//         $(`#${imageName.split(" ")[1]}_gold`).show();
+//         $(`#${imageName.split(" ")[1]}_white`).hide();
+//         $(this).css("color", "rgb(65, 144, 247)");
+
+//     }
+// });

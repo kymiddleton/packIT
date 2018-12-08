@@ -1,13 +1,4 @@
 // // Generate compiled packing list based on user selection
-const showModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').show();
-}
-//hides modal container
-const hideModal = function () {
-    // e.preventDefault();
-    $('.modal-container').hide();
-}
 
 $(document).ready(function () {
     let weather = '';
@@ -33,11 +24,21 @@ $(document).ready(function () {
         if (weather && destination && travel && packing) {
             //shows modal container
             showModal();
+            const showModal = function (e) {
+                e.preventDefault();
+                $('.modal-container').show();
+            }
+            //hides modal container
+            const hideModal = function () {
+                // e.preventDefault();
+                $('.modal-container').hide();
+            }
+            showModal();
+            hideModal();
         }
     }
     $('.image').on('click', selections);
 
-    $('#notrip').on('click', hideModal)
 
     $('#gotrip').on('click', function () {
         console.log(weather + packing + destination + travel)
@@ -66,7 +67,7 @@ $(document).ready(function () {
                 })
 
             })
-        hideModal();
+
     })
 
 })
