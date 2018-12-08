@@ -24,9 +24,9 @@ span {
 }
 
 .wrap {
-    height: auto;
+    /* height: auto; */
     width: 700px;
-    /* height: 700px; */
+    min-height: 700px;
     /* height: 755px; */
     margin-left: auto;
     margin-right: auto;
@@ -38,7 +38,7 @@ span {
 .container {
     display: grid;
     justify-content: space-evenly;
-    height: 100%;
+    height: auto;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 52px 55px;
@@ -62,27 +62,36 @@ img {
     height: 46px;
 }
 
-/* #suitcase {
-    display: none;
-    border: 1px solid white;
-} */
 
 #header {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 50px 100px;
 }
-.category {
+.category, .newcloth, #submitclothing, .newfoot, #submitfootwear, .newperson, #submitperson,  .newdocument, #submitdocument, .newgadget, #submitgadget, .newmisc, #submitmisc {
     display: none;
 }
+
+
 
 .pieces {
     display: none;  
 }
 
 .show {
-    display: grid;
+    display: inline;
 } 
+.showgrid {
+    display: grid;
+}
 .hide {
     display: none
 }
+
+.homepage {
+   min-height: 800px;
+}
+
+/* #savedtrips {
+   min-height: 800px;
+} */
