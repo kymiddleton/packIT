@@ -1,4 +1,13 @@
 // // Generate compiled packing list based on user selection
+const showModal = function (e) {
+    e.preventDefault();
+    $('.modal-container').show();
+}
+//hides modal container
+const hideModal = function () {
+    // e.preventDefault();
+    $('.modal-container').hide();
+}
 
 $(document).ready(function () {
     let weather = '';
@@ -24,27 +33,18 @@ $(document).ready(function () {
         if (weather && destination && travel && packing) {
             //shows modal container
             showModal();
-            const showModal = function (e) {
-                e.preventDefault();
-                $('.modal-container').show();
-            }
-            //hides modal container
-            const hideModal = function () {
-                // e.preventDefault();
-                $('.modal-container').hide();
-            }
-            showModal();
-            hideModal();
         }
     }
     $('.image').on('click', selections);
 
+    $('#notrip').on('click', hideModal)
 
     $('#gotrip').on('click', function () {
         console.log(weather + packing + destination + travel)
         $.ajax({
-            url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`, method: 'GET'
-        })
+                url: `/api/item-schema/${weather}/${packing}/${destination}/${travel}`,
+                method: 'GET'
+            })
             .then(function (data) {
                 console.log(data)
                 data.map(e => {
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 })
 
             })
-          
+        hideModal();
     })
 
 })
