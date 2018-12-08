@@ -1,7 +1,7 @@
 // Customized pre-compiled packing list
 $(".image").on("click", function (event) {
     let imageName = $(this).attr("class");
-    console.log(imageName)
+    // console.log(imageName)
     if (imageName.split(" ")[2] == "gold") {
         $(this).removeClass('gold')
         $(this).addClass('white')

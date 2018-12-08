@@ -58,7 +58,7 @@ const myTrips = function () {
         
     });
 };
-$('button').on('click', myTrips);
+// $('button').on('click', myTrips);
 
 
 function handleCategory(event) {
