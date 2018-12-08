@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-
     <title>packIT</title>
 </head>
 
@@ -21,97 +19,99 @@
         <div class="box two" id="additems">
 
             <div class="wrap">
-                <div id="header"><h1>pack <span>IT</span></h1><button id="home"><i class="fas fa-home"></i><button id="showtrips">My Trips</button></div>  
-                <div class="box one">           
-                        <ul id="savedtrips"></ul>
+                <div id="header">
+                    <h1>pack <span>IT</span></h1><button id="home"><i class="fas fa-home"></i></button><button id="showtrips">My
+                        Trips</button>
+                </div>
+                <div class="box one">
+
+                    <ul id="savedtrips"></ul>
+
                 </div>
 
                 <div class="container" id="grid">
-                    <div class="image happy-sun" class="weather" data-category="weather" value="hot">
-                        <img src="./assets/happy-sun.png" alt="sun" id="hot_white">
-                        <img src="./assets/happy-sun-002.png" alt="sun2" id="hot_gold" hidden>
-
+                    
+                    <div class="image happy-sun weather" data-category="weather" value="hot">
+                        <img src="./assets/happy-sun.png" alt="sun" id="happy-sun_white">
+                        <img src="./assets/happy-sun-002.png" alt="sun2" id="happy-sun_gold" hidden>
                         <h4>HOT</h4>
                     </div>
-                    <div class="image umbrella" class="weather" data-category="weather" value="rain">
+                    <div class="image umbrella weather" data-category="weather" value="rain">
                         <img src="./assets/umbrella.png" alt="rain" id="umbrella_white">
                         <img src="./assets/umbrella-003.png" alt="rain2" id="umbrella_gold" hidden>
                         <h4>RAINY</h4>
                     </div>
-                    <div class="image snowflake" class="weather" data-category="weather" value="cold">
+                    <div class="image snowflake weather" data-category="weather" value="cold">
                         <img src="./assets/snowflake.png" alt="snow" id="snowflake_white">
                         <img src="./assets/snowflake-006.png" alt="snow2" id="snowflake_gold" hidden>
                         <h4>COLD</h4>
                     </div>
-                    <div class="image plane" class="travel" data-category="travel" value="plane">
+                    <div class="image plane travel" data-category="travel" value="plane">
                         <img src="./assets/plane.png" alt="plane" id="plane_white">
                         <img src="./assets/plane-008.png" alt="plane2" id="plane_gold" hidden>
                         <h4>PLANE</h4>
                     </div>
-                    <div class="image taxi" class="travel" data-category="travel" value="car">
+                    <div class="image taxi travel" data-category="travel" value="car">
                         <img src="./assets/taxi.png" alt="car" id="taxi_white">
                         <img src="./assets/taxi-005.png" alt="car2" id="taxi_gold" hidden>
                         <h4>CAR</h4>
                     </div>
-                    <div class="image bus" class="travel" data-category="travel" value="train">
+                    <div class="image bus travel" data-category="travel" value="train">
                         <img src="./assets/bus.png" alt="bus" id="bus_white">
                         <img src="./assets/bus-011.png" alt="bus2" id="bus_gold" hidden>
                         <h4>TRANSIT</h4>
                     </div>
-                    <div class="image sun-umbrella" class="destination" data-category="destination" value="beach">
+                    <div class="image sun-umbrella destination" data-category="destination" value="beach">
                         <img src="./assets/sun-umbrella.png" alt="beach" id="sun-umbrella_white">
                         <img src="./assets/sum-umbrella-001.png" alt="beach2" id="sun-umbrella_gold" hidden>
                         <h4>BEACH</h4>
                     </div>
-                    <div class="image trees" class="destination" data-category="destination" value="outdoors">
+                    <div class="image trees destination" data-category="destination" value="outdoors">
                         <img src="./assets/trees.png" alt="outdoors" id="trees_white">
                         <img src="./assets/trees-004.png" alt="outdoors2" id="trees_gold" hidden>
                         <h4>OUTDOORS</h4>
                     </div>
-                    <div class="image skyline" class="destination" data-category="destination" value="city">
+                    <div class="image skyline destination" data-category="destination" value="city">
                         <img src="./assets/skyline.png" alt="city" id="skyline_white">
                         <img src="./assets/skyline-007.png" alt="city2" id="skyline_gold" hidden>
                         <h4>CITY</h4>
                     </div>
-                    <div class="image backpack" class="packing" data-category="packing" value="minimal">
+                    <div class="image backpack packing" data-category="packing" value="minimal">
                         <img src="./assets/backpack.png" alt="thrifty" id="backpack_white">
                         <img src="./assets/backpack-012.png" alt="thrifty2" id="backpack_gold" hidden>
                         <h4>MINIMAL</h4>
                     </div>
-                    <div class="image luggage" class="packing" data-category="packing" value="typical">
+                    <div class="image luggage packing" data-category="packing" value="typical">
                         <img src="./assets/luggage.png" alt="standard" id="luggage_white">
                         <img src="./assets/luggage-009.png" alt="standard2" id="luggage_gold" hidden>
                         <h4>TYPICAL</h4>
                     </div>
-                    <div class="image crown" class="packing" data-category="packing" value="diva">
+                    <div class="image crown packing" data-category="packing" value="diva">
                         <img src="./assets/crown.png" alt="D.Va" id="crown_white">
                         <img src="./assets/crown-010.png" alt="D.Va2" id="crown_gold" hidden>
                         <h4>DIVA</h4>
+                    </div>
+                    <div class='modal hide'>
+                        <h2>Confirm your selections</h2>
+                        <textarea id='triplocation' rows='2' cols='30' placeholder="what is your trip name?"></textarea>
+                        <button class='trip-button2' id='notrip'> Back </button>
+                        <button class='trip-button2' id='gotrip'> Next </button>
+                    </div>
+                <div id="preCompiled" class = "hide">
+
+                    This is where text will go
+                        <div class="clothing itemsList"></div>
+                        <div class="footwear itemsList"></div>
+                        <div class="personal itemsList"></div>
+                        <div class="documents itemsList"></div>
+                        <div class="gadgets itemsList"></div>
+                        <div class="miscelleneous itemsList"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class='modal-container hide'>
-        <div class='modal'>
-            <h2> Confirm your selections <span class='close-modal'>X</span></h2>
-            <textarea id='triplocation' rows='2' cols='30' placeholder="Where are you going?"></textarea>
-            <button class='trip-button2' id='notrip'> Back </button>
-            <button class='trip-button2' id='gotrip'> Next </button>
-        </div>
-    </div>
-
-    <div class='pagetwo hide'>
-        <div id="preCompiled">
-            <div class="clothing"></div>
-            <div class="footwear"></div>
-            <div class="personal"></div>
-            <div class="documents"></div>
-            <div class="gadgets"></div>
-            <div class="miscelleneous"></div>
-        </div>
-    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="./js/login.js"></script>
