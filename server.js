@@ -32,9 +32,7 @@ mongoose.Promise = global.Promise;
 //Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", 
-  {
-    useMongoClient: true
-  }
+  { useMongoClient: true }
 );
 
 // Starts our server on the predefined PORT
