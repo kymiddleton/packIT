@@ -73,6 +73,16 @@ describe('decrement', function () {
 // -------------------------------------------------
 
 //shows modal container
+const showModal = function (e) {
+    e.preventDefault();
+    $('.modal-container').show();
+}
+//hides modal container
+const hideModal = function (e) {
+    e.preventDefault();
+    $('.modal-container').hide();
+}
+//saves value of the textarea when button is pressed, and hides modal container
 const saveTrip = function (e) {
     e.preventDefault();
     const inputTrip = $('#tripmaker').val();

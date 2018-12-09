@@ -19,7 +19,7 @@ app.use(express.json());
 
 //Sets the server to use the public directory for static assets
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static('public'));
 // Routes
 require('./routes/api-routes-item.js')(app);
 require('./routes/api-routes-trips.js')(app);
@@ -30,8 +30,14 @@ require('./routes/html-routes.js')(app);
 mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", 
+//   { useMongoClient: true }
+// );
+
+// Connect for testing.  
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", 
+  process.env.MONGODB_URI || "mongodb://localhost:27017", 
   { useMongoClient: true }
 );
 
