@@ -36,11 +36,7 @@ describe('myTrips', function () {
 
 
     it('should display list of trips when clicking myTrips', function () {
-<<<<<<< HEAD
         server.respondWith('GET', '/api/trips-schema', [
-=======
-        server.respondWith('GET', '/myTrips', [
->>>>>>> 3ad003c553a2b00ed3cb63e612837449d944019c
             200, {
                 'Content-Type': 'application/json'
             },
