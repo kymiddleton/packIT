@@ -62,29 +62,29 @@ module.exports = function (app) {
         });
     });
 
-    app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
-        console.log('--------deleting--------');
-        db.trips.update({
-            _id: req.params.trips_id,
-            // We'll create a simple object to send back with a message and the id of the document that was removed
-            const response = {
-                message: "Trip successfully deleted",
-                id: trips._id
-            };
-            return res.status(200).send(response);
-        });
-    });
+    // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
+    //     console.log('--------deleting--------');
+    //     db.trips.update({
+    //         _id: req.params.trips_id,
+    //         // We'll create a simple object to send back with a message and the id of the document that was removed
+    //         const response = {
+    //             message: "Trip successfully deleted",
+    //             id: trips._id
+    //         };
+    //         return res.status(200).send(response);
+    //     });
+    // });
 
 };
 
-app.put('/api/trips-schema/:trips_id', function (req, res) {
-    console.log('--------updating--------');
-    db.trips.findByIdAndUpdate(req.params.trips_id, function (err, trips) {
-        if (err) return res.status(500).send(err);
-        const response = {
-            message: "Updated",
-            id: trips._id
-        };
-        return res.status(200).send(response);
-    });
-});
+// app.put('/api/trips-schema/:trips_id', function (req, res) {
+//     console.log('--------updating--------');
+//     db.trips.findByIdAndUpdate(req.params.trips_id, function (err, trips) {
+//         if (err) return res.status(500).send(err);
+//         const response = {
+//             message: "Updated",
+//             id: trips._id
+//         };
+//         return res.status(200).send(response);
+//     });
+// });
