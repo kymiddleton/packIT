@@ -35,6 +35,12 @@ mongoose.connect(
   { useMongoClient: true }
 );
 
+// Connect for testing.  
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost:27017", 
+//   { useMongoClient: true }
+// );
+
 // Starts our server on the predefined PORT
 app.listen(PORT, function () {
   console.log(`App is now listening on PORT ${PORT}`)
