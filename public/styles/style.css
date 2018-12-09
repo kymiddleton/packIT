@@ -68,28 +68,41 @@ img {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 50px 100px;
 }
-.category, .newcloth, #submitclothing, .newfoot, #submitfootwear, .newperson, #submitperson,  .newdocument, #submitdocument, .newgadget, #submitgadget, .newmisc, #submitmisc {
+
+.category,
+.newcloth,
+#submitclothing,
+.newfoot,
+#submitfootwear,
+.newperson,
+#submitperson,
+.newdocument,
+#submitdocument,
+.newgadget,
+#submitgadget,
+.newmisc,
+#submitmisc {
     display: none;
 }
 
-
-
 .pieces {
-    display: none;  
+    display: none;
 }
 
 .show {
     display: inline;
-} 
+}
+
 .showgrid {
     display: grid;
 }
+
 .hide {
     display: none
 }
 
 .homepage {
-   min-height: 800px;
+    min-height: 800px;
 }
 
 /* #savedtrips {

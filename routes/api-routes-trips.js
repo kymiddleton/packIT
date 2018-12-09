@@ -30,7 +30,14 @@ module.exports = function (app) {
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { //Working
         // console.log('----> updating trip <----');
-        db.trips.findOneAndUpdate({ _id: req.body.id }, { $set: { tripList: req.body.tripList, tripName: req.body.tripName } })
+        db.trips.findOneAndUpdate({
+                _id: req.body.id
+            }, {
+                $set: {
+                    tripList: req.body.tripList,
+                    tripName: req.body.tripName
+                }
+            })
             .then(function (dbtrips) {
                 // console.log('updated trip', dbtrips)
                 res.json(dbtrips);
@@ -43,7 +50,9 @@ module.exports = function (app) {
     // DELETE request: Deletes Trip content
     app.delete('/api/trips-schema/:tripname', function (req, res) { //Working
         // console.log('--------deleting--------');
-        db.trips.findOneAndDelete({ tripName: req.params.tripname }, function (err, trips) {
+        db.trips.findOneAndDelete({
+            tripName: req.params.tripname
+        }, function (err, trips) {
             if (err) return res.status(500).send(err);
             const response = {
                 message: "Trip successfully deleted",
