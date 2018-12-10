@@ -1,5 +1,27 @@
 // // Generate compiled packing list based on user selection
 $(document).ready(function () {
+        $(".clothing").click(function(){
+            $(".itemsOne").toggleClass("item");
+        });
+        $(".footwear").click(function(){
+            $(".itemsTwo").toggleClass("item");
+        });
+        $(".personal").click(function(){
+            $(".itemsThree").toggleClass("item");
+        });
+        $(".documents").click(function(){
+            $(".itemsFour").toggleClass("item");
+        });
+        $(".gadgets").click(function(){
+            $(".itemsFive").toggleClass("item");
+        });
+        $(".miscellaneos").click(function(){
+            $(".itemsSix").toggleClass("item");
+        });
+
+
+
+
     let weather = '';
     let packing = '';
     let destination = '';
@@ -22,9 +44,9 @@ $(document).ready(function () {
         };
         if (weather && destination && travel && packing) {
 
-            $('.image').addClass('hide');
-            $('.modal').removeClass('hide');
-            $('#filteredList').addClass('hide');
+            $('.image').addClass('item');
+            $('.modal').removeClass('item');
+            $('#filteredList').addClass('item');
 
         }
 
@@ -33,8 +55,8 @@ $(document).ready(function () {
 
     $('#gotrip').on('click', function () {
 
-        $('.modal').addClass('hide');
-        $('#filteredList').removeClass('hide');
+        $('.modal').addClass('item');
+        $('#filteredList').removeClass('item');
 
         console.log(weather + packing + destination + travel)
 
@@ -56,28 +78,19 @@ $(document).ready(function () {
                     category = category.toLowerCase();
                     if (category == 'clothing') {
                         clothing.push(data[i].item)
-                        console.log(data[i].item + `this is from clothing`)
-                        // $('.clothing').append(`<li>${e.data[i].item}</li>`)
                     } else if (category == 'footwear') {
                         footwear.push(data[i].item)
-                        // console.log('footwear')
-                        // $('.footwear').append(`<li>${e.data[i].item}</li>`)
                     } else if (category == 'personal') {
                         personal.push(data[i].item)
-                        //    $('.personl').append(e.data[i].item)
                     } else if (category == 'documents') {
                         documents.push(data[i].item)
-                        // $('.documents').append(e.data[i].item)
                     } else if (category == 'gadgets') {
                         gadgets.push(data[i].item)
-                        // $('.gadgets').append(e.data[i].item)
                     } else if (category == 'miscelleneous') {
                         miscelleneous.push(data[i].item)
-                        // $('.miscelleneous').append(e.data[i].item)
                     }
 
                 };
-                console.log(`this should contain items : ` + clothing)
                 itemList = {
                     'clothing': clothing,
                     'footwear': footwear,
@@ -86,21 +99,21 @@ $(document).ready(function () {
                     'gadgets': gadgets,
                     'miscelleneous': miscelleneous
                 };
-                console.log(`this is the jason file ` + JSON.stringify(itemList))
-                console.log(`this is footwear array after ` + clothing)
+                // console.log(`this is the jason file ` + JSON.stringify(itemList))
+                // console.log(`this is footwear array after ` + clothing)
 
             }).then(function () {
 
                 $('#preCompiled').empty();
+
                 $.ajax('/api/trips-schema').done(function () {
-                    console.log('itemList: ' + JSON.stringify(itemList))
+                    // console.log('itemList: ' + JSON.stringify(itemList))
                     for (let key in itemList) {
-                        console.log('key: ' + key);
-                        //    for (let i= 0; i < itemList[key].length; i ++){
+                        // console.log('key: ' + key);
                         let categoryValue = itemList[key];
-                        console.log('categoryValue: ' + categoryValue)
+                        // console.log('categoryValue: ' + categoryValue)
                         if (categoryValue.length > 0) {
-                            console.log('categoryValue: ' + categoryValue.length)
+                            // console.log('categoryValue: ' + categoryValue.length)
 
                             if (key == 'clothing') {
                                 //we only use [0] for testing to see the first value in the array that is returned
@@ -108,45 +121,50 @@ $(document).ready(function () {
                                 // we then will append each element in the array
                                 for (let i = 0; i < categoryValue.length; i++) {
 
-                                    $('.clothing').append(`<li class ="item">${categoryValue[i]}</li>`)
+                                    $('.clothing').append(`<li class ="itemsOne item">${categoryValue[i]}</li>`)
                                 }
-                                console.log('clothing: '+categoryValue[0])
+                                // console.log('clothing: '+categoryValue[0])
                             }
                             else if (key == 'footwear') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.footwear').append(`<li class="item">${categoryValue[i]}</li>`)
-                                    console.log('footwear: '+categoryValue[i])
+                                    $('.footwear').append(`<li class="itemsTwo item">${categoryValue[i]}</li>`)
+                                    // console.log('footwear: '+categoryValue[i])
                                 
                                 }
                             }
                             else if (key == 'personal') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.personal').append(`<li class ="item">${categoryValue[i]}</li>`)
-                                    console.log('personal: '+categoryValue[i])
+                                    $('.personal').append(`<li class ="itemsThree item">${categoryValue[i]}</li>`)
+                                    // console.log('personal: '+categoryValue[i])
                                 
                                 }
                             } else if (key == 'documents') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.gadgets').append(`<li class = "item">${categoryValue[i]}</li>`)
-                                console.log('gadgets: '+categoryValue[i])
+                                    $('.documents').append(`<li class = "itemsFour item">${categoryValue[i]}</li>`)
+                                // console.log('gadgets: '+categoryValue[i])
 
                                 }
-                            } else if (key == 'documents') {
+                            } else if (key == 'gadgets') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.miscellaneous').append(`<li class = "item">${categoryValue[i]}</li>`)
+                                    $('.gadgets').append(`<li class = "itemsFive item">${categoryValue[i]}</li>`)
                                 }
-                            }
+                            } else if (key == 'miscellaneos') {
+                                for (let i = 0; i < categoryValue.length; i++) {
+                                    $('.miscellaneous').append(`<li class = "itemsSix item">${categoryValue[i]}</li>`)
+                                }
                         }
+                    }
                     };
                 });
             });
 
 
         const cancel = function () {
-            $('.modal').addClass('hide');
-            $('.image').removeClass('hide');
+            $('.modal').addClass('item');
+            $('.image').removeClass('item');
             $('.image').on('click', selections);
         }
+   
         $('#notrip').on('click', cancel);
 
 

@@ -94,7 +94,7 @@ img {
     display: inline;
 }
 
-.showgrid {
+.showgrid  {
     display: grid;
 }
 
@@ -116,7 +116,22 @@ img {
     text-align: center;
     
 }
-
+/* this modifies the modal box and its contents */
 .list {
+    display: none;
+}
+.modal{
+    width: 200x;
+    width:200px;
+    height: 100px;
+    background-color: gray;
+    margin-left: 200px;
+}
+h2{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.item {
     display: none;
 }
