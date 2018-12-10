@@ -36,8 +36,7 @@ module.exports = function (app) {
 
 
     // PUT request: Route for updating Packing List content / saving updates 
-    // app.post('/api/update/item-schema', function (req, res) {
-    app.put('/api/item-schema', function (req, res) { // NOT working
+    app.put('/api/item-schema', function (req, res) { // Working
         // console.log('----> updating item <----');
         db.packingItem.findOneAndUpdate({
                 _id: req.body.id
@@ -60,11 +59,9 @@ module.exports = function (app) {
     });
 
     // DELETE request: Deletes Packing List content
-    // app.post('/api/delete/item-schema/:packingItem_id', function (req, res) {
-    app.delete('/api/item-schema/:packingItem_id', function (req, res) { //NOT working
+    app.delete('/api/item-schema/:packingItem_id', function (req, res) { //Working
         // console.log('--------deleting item --------');
         db.packingItem.findByIdAndRemove(req.body.id, function (err, packingItem) {
-            // db.packingItem.findByIdAndRemove(req.params.packingItem_id, function (err, packingItem) {
             if (err) return res.status(500).send(err);
             // We'll create a simple object to send back with a message and the id of the document that was removed
             const response = {
