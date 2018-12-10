@@ -62,29 +62,29 @@ module.exports = function (app) {
         });
 
         // // Pawan needs for his piece to delete one single item instead of deleting all items. 
-        app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
-                    console.log('--------deleting--------');
-                    db.trips.update({
-                            _id: req.params.trips_id
-                        }, {
-                            $pullAll: {
-                                [req.params.category]: [req.params.item]
-                            }
-                        })
-                        .then(data => res.json(data))
-                }
+        // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
+        //             console.log('--------deleting--------');
+        //             db.trips.update({
+        //                     _id: req.params.trips_id
+        //                 }, {
+        //                     $pullAll: {
+        //                         [req.params.category]: [req.params.item]
+        //                     }
+        //                 })
+        //                 .then(data => res.json(data))
+        //         }
 
-                //Pawan needs to update one specific item instead of all items. 
-                app.put('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
-                        console.log('--------updating--------');
-                        db.trips.update({
-                                _id: req.params.trips_id
-                            }, {
-                                $pullAll: {
-                                    [req.params.category]: [req.params.item]
-                                }
-                            })
-                            .then(data => res.json(data))
-                    }
+        //         //Pawan needs to update one specific item instead of all items. 
+        //         app.put('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
+        //                 console.log('--------updating--------');
+        //                 db.trips.update({
+        //                         _id: req.params.trips_id
+        //                     }, {
+        //                         $pullAll: {
+        //                             [req.params.category]: [req.params.item]
+        //                         }
+        //                     })
+        //                     .then(data => res.json(data))
+        //             }
 
                 }

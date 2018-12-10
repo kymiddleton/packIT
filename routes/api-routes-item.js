@@ -6,7 +6,6 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
-<<<<<<< HEAD
         // console.log(req.params)
         db.packingItem.find({$and :[
             {weather:{$in : [req.params.weather]}},
@@ -14,27 +13,6 @@ module.exports = function (app) {
              {destination: {$in : [req.params.destination]}},
              {travel: {$in : [req.params.travel]}}
          ]})
-=======
-
-        console.log(req.params)
-        // res.send(true)
-        // console.log(req.body)
-        db.packingItem.find({
-                $and: [{
-                        weather: req.params.weather
-                    },
-                    {
-                        packing: req.params.packing
-                    },
-                    {
-                        destination: req.params.destination
-                    },
-                    {
-                        travel: req.params.travel
-                    }
-                ]
-            })
->>>>>>> 1ea6a42d9e054d0481945c3e5462788b289331cb
             .then(function (dbpackingItem) {
                 console.log(dbpackingItem)
                 res.json(dbpackingItem);
