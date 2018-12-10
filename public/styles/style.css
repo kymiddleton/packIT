@@ -132,6 +132,20 @@ h2{
     padding-bottom: 10px;
 }
 
-.item {
+.hideItems {
     display: none;
+}
+
+ul{ 
+    color: white;
+    /* background: rgb(63, 62, 62); */
+
+  
+}
+li{
+    color: gray;
+}
+input [type="checkbox"] {
+  background-color: none;
+
 }
