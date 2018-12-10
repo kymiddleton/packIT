@@ -33,7 +33,7 @@ $(document).ready(function () {
     $('#gotrip').on('click', function () {
 
         $('.modal').addClass('hide');
-        $('#preCompiled').removeClass('hide');
+        $('#filteredList').removeClass('hide');
         
         console.log(weather + packing + destination + travel)
       
@@ -96,12 +96,30 @@ $(document).ready(function () {
                                 console.log('itemList: '+JSON.stringify(itemList))
                                 for (let key in itemList) {
                                     console.log('key: '+key);
-                                   for (let i= 0; i < itemList[key].length; i ++){
-                                       if (itemList.key)
+                                //    for (let i= 0; i < itemList[key].length; i ++){
+                                       let categoryValue = itemList[key];
+                                       console.log('categoryValue: '+categoryValue)
+                                       if (categoryValue.length > 0)
                                        {
-                                            console.log( itemList.key)
+                                        console.log('categoryValue: '+categoryValue.length)
+
+                                           if (key == 'clothing'){
+                                               //we only use [0] for testing to see the first value in the array that is returned
+                                               //We need to create a loop inside of here to get each element in the array
+                                               // we then will append each element in the array
+                                               for(let i = 0; i < categoryValue.length; i ++)
+                                               {
+                                                   $('.clothing').append(`<li>${categoryValue[i]}</li>`)
+                                               }
+                                                console.log('clothing: '+categoryValue[0])
+                                           }
+                                           else if (key == 'footwear')
+                                           {
+                                            console.log('footwear: '+itemList.key)
+                                           }
+    
                                        }
-                                   }
+                                //    }
                                  
                                     
                                     
