@@ -11,10 +11,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.json());
 
 //Sets the server to use the public directory for static assets
@@ -31,8 +35,14 @@ mongoose.Promise = global.Promise;
 
 //Connect to the Mongo DB
 mongoose.connect(
+<<<<<<< HEAD
   process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", 
   { useMongoClient: true }
+=======
+  process.env.MONGODB_URI || "mongodb://packit:packit1234@ds123454.mlab.com:23454/heroku_hghvcwbh", {
+    useMongoClient: true
+  }
+>>>>>>> 7f9f3157cd796837f60dfcd424378adb52991bb8
 );
 
 // Connect for testing.  
