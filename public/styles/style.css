@@ -116,3 +116,7 @@ img {
     text-align: center;
     
 }
+
+.list {
+    display: none;
+}
