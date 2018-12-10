@@ -46,12 +46,40 @@ The project is deployed with Heroku.
 
 # Code Structure
 Models
+- index.js
+- item-schema.js
+- trips-schema.js
+- user-schema.js
 
 Public Files
+- assets
+    * 12 png files in white
+    * 12 png files in blue
+- images
+- js
+    * compiled.js
+    * customizedList.js
+    * login.js
+- styles
+    * reset.css
+    * style.css
+- test-frontend
+    * test-compiledF.js
+    * test-customF.js
+    * test-loginF.js
+    * test.html
+- index.html
 
 Routes
+- api-routes-item.js
+- api-routes-trips.js
+- api-routes-user.js
+- html-routes.js
 
-Testing
+Test Backend
+- test-item.js
+- test-trips.js
+- test-user.js
 
 Other
 - server.js
@@ -64,12 +92,16 @@ Other
 
 # Authors
 - Robert Doughty - Login, Saving User Trip Profiles
+    * Seeded database: Documents
 - Pawan Jada - Customization / Adding & Deleting Packing List Items
 - Juliana Tyler - Pre-compiled Packing List
 - Kyla Middleton - Lead Architect
     * Created base HTML and CSS
-    * Configured/tested models and routes.
-    * Seeded database
+    * Configured models and api routes.
+    * Completed all back-end testing
+    * Seeded database: Clothing, Footwear, Gadgets, and Miscellaneous. 
+
+Seeded database: Personal
 
 # Acknowledgements
 - Unsplash Photos
