@@ -6,7 +6,6 @@ module.exports = function (app) {
 
     // GET request: Route for retrieving Packing List Items from the database.
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
-<<<<<<< HEAD
         // console.log(req.params)
         db.packingItem.find({$and :[
             {weather:{$in : [req.params.weather]}},
@@ -14,27 +13,6 @@ module.exports = function (app) {
              {destination: {$in : [req.params.destination]}},
              {travel: {$in : [req.params.travel]}}
          ]})
-=======
-
-        console.log(req.params)
-        // res.send(true)
-        // console.log(req.body)
-        db.packingItem.find({
-                $and: [{
-                        weather: req.params.weather
-                    },
-                    {
-                        packing: req.params.packing
-                    },
-                    {
-                        destination: req.params.destination
-                    },
-                    {
-                        travel: req.params.travel
-                    }
-                ]
-            })
->>>>>>> 1ea6a42d9e054d0481945c3e5462788b289331cb
             .then(function (dbpackingItem) {
                 console.log(dbpackingItem)
                 res.json(dbpackingItem);
@@ -46,7 +24,7 @@ module.exports = function (app) {
 
     // POST request: Route for creating new Packing List Items in the database.
     app.post('/api/item-schema', function (req, res) { //Works
-        console.log('------Adding Item in mongo');
+        // console.log('------Adding Item in mongo');
         db.packingItem.create(req.body)
             .then(function (dbpackingItem) {
                 res.json(dbpackingItem);
@@ -60,7 +38,7 @@ module.exports = function (app) {
     // PUT request: Route for updating Packing List content / saving updates 
     // app.post('/api/update/item-schema', function (req, res) {
     app.put('/api/item-schema', function (req, res) { // NOT working
-        console.log('----> updating item <----');
+        // console.log('----> updating item <----');
         db.packingItem.findOneAndUpdate({
                 _id: req.body.id
             }, {
@@ -84,7 +62,7 @@ module.exports = function (app) {
     // DELETE request: Deletes Packing List content
     // app.post('/api/delete/item-schema/:packingItem_id', function (req, res) {
     app.delete('/api/item-schema/:packingItem_id', function (req, res) { //NOT working
-        console.log('--------deleting item --------');
+        // console.log('--------deleting item --------');
         db.packingItem.findByIdAndRemove(req.body.id, function (err, packingItem) {
             // db.packingItem.findByIdAndRemove(req.params.packingItem_id, function (err, packingItem) {
             if (err) return res.status(500).send(err);
