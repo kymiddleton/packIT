@@ -2,6 +2,7 @@
 
 const myTrips = function () {
     $('#savedtrips').empty();
+    $('#savedtrips').append(`<div id="tripheader">My Trips</div>`);
     $.ajax('/api/trips-schema').done(function(tripList) {
         console.log(tripList);
         let htmlstr = '';
@@ -16,11 +17,11 @@ const myTrips = function () {
                 console.log(element);           
                 htmlstr += `<li id="clothing">${element}<i class="fas fa-trash-alt" id="delpiece" data-pieceid=${element.id}></i></li>`             
             });  
-            htmlstr += `<li id="addcloth">Add Item</li>`
-            htmlstr += `<form class="clothform">
-                            <input id="newcloth" class="newcloth" name="newcloth" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newcloth" name="newcloth" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitclothing"></button>
-                        </form>`
+                        </form></li>`
             htmlstr += `</ul></li>`             
             htmlstr += `<li class="category">Footwear`
             htmlstr += `<ul class="pieces">`
@@ -28,11 +29,11 @@ const myTrips = function () {
                 console.log(element);   
                 htmlstr += `<li id="footwear">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li id="addfoot">Add Item</li>`
-            htmlstr += `<form class="footform">
-                            <input id=newfoot class="newfoot" name="newfoot" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newfoot"  name="newfoot" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitfootwear"></button>
-                        </form>`  
+                        </form></li>`  
             htmlstr += `</ul></li>`   
             htmlstr += `<li class="category">Personal Care`
             htmlstr += `<ul class="pieces">`
@@ -40,11 +41,11 @@ const myTrips = function () {
                 console.log(element);   
                 htmlstr += `<li id="personal">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li id="addperson">Add Item</li>`
-            htmlstr += `<form class="personform">
-                            <input id="newperson" class="newperson" name="newperson" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newperson" name="newperson" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitperson"></button>
-                        </form>`
+                        </form></li>`
             htmlstr += `</ul></li>`     
             htmlstr += `<li class="category">Documents`
             htmlstr += `<ul class="pieces">`
@@ -52,11 +53,11 @@ const myTrips = function () {
                 console.log(element);   
                 htmlstr += `<li id="documents">${element}<i class="fas fa-trash-alt"></i></li>`   
             }); 
-            htmlstr += `<li id="adddocument">Add Item</li>`
-            htmlstr += `<form class="documentform">
-                            <input id="newdocument" class="newdocument" name="newdocument" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newdocument" name="newdocument" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitdocument"></button>
-                        </form>`   
+                        </form></li>`   
             htmlstr += `</ul></li>` 
             htmlstr += `<li class="category">Gadgets`
             htmlstr += `<ul class="pieces">`
@@ -64,11 +65,11 @@ const myTrips = function () {
                 console.log(element);   
                 htmlstr += `<li id="gadgets">${element}<i class="fas fa-trash-alt"></i></li>`   
             });   
-            htmlstr += `<li id="addgadget">Add Item</li>`
-            htmlstr += `<form class="gadgetform">
-                            <input id="newgadget" class="newgadget" name="newgadget" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newgadget" name="newgadget" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitgadget"></button>
-                        </form>`   
+                        </form></li>`   
            
             htmlstr += `</ul></li>` 
             htmlstr += `<li class="category">Miscellaneous`
@@ -77,11 +78,11 @@ const myTrips = function () {
                 console.log(element);   
                 htmlstr += `<li id="miscellaneous">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li id="addmisc">Add Item</li>`
-            htmlstr += `<form class="miscform">
-                            <input id="newmisc" class="newmisc" name="newmisc" type="text" placeholder="New Item" autocomplete="off"/>
+            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<form class="newpiece">
+                            <input id="newmisc" name="newmisc" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitmisc"></button>
-                        </form>` 
+                        </form></li>` 
             htmlstr +=`</ul></li>`
             htmlstr +=`</ul>`
             
@@ -112,42 +113,15 @@ function handlePieces(event) {
 };
 $('#savedtrips').click(handlePieces).find('.pieces').hide();
 
-
-const showAddCloth = function () {
-    console.log('click')
-    $('.newcloth').toggleClass('show');
+function handleNewPiece(event) {
+    var target = $(event.target);
+    console.log(target);
+    if (target.is('.addpiece')) {
+    target.children('.newpiece').toggle();
+    }
 };
-$('#savedtrips').on('click', '#addcloth', showAddCloth);
+$('#savedtrips').click(handleNewPiece).find('.newitem').hide();
 
-const showAddFoot = function () {
-    console.log('click')
-    $('.newfoot').toggleClass('show');
-};
-$('#savedtrips').on('click', '#addfoot', showAddFoot);
-
-const showAddPerson = function () {
-    console.log('click')
-    $('.newperson').toggleClass('show');
-};
-$('#savedtrips').on('click', '#addperson', showAddPerson);
-
-const showAddDoc = function () {
-    console.log('click')
-    $('.newdocument').toggleClass('show');
-};
-$('#savedtrips').on('click', '#adddocument', showAddDoc);
-
-const showAddGad = function () {
-    console.log('click')
-    $('.newgadget').toggleClass('show');
-};
-$('#savedtrips').on('click', '#addgadget', showAddGad);
-
-const showAddMisc = function () {
-    console.log('click')
-    $('.newmisc').toggleClass('show');
-};
-$('#savedtrips').on('click', '#addmisc', showAddMisc);
 
 function removeHome() {
    
@@ -162,8 +136,6 @@ function addHome() {
     $('#savedtrips').addClass('hide');
 };
 $('.fa-home').on('click', addHome);
-
-
 
 
 
