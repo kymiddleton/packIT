@@ -87,21 +87,23 @@ img {
 }
 #showtrips:focus, #home:focus  {outline:0;}
 .pieces {
-    display: none;  
+    display: none;
 }
 
 .show {
     display: inline;
-} 
+}
+
 .showgrid {
     display: grid;
 }
+
 .hide {
     display: none
 }
 
 .homepage {
-   min-height: 800px;
+    min-height: 800px;
 }
 
 #savedtrips {

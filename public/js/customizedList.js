@@ -54,5 +54,3 @@ toggleImgColor = function (rowName, imageValue) {
 
     })
 };
-
-
