@@ -19,14 +19,21 @@
                 <div id="header">
                     <h1>pack <span>IT</span></h1><button id="home">
                         <i class="fas fa-home"></i></button>
-                        <button id="showtrips"><i class="fas fa-suitcase"></i></button>
+                    <button id="showtrips"><i class="fas fa-suitcase"></i></button>
                 </div>
                 <div class="box one">
 
                     <ul id="savedtrips"></ul>
 
                 </div>
-
+                <div id="filteredList hideItems">
+                    <ul class="clothing hideItems existing"><h3>Clothing</h3></ul>
+                    <ul class="footwear hideItems existing"><h3>Footwear</h3></ul>
+                    <ul class="personal hideItems existing"><h3>Personal</h3></ul>
+                    <ul class="documents hideItems existing"><h3>Documents</h3></ul>
+                    <ul class="gadgets hideItems existing"><h3>Gadgets</h3></ul>
+                    <ul class="miscelleneous hideItems existing"><h3>miscellaneous</h3></ul>
+                </div>
                 <div class="container" id="grid">
 
                     <div class="image happy-sun weather" data-category="weather" value="hot">
@@ -89,24 +96,26 @@
                         <img src="./assets/crown-010.png" alt="D.Va2" id="crown_gold" hidden>
                         <h4>DIVA</h4>
                     </div>
-                    <div class='modal hide'>
-                        <h2>Confirm your selections</h2>
-                        <textarea id='triplocation' rows='2' cols='30' placeholder="what is your trip name?"></textarea>
-                        <button class='trip-button2' id='notrip'> Back </button>
-                        <button class='trip-button2' id='gotrip'> Next </button>
-                    </div>
                 </div>
-                <div id="preCompiled" class="hide">
-                    <div class="clothing itemsList"></div>
-                    <div class="footwear itemsList"></div>
-                    <div class="personal itemsList"></div>
-                    <div class="documents itemsList"></div>
-                    <div class="gadgets itemsList"></div>
-                    <div class="miscelleneous itemsList"></div>
+                <div class='modal hideItems'>
+                    <h2>Confirm your selections</h2>
+                    <input id='name' rows='2' cols='30' placeholder="what is your trip name?"></input>
+                    <button class='trip-button2' id='notrip'> Back </button>
+                    <button class='trip-button2' id='gotrip'> Next </button>
                 </div>
+
+                <!-- <div id="filteredList hideItems">
+                    <ul class="clothing hideItems existing"><h3>Clothing</h3></ul>
+                    <ul class="footwear hideItems existing"><h3>Footwear</h3></ul>
+                    <ul class="personal hideItems existing"><h3>Personal</h3></ul>
+                    <ul class="documents hideItems existing"><h3>Documents</h3></ul>
+                    <ul class="gadgets hideItems existing"><h3>Gadgets</h3></ul>
+                    <ul class="miscelleneous hideItems existing"><h3>miscellaneous</h3></ul>
+                </div> -->
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="./js/login.js"></script>

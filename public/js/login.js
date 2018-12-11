@@ -11,15 +11,15 @@ const myTrips = function () {
             console.log(e.tripList.clothing);
             htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripid=${e._id}></i>`
            
-            htmlstr += `<li class="clothing category">Clothing`
+            htmlstr += `<li class="clothing category" class="fas fa-plus">Clothing`
             htmlstr += `<ul class="pieces">`
             e.tripList.clothing.forEach(element => {  
                 console.log(element);           
-                htmlstr += `<li id="clothing">${element}<i class="fas fa-trash-alt" id="delpiece" data-pieceid=${element.id}></i></li>`             
+                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt" class="delpiece" data-pieceid=${element.id}></i></li>`             
             });  
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newcloth" name="newcloth" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newcloth" name="newcloth" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitclothing"></button>
                         </form></li>`
             htmlstr += `</ul></li>`             
@@ -27,11 +27,11 @@ const myTrips = function () {
             htmlstr += `<ul class="pieces">`
             e.tripList.footwear.forEach(element =>  {  
                 console.log(element);   
-                htmlstr += `<li id="footwear">${element}<i class="fas fa-trash-alt"></i></li>`   
+                htmlstr += `<li id="footwear" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newfoot"  name="newfoot" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newfoot"  name="newfoot" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitfootwear"></button>
                         </form></li>`  
             htmlstr += `</ul></li>`   
@@ -39,11 +39,11 @@ const myTrips = function () {
             htmlstr += `<ul class="pieces">`
             e.tripList.personal.forEach(element =>  {  
                 console.log(element);   
-                htmlstr += `<li id="personal">${element}<i class="fas fa-trash-alt"></i></li>`   
+                htmlstr += `<li id="personal" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newperson" name="newperson" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newperson" name="newperson" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitperson"></button>
                         </form></li>`
             htmlstr += `</ul></li>`     
@@ -51,11 +51,11 @@ const myTrips = function () {
             htmlstr += `<ul class="pieces">`
             e.tripList.documents.forEach(element =>  {  
                 console.log(element);   
-                htmlstr += `<li id="documents">${element}<i class="fas fa-trash-alt"></i></li>`   
+                htmlstr += `<li id="documents" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             }); 
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newdocument" name="newdocument" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newdocument" name="newdocument" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitdocument"></button>
                         </form></li>`   
             htmlstr += `</ul></li>` 
@@ -63,11 +63,11 @@ const myTrips = function () {
             htmlstr += `<ul class="pieces">`
             e.tripList.gadgets.forEach(element =>  {  
                 console.log(element);   
-                htmlstr += `<li id="gadgets">${element}<i class="fas fa-trash-alt"></i></li>`   
+                htmlstr += `<li id="gadgets" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             });   
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece" >Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newgadget" name="newgadget" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newgadget" name="newgadget" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitgadget"></button>
                         </form></li>`   
            
@@ -76,11 +76,11 @@ const myTrips = function () {
             htmlstr += `<ul class="pieces">`
             e.tripList.miscellaneous.forEach(element => {  
                 console.log(element);   
-                htmlstr += `<li id="miscellaneous">${element}<i class="fas fa-trash-alt"></i></li>`   
+                htmlstr += `<li id="miscellaneous" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
-            htmlstr += `<li class="addpiece">Add Item`
+            htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newmisc" name="newmisc" type="text" placeholder="New Item" autocomplete="off"/>
+                            <input id="newmisc" name="newmisc" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
                             <button type="submit" id="submitmisc"></button>
                         </form></li>` 
             htmlstr +=`</ul></li>`
@@ -127,13 +127,20 @@ function removeHome() {
    
     $('.container').addClass('hide');
     $('#savedtrips').removeClass('hide');
+    $('.existing').addClass('hide');
+    $('.modal').addClass('hide');
     myTrips();
 };
 $('#showtrips').on('click', removeHome);
 
 function addHome() {
+    //we need to refresh in order for Juliana's content does not take over the icons with categories or modal box
+    // location.reload()
     $('.container').removeClass('hide');
     $('#savedtrips').addClass('hide');
+    $('.existing').addClass('hide');
+    $('.modal').addClass('hide');
+    $('.image').removeClass('hideItems');
 };
 $('.fa-home').on('click', addHome);
 
