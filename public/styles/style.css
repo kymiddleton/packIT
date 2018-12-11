@@ -26,7 +26,7 @@ span {
 .wrap {
     /* height: auto; */
     width: 700px;
-    min-height: 700px;
+    min-height: 800px;
     /* height: 755px; */
     margin-left: auto;
     margin-right: auto;
@@ -86,7 +86,9 @@ img {
     font-size: 30px;
 }
 #showtrips:focus, #home:focus  {outline:0;}
-.pieces {
+
+
+.pieces, .fa-trash-alt  {
     display: none;
 }
 
@@ -114,9 +116,46 @@ img {
 
 #tripheader {
     text-align: center;
+    font-size: 30px;
+    font-weight: 500;
     
 }
+#tripname {
+    margin: 10px;
+    background-color: rgba(43, 43, 43, 0.6);
+    padding: 25px;
+    font-size: 25px;
+}
 
-.list {
-    display: none;
+.category {
+    padding: 5px;
+    font-size: 20px;
+   
+}
+.pieces {
+    background-color: rgb(63, 62, 62);
+    font-size: 15px;
+    padding: 10px;
+}
+.onepiece {
+    padding: 5px;
+
+}
+.newpiece {
+    margin-top: 5px;
+}
+.inpiece {
+    background-color: rgb(63, 62, 62);
+    border: 1px solid rgba(43, 43, 43, 0.6);
+    color: white;
+}
+.fa-trash-alt {
+    font-size: 15px;
+    position: absolute;
+    right: 400px;
+    color: lightgray;
+}
+
+#tripname:hover #deltrip, .onepiece:hover .delpiece {
+    display: inline;
 }
