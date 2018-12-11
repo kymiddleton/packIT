@@ -16,7 +16,7 @@ $(document).ready(function () {
         $(".gadgets").click(function(){
             $(".itemsFive").toggleClass("hideItems");
         });
-        $(".miscellaneos").click(function(){
+        $(".miscellaneous").click(function(){
             $(".itemsSix").toggleClass("hideItems");
         });
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
                 let personal = [];
                 let documents = [];
                 let gadgets = [];
-                let miscelleneous = [];
+                let miscellaneous = [];
                 // console.log(`this is footwear array before ` + clothing)
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
@@ -90,8 +90,8 @@ $(document).ready(function () {
                         documents.push(data[i].item)
                     } else if (category == 'gadgets') {
                         gadgets.push(data[i].item)
-                    } else if (category == 'miscelleneous') {
-                        miscelleneous.push(data[i].item)
+                    } else if (category == 'miscellaneous') {
+                        miscellaneous.push(data[i].item)
                     }
 
                 };
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     'personal': personal,
                     'documents': documents,
                     'gadgets': gadgets,
-                    'miscelleneous': miscelleneous
+                    'miscellaneous': miscellaneous
                 };
                 // console.log(`this is the jason file ` + JSON.stringify(itemList))
                 // console.log(`this is footwear array after ` + clothing)
@@ -152,7 +152,7 @@ $(document).ready(function () {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.gadgets').append(`<li class = "itemsFive hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
-                            } else if (key == 'miscellaneos') {
+                            } else if (key == 'miscellaneous') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.miscellaneous').append(`<li class = "itemsSix hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
