@@ -34,7 +34,7 @@ module.exports = function (app) {
         // console.log('----> updating user <----');
         db.user.findOneAndUpdate({ userName: req.body.userName }, { $set: { userName: req.body.userName, email: req.body.email, password: req.body.password } })
             .then(function (dbuser) {
-                console.log(res.body);
+                // console.log(res.body);
                 //add error handling for null response
                 if (res.body === null){
                     console.log("must pass in user info");
