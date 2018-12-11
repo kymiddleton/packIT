@@ -106,4 +106,5 @@ describe('GET/api/item-schema/:weather/:packing/:destination/:travel', function 
         });
         done();
     });
+})
 });

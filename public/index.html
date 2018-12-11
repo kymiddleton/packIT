@@ -26,7 +26,14 @@
                     <ul id="savedtrips"></ul>
 
                 </div>
-
+                <div id="filteredList hideItems">
+                    <ul class="clothing hideItems existing"><h3>Clothing</h3></ul>
+                    <ul class="footwear hideItems existing"><h3>Footwear</h3></ul>
+                    <ul class="personal hideItems existing"><h3>Personal</h3></ul>
+                    <ul class="documents hideItems existing"><h3>Documents</h3></ul>
+                    <ul class="gadgets hideItems existing"><h3>Gadgets</h3></ul>
+                    <ul class="miscelleneous hideItems existing"><h3>miscellaneous</h3></ul>
+                </div>
                 <div class="container" id="grid">
 
                     <div class="image happy-sun weather" data-category="weather" value="hot">
@@ -89,26 +96,24 @@
                         <img src="./assets/crown-010.png" alt="D.Va2" id="crown_gold" hidden>
                         <h4>DIVA</h4>
                     </div>
-                    <div class='modal'>
-                        <h2>Confirm your selections</h2>
-                        <input id='name' rows='2' cols='30' placeholder="what is your trip name?"></input>
-                        <button class='trip-button2' id='notrip'> Back </button>
-                        <button class='trip-button2' id='gotrip'> Next </button>
-                    </div>
-
-                    <div id="filteredList">
-                        <ul class="clothing">Clothing</ul>
-                        <ul class="footwear">Footwear</ul>
-                        <ul class="personal">Personal</ul>
-                        <ul class="documents">Documents</ul>
-                        <ul class="gadgets">Gadgets</ul>
-                        <ul class="miscelleneous">miscelleneous</ul>
-                    </div>
-                    </div>
                 </div>
+                <div class='modal hideItems'>
+                    <h2>Confirm your selections</h2>
+                    <input id='name' rows='2' cols='30' placeholder="what is your trip name?"></input>
+                    <button class='trip-button2' id='notrip'> Back </button>
+                    <button class='trip-button2' id='gotrip'> Next </button>
+                </div>
+
+                <!-- <div id="filteredList hideItems">
+                    <ul class="clothing hideItems existing"><h3>Clothing</h3></ul>
+                    <ul class="footwear hideItems existing"><h3>Footwear</h3></ul>
+                    <ul class="personal hideItems existing"><h3>Personal</h3></ul>
+                    <ul class="documents hideItems existing"><h3>Documents</h3></ul>
+                    <ul class="gadgets hideItems existing"><h3>Gadgets</h3></ul>
+                    <ul class="miscelleneous hideItems existing"><h3>miscellaneous</h3></ul>
+                </div> -->
             </div>
         </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

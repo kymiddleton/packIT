@@ -1,8 +1,8 @@
 
 
-
-//const expect = require('chai').expect;
-
+// const preCompiled = require('../js/compiled')
+const expect = require('chai').expect;
+const assert = require('chai').assert;
 // const packingList = require('./public/compiled.js').packingList;
 
 
