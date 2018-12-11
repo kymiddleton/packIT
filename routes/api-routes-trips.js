@@ -19,6 +19,16 @@ module.exports = function (app) {
         app.post('/api/trips-schema', function (req, res) { // Working
             // console.log('------Adding Trip Link in mongo');
             db.trips.create(req.body)
+            // db.trips.create({ tripName: req.body.tripName,
+            //     tripList: {$and: [
+            //         {clothing:{$in : [req.params.clothing]}},
+            //         {footwear: {$in : [req.params.footwear]}},
+            //         {personal: {$in : [req.params.personal]}},
+            //         {documents: {$in : [req.params.documents]}},
+            //         {gadgets: {$in : [req.params.gadgets]}},
+            //         {miscellaneous: {$in : [req.params.miscellaneous]}}
+            //     ]})
+
                 .then(function (dbtrips) {
                     res.json(dbtrips);
                 })

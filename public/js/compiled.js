@@ -109,8 +109,8 @@ $(document).ready(function () {
             }).then(function () {
 
                 $('#preCompiled').empty();
-
-                $.ajax('/api/trips-schema').done(function () {
+                // $.ajax({url: `/api/trip-schema`, method: 'POST'})
+                $.ajax({url:'/api/trips-schema', method: 'POST'}).done(function () {
                     // console.log('itemList: ' + JSON.stringify(itemList))
                     for (let key in itemList) {
                         // console.log('key: ' + key);
@@ -125,36 +125,36 @@ $(document).ready(function () {
                                 // we then will append each element in the array
                                 for (let i = 0; i < categoryValue.length; i++) {
 
-                                    $('.clothing').append(`<li class ="itemsOne hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.clothing').append(`<li class ="itemsOne hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
                                 // console.log('clothing: '+categoryValue[0])
                             }
                             else if (key == 'footwear') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.footwear').append(`<li class="itemsTwo hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.footwear').append(`<li class="itemsTwo hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                     // console.log('footwear: '+categoryValue[i])
                                 
                                 }
                             }
                             else if (key == 'personal') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.personal').append(`<li class ="itemsThree hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.personal').append(`<li class ="itemsThree hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                     // console.log('personal: '+categoryValue[i])
                                 
                                 }
                             } else if (key == 'documents') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.documents').append(`<li class = "itemsFour hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.documents').append(`<li class = "itemsFour hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 // console.log('gadgets: '+categoryValue[i])
 
                                 }
                             } else if (key == 'gadgets') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.gadgets').append(`<li class = "itemsFive hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.gadgets').append(`<li class = "itemsFive hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
                             } else if (key == 'miscellaneos') {
                                 for (let i = 0; i < categoryValue.length; i++) {
-                                    $('.miscellaneous').append(`<li class = "itemsSix hideItems"><input type ="checkbox" >${categoryValue[i]}</li>`)
+                                    $('.miscellaneous').append(`<li class = "itemsSix hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
                         }
                     }

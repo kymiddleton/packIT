@@ -127,15 +127,19 @@ function removeHome() {
    
     $('.container').addClass('hide');
     $('#savedtrips').removeClass('hide');
+    $('.existing').addClass('hide');
+    $('.modal').addClass('hide');
     myTrips();
 };
 $('#showtrips').on('click', removeHome);
 
 function addHome() {
     //we need to refresh in order for Juliana's content does not take over the icons with categories or modal box
-    location.reload()
-    // $('.container').removeClass('hide');
-    // $('#savedtrips').addClass('hide');
+    // location.reload()
+    $('.container').removeClass('hide');
+    $('#savedtrips').addClass('hide');
+    $('.existing').addClass('hide');
+    $('.modal').addClass('hide');
 };
 $('.fa-home').on('click', addHome);
 
