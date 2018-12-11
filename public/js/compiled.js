@@ -28,6 +28,8 @@ $(document).ready(function () {
     let destination = '';
     let travel = '';
     let itemList = {};
+
+
     const selections = function () {
         select = $(this).data('category')
         if (select === 'weather') {
@@ -128,15 +130,13 @@ $(document).ready(function () {
                                     $('.clothing').append(`<li class ="itemsOne hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
                                 // console.log('clothing: '+categoryValue[0])
-                            }
-                            else if (key == 'footwear') {
+                            } else if (key == 'footwear') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.footwear').append(`<li class="itemsTwo hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                     // console.log('footwear: '+categoryValue[i])
                                 
                                 }
-                            }
-                            else if (key == 'personal') {
+                            } else if (key == 'personal') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.personal').append(`<li class ="itemsThree hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                     // console.log('personal: '+categoryValue[i])
@@ -152,6 +152,7 @@ $(document).ready(function () {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.gadgets').append(`<li class = "itemsFive hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
+                                
                             } else if (key == 'miscellaneous') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.miscellaneous').append(`<li class = "itemsSix hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
