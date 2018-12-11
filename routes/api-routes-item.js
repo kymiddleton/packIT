@@ -34,7 +34,6 @@ module.exports = function (app) {
             });
     });
 
-
     // PUT request: Route for updating Packing List content / saving updates 
     app.put('/api/item-schema', function (req, res) { // Working
         // console.log('----> updating item <----');
