@@ -140,6 +140,7 @@ function addHome() {
     $('#savedtrips').addClass('hide');
     $('.existing').addClass('hide');
     $('.modal').addClass('hide');
+    $('.image').removeClass('hideItems');
 };
 $('.fa-home').on('click', addHome);
 
