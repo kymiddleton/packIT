@@ -120,6 +120,7 @@ img {
     font-weight: 500;
     
 }
+<<<<<<< HEAD
 #tripname {
     margin: 10px;
     background-color: rgba(43, 43, 43, 0.6);
@@ -158,4 +159,9 @@ img {
 
 #tripname:hover #deltrip, .onepiece:hover .delpiece {
     display: inline;
+=======
+
+.list {
+    display: none;
+>>>>>>> b74032c5a57ba9ce2aa22e2bb3e11f8491877298
 }

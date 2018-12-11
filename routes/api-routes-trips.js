@@ -61,7 +61,11 @@ module.exports = function (app) {
             });
         });
 
+<<<<<<< HEAD
         // // // Pawan needs for his piece to delete one single item instead of deleting all items. 
+=======
+        // // Pawan needs for his piece to delete one single item instead of deleting all items. 
+>>>>>>> b74032c5a57ba9ce2aa22e2bb3e11f8491877298
         // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
         //             console.log('--------deleting--------');
         //             db.trips.update({
