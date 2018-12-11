@@ -1,11 +1,5 @@
 
 
-// const preCompiled = require('../js/compiled')
-const expect = require('chai').expect;
-const assert = require('chai').assert;
-// const packingList = require('./public/compiled.js').packingList;
-
-
 describe('selections', function () {
   it('should return an object when selections match an item in DB', function () {
     expect({

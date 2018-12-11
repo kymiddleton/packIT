@@ -1,5 +1,4 @@
-const expect = require('chai').expect;
-const inputItem = require('./public/app.js').inputItem;
+
 
 describe('inputItem', function () {
     it('should be a string of characters', function () {
@@ -73,15 +72,15 @@ describe('decrement', function () {
 // -------------------------------------------------
 
 //shows modal container
-const showModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').show();
-}
+// const showModal = function (e) {
+//     e.preventDefault();
+//     $('.modal-container').show();
+// }
 //hides modal container
-const hideModal = function (e) {
-    e.preventDefault();
-    $('.modal-container').hide();
-}
+// const hideModal = function (e) {
+//     e.preventDefault();
+//     $('.modal-container').hide();
+// }
 //saves value of the textarea when button is pressed, and hides modal container
 const saveTrip = function (e) {
     e.preventDefault();
