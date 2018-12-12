@@ -1,27 +1,24 @@
 // // Generate compiled packing list based on user selection
 $(document).ready(function () {
     
-        $(".clothing").click(function(){
+        $(".itemsone").click(function(){
             $(".itemsOne").toggleClass("hideItems");
         });
-        $(".footwear").click(function(){
+        $(".itemstwo").click(function(){
             $(".itemsTwo").toggleClass("hideItems");
         });
-        $(".personal").click(function(){
+        $(".itemsthree").click(function(){
             $(".itemsThree").toggleClass("hideItems");
         });
-        $(".documents").click(function(){
+        $(".itemsfour").click(function(){
             $(".itemsFour").toggleClass("hideItems");
         });
-        $(".gadgets").click(function(){
+        $(".itemsfive").click(function(){
             $(".itemsFive").toggleClass("hideItems");
         });
-        $(".miscellaneous").click(function(){
+        $(".itemssix").click(function(){
             $(".itemsSix").toggleClass("hideItems");
         });
-
-
-
 
     let weather = '';
     let packing = '';
@@ -60,7 +57,6 @@ $(document).ready(function () {
     $('#gotrip').on('click', function () {
 
         $('.modal').addClass('hideItems');
-        // $('#filteredList').removeClass('hide');
         $('.existing').removeClass('hideItems');
       
 
@@ -76,10 +72,9 @@ $(document).ready(function () {
                 let documents = [];
                 let gadgets = [];
                 let miscellaneous = [];
-                // console.log(`this is footwear array before ` + clothing)
+
                 console.log(data)
                 for (let i = 0; i < data.length; i++) {
-                    // console.log(data[i].category)
                     let category = data[i].category;
                     category = category.toLowerCase();
                     if (category == 'clothing') {
@@ -95,7 +90,6 @@ $(document).ready(function () {
                     } else if (category == 'miscellaneous') {
                         miscellaneous.push(data[i].item)
                     }
-
                 };
                 itemList = {
                     'clothing': clothing,
@@ -105,54 +99,43 @@ $(document).ready(function () {
                     'gadgets': gadgets,
                     'miscellaneous': miscellaneous
                 };
-                // console.log(`this is the jason file ` + JSON.stringify(itemList))
-                // console.log(`this is footwear array after ` + clothing)
-
+ 
             }).then(function () {
-
-                $('#preCompiled').empty();
-                // $.ajax({url: `/api/trip-schema`, method: 'POST'})
-                $.ajax({url:'/api/trips-schema', method: 'POST'}).done(function () {
-                    // console.log('itemList: ' + JSON.stringify(itemList))
+                let tripName = $('#name').val();
+                $.ajax({url:'/api/trips-schema', method: 'POST',
+                 data: {tripName:tripName, tripList: itemList}}).then(res => console.log(res))
+            }).done(function () {
+                    // let tripName = $('.name').val();
                     for (let key in itemList) {
-                        // console.log('key: ' + key);
                         let categoryValue = itemList[key];
-                        // console.log('categoryValue: ' + categoryValue)
+                        
                         if (categoryValue.length > 0) {
-                            // console.log('categoryValue: ' + categoryValue.length)
-
                             if (key == 'clothing') {
                                 //we only use [0] for testing to see the first value in the array that is returned
                                 //We need to create a loop inside of here to get each element in the array
                                 // we then will append each element in the array
                                 for (let i = 0; i < categoryValue.length; i++) {
-
                                     $('.clothing').append(`<li class ="itemsOne hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
-                                // console.log('clothing: '+categoryValue[0])
                             } else if (key == 'footwear') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.footwear').append(`<li class="itemsTwo hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
-                                    // console.log('footwear: '+categoryValue[i])
-                                
                                 }
                             } else if (key == 'personal') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.personal').append(`<li class ="itemsThree hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
-                                    // console.log('personal: '+categoryValue[i])
                                 
                                 }
                             } else if (key == 'documents') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.documents').append(`<li class = "itemsFour hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
-                                // console.log('gadgets: '+categoryValue[i])
 
                                 }
                             } else if (key == 'gadgets') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.gadgets').append(`<li class = "itemsFive hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
                                 }
-                                
+
                             } else if (key == 'miscellaneous') {
                                 for (let i = 0; i < categoryValue.length; i++) {
                                     $('.miscellaneous').append(`<li class = "itemsSix hideItems"><input type ="checkbox">${categoryValue[i]}</li>`)
@@ -174,5 +157,3 @@ $(document).ready(function () {
 
 
     });
-
-});
