@@ -60,7 +60,7 @@ const deleteItem = function (event) {
     const id = $(this).data('tripid');
     const category = $(this).data('pieceid');
     const item = $(this).data('piecename')
-    console.log(index);
+    console.log(category);
     $.ajax({
         url: `/api/trips-schema/${id}/${category}/${item}`,
         method: "DELETE"
@@ -72,7 +72,7 @@ const updateItem = function (event) {
     const id = $(this).data('tripid');
     const category = $(this).data('pieceid');
     const item = $(this).data('piecename')
-    console.log(index);
+    console.log(item);
     $.ajax({
         url: `/api/trips-schema/${id}/${category}/${item}`,
         method: "PUT"
