@@ -6,7 +6,8 @@ const TripsSchema = new Schema({
     tripName: {
         type: String,
         unique: true,
-        trim: true
+        trim: true,
+        required: "Trip Name Required"
     },
     tripList: {
         clothing: Array,
