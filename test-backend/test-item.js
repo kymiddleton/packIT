@@ -72,7 +72,7 @@ describe('GET/api/item-schema/:weather/:packing/:destination/:travel', function 
     });
 
     it('it should UPDATE the item id', (done) => {
-        let item = new db.packingItem({item: '', category: '', weather: '', packing: '', destination: '',  travel: '' })
+        // let item = new db.packingItem({item: '', category: '', weather: '', packing: '', destination: '',  travel: '' })
             
         request.put('/api/item-schema').send({
             item: 'fff',
@@ -107,4 +107,3 @@ describe('GET/api/item-schema/:weather/:packing/:destination/:travel', function 
         done();
     });
 })
-});

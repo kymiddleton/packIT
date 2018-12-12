@@ -27,29 +27,6 @@ module.exports = function (app) {
             });
     });
 
-    // app.post('/api/trips-schema', function (req, res) {
-    //     console.log('------Adding Item in mongo');
-    //     db.packingItem.create({
-    //         tripName: req.body.tripName,
-    //         tripList: {
-    //             $and: [
-    //                 { clothing: { $in: [req.params.clothing] } },
-    //                 { footwear: { $in: [req.params.footwear] } },
-    //                 { personal: { $in: [req.params.personal] } },
-    //                 { documents: { $in: [req.params.documents] } },
-    //                 { gadgets: { $in: [req.params.gadgets] } },
-    //                 { miscellaneous: { $in: [req.params.miscellaneous] } }
-    //             ]
-    //         }})
-    //         .then(function (dbpackingItem) {
-    //             res.json(dbpackingItem);
-    //         })
-    //         .catch(function (err) {
-    //             res.json(err);
-    //         });
-    // });
-
-
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { //Working
         // console.log('----> updating trip <----');
@@ -68,23 +45,6 @@ module.exports = function (app) {
             });
     });
 
-
-        // // // Pawan needs for his piece to delete one single item instead of deleting all items. 
-
-        // // Pawan needs for his piece to delete one single item instead of deleting all items. 
-
-        // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
-        //             console.log('--------deleting--------');
-        //             db.trips.update({
-        //                     _id: req.params.trips_id
-        //                 }, {
-        //                     $pullAll: {
-        //                         [req.params.category]: [req.params.item]
-        //                     }
-        //                 })
-        //                 .then(data => res.json(data))
-        //         }
-
     // DELETE request: Deletes Trip content
     app.delete('/api/trips-schema/:tripname', function (req, res) { //Working
         // console.log('--------deleting--------');
@@ -99,25 +59,24 @@ module.exports = function (app) {
         });
     });
 
+    /*==================ROUTES FOR CUSTOMIZED ===================*/
+
+    //Pawan needs to update one specific item instead of all items. 
+    // app.put('/api/trips-schema/:category/:item', function (req, res) { //NOT working
+    //     console.log('-------> updating <--------');
+    //     db.trips.findOneAndUpdate({ _id: req.body._id }, {$set: {category: req.body.category, item: req.body.item}})
+    //     .then(function (dbtrips) {
+    //         res.json(dbtrips);
+    //     })
+    //     .catch(function (err) {
+    //         res.json(err);
+    //     });        
+    // });
 
     // // Pawan needs for his piece to delete one single item instead of deleting all items. 
     // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) { //NOT working
     //     console.log('---> deleting <---');
     //     db.trips.findByIdAndDelete(
-    //         { _id: req.params.trips_id },
-    //         {
-    //             $pullAll: {
-    //                 [req.params.category]: [req.params.item]
-    //             }
-    //         }
-    //             .then(data => res.json(data))
-    //     )
-    // });
-
-    //Pawan needs to update one specific item instead of all items. 
-    // app.put('/api/trips-schema/:trips_id/:category/:item', function (req, res) { //NOT working
-    //     console.log('-------> updating <--------');
-    //     db.trips.update(
     //         { _id: req.params.trips_id },
     //         {
     //             $pullAll: {
