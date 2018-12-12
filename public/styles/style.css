@@ -88,7 +88,7 @@ img {
 #showtrips:focus, #home:focus  {outline:0;}
 
 
-.pieces, .fa-trash-alt  {
+.pieces, #deltrip, .delpiece  {
     display: none;
 }
 
@@ -125,11 +125,10 @@ img {
     display: none;
 }
 .modal{
-    width: 200x;
     width:200px;
     height: 100px;
     background-color: gray;
-    margin-left: 200px;
+    margin:auto;
 }
 h2{
     padding-top: 5px;
@@ -140,10 +139,9 @@ h2{
     display: none;
 }
 
+
 /* this sets up the design for preCompiled list */
-div#filteredList {
-    margin-top: -100px;
-}
+
 h3{ 
     background-color: rgba(43, 43, 43, 0.6);
     color: white;
@@ -161,7 +159,7 @@ li{
     padding: 5px;
 }
 input [type="checkbox"] {
-  background-color: none;
+    background-color: transparent
 }
 /* roberts design */
 #tripname {
@@ -169,6 +167,7 @@ input [type="checkbox"] {
     background-color: rgba(43, 43, 43, 0.6);
     padding: 25px;
     font-size: 25px;
+    position: relative;
 }
 
 .category {
@@ -177,6 +176,7 @@ input [type="checkbox"] {
    
 }
 .pieces {
+    position: relative;
     background-color: rgb(63, 62, 62);
     font-size: 15px;
     padding: 10px;
@@ -196,8 +196,8 @@ input [type="checkbox"] {
 .fa-trash-alt {
     font-size: 15px;
     position: absolute;
-    right: 400px;
     color: lightgray;
+   right: 10px;
 }
 
 #tripname:hover #deltrip, .onepiece:hover .delpiece {

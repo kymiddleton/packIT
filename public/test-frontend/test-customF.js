@@ -1,6 +1,3 @@
-const expect = require('chai').expect;
-const inputItem = require('./public/app.js').inputItem;
-
 describe('inputItem', function () {
     it('should be a string of characters', function () {
         expect(inputItem('Nikes')).to.equal(true);
