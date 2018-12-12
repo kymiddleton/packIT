@@ -8,27 +8,10 @@ module.exports = function (app) {
     app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
         // console.log(req.params)
         db.packingItem.find({
-                $and: [{
-                        weather: {
-                            $in: [req.params.weather]
-                        }
-                    },
-                    {
-                        packing: {
-                            $in: [req.params.packing]
-                        }
-                    },
-                    {
-                        destination: {
-                            $in: [req.params.destination]
-                        }
-                    },
-                    {
-                        travel: {
-                            $in: [req.params.travel]
-                        }
-                    }
-                ]
+                $and: [{ weather: { $in: [req.params.weather]}},
+                    {packing: {$in: [req.params.packing]} },
+                    {destination: {$in: [req.params.destination]}},
+                    {travel: {$in: [req.params.travel]}}]  
             })
             .then(function (dbpackingItem) {
                 console.log(dbpackingItem)
