@@ -8,11 +8,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors"
     ],
@@ -31,11 +31,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors"
     ],
@@ -54,11 +54,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors"
     ],
@@ -77,11 +77,11 @@
         "typical", 
         "minimal"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors"
     ],
@@ -100,10 +100,10 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach"
     ],
     "item" : "surf board",
@@ -121,10 +121,10 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors"
     ],
     "item" : "snow skis",
@@ -142,11 +142,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors", 
         "city"
     ],
@@ -156,29 +156,6 @@
 }
 
 /* 8 */
-{
-    "_id" : ObjectId("5c10526705c40c443ee7f0d2"),
-    "weather" : [ 
-        "hot", 
-        "rainy", 
-        "cold"
-    ],
-    "packing" : [ 
-        "typical", 
-        "diva"
-    ],
-    "destination" : [ 
-        "plane", 
-        "car", 
-        "transit"
-    ],
-    "travel" : [],
-    "item" : "lotion",
-    "category" : "personal",
-    "__v" : 0
-}
-
-/* 9 */
 {
     "_id" : ObjectId("5c10526f05c40c443ee7f0d3"),
     "weather" : [ 
@@ -201,29 +178,7 @@
     "__v" : 0
 }
 
-/* 10 */
-{
-    "_id" : ObjectId("5c10530005c40c443ee7f0db"),
-    "weather" : [ 
-        "hot"
-    ],
-    "packing" : [ 
-        "minimal", 
-        "typical", 
-        "diva"
-    ],
-    "destination" : [ 
-        "plane", 
-        "car", 
-        "transit"
-    ],
-    "travel" : [],
-    "item" : "sandals",
-    "category" : "footwear",
-    "__v" : 0
-}
-
-/* 11 */
+/* 9 */
 {
     "_id" : ObjectId("5c105d2e6c76a744c0ed469b"),
     "weather" : [ 
@@ -249,7 +204,7 @@
     "__v" : 0
 }
 
-/* 12 */
+/* 10 */
 {
     "_id" : ObjectId("5c105d436c76a744c0ed469c"),
     "weather" : [ 
@@ -262,10 +217,10 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -275,7 +230,7 @@
     "__v" : 0
 }
 
-/* 13 */
+/* 11 */
 {
     "_id" : ObjectId("5c105d606c76a744c0ed469d"),
     "weather" : [ 
@@ -288,10 +243,10 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -301,13 +256,65 @@
     "__v" : 0
 }
 
-/* 14 */
+/* 12 */
 {
     "_id" : ObjectId("5c105d8f6c76a744c0ed469e"),
     "weather" : [ 
         "hot", 
         "rainy", 
         "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "travel" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "destination" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "travelers checks",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("5c10526705c40c443ee7f0d2"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "travel" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "destination" : [ 
+        "beach", 
+        "city"
+    ],
+    "item" : "lotion",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("5c10530005c40c443ee7f0db"),
+    "weather" : [ 
+        "hot"
     ],
     "packing" : [ 
         "minimal", 
@@ -324,8 +331,8 @@
         "outdoors", 
         "city"
     ],
-    "item" : "travelers checks",
-    "category" : "documents",
+    "item" : "sandals",
+    "category" : "footwear",
     "__v" : 0
 }
 
@@ -342,12 +349,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -370,12 +377,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -398,12 +405,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -426,12 +433,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -454,12 +461,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -482,12 +489,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -538,12 +545,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -593,12 +600,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -618,12 +625,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -645,11 +652,11 @@
         "minimal", 
         "typical"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors"
     ],
@@ -670,12 +677,12 @@
         "typical", 
         "minimal"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -697,12 +704,12 @@
         "typical", 
         "minimal"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -723,12 +730,12 @@
     "packing" : [ 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -751,12 +758,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -779,12 +786,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -807,12 +814,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -835,12 +842,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -863,12 +870,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -891,12 +898,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -919,12 +926,16 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [],
+    "destination" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
     "item" : "contact case",
     "category" : "personal",
     "__v" : 0
@@ -943,12 +954,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -971,12 +982,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -999,12 +1010,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1027,12 +1038,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1055,12 +1066,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1080,11 +1091,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors"
     ],
     "item" : "snow boots",
@@ -1103,12 +1114,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors", 
         "city"
     ],
@@ -1127,12 +1138,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1152,11 +1163,13 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "car", 
         "transit"
     ],
-    "travel" : [],
+    "destination" : [ 
+        "outdoors"
+    ],
     "item" : "cowboy boots",
     "category" : "footwear",
     "__v" : 0
@@ -1175,12 +1188,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1203,12 +1216,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1229,12 +1242,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1255,12 +1268,12 @@
     "packing" : [ 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1281,12 +1294,12 @@
     "packing" : [ 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1309,12 +1322,12 @@
     "packing" : [ 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1333,12 +1346,12 @@
     "packing" : [ 
         "typical"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors", 
         "city"
     ],
@@ -1356,12 +1369,12 @@
     "packing" : [ 
         "typical"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "outdoors", 
         "city"
     ],
@@ -1382,12 +1395,12 @@
         "minimal", 
         "typical"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1408,12 +1421,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1434,12 +1447,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1459,12 +1472,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1487,12 +1500,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1515,12 +1528,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1542,12 +1555,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1570,12 +1583,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1598,12 +1611,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1626,11 +1639,11 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
@@ -1653,12 +1666,12 @@
         "typical", 
         "diva"
     ],
-    "destination" : [ 
+    "travel" : [ 
         "plane", 
         "car", 
         "transit"
     ],
-    "travel" : [ 
+    "destination" : [ 
         "beach", 
         "outdoors", 
         "city"
