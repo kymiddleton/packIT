@@ -21,3 +21,10 @@ describe('inputItem', function () {
         expect(inputItem(123).to.equal('123'));
     });
 });
+
+const checker = function (string) {
+    const newstring = parseFloat(string)
+    if (String.isString(newstring) && newstring.length > 0) {
+        return string;
+    }
+}
