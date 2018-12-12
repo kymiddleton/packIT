@@ -22,10 +22,10 @@ describe('selections', function () {
 
   });
   it('should hide icons after 4 are selected', function () {
-    $('.happy-sun').trigger('click');
+    $('.hot').trigger('click');
     $('.plane').trigger('click');
-    $('.sun-umbrella').trigger('click');
-    $('.crown').trigger('click');
+    $('.beach').trigger('click');
+    $('.diva').trigger('click');
     expect($('.image').hasClass('hide')).to.equal(false);
   })
   it('should return items in each category with corresponding selections', function () {
