@@ -140,6 +140,7 @@ h2{
     display: none;
 }
 
+
 /* this sets up the design for preCompiled list */
 div#filteredList {
     margin-top: -100px;
@@ -161,7 +162,8 @@ li{
     padding: 5px;
 }
 input [type="checkbox"] {
-  background-color: none;
+  border: none;
+  background: transparent;
 }
 /* roberts design */
 #tripname {
