@@ -9,7 +9,7 @@ const myTrips = function () {
         tripList.forEach(e => {
             console.log(e.tripName);
             console.log(e.tripList.clothing);
-            htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripid=${e._id}></i>`
+            htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripnameid=${e.tripName} data-tripid=${e._id}></i>`
            
             htmlstr += `<li class="clothing category" class="fas fa-plus">Clothing`
             htmlstr += `<ul class="pieces">`
@@ -148,7 +148,7 @@ $('.fa-home').on('click', addHome);
 
 $('#savedtrips').on('click','#deltrip', function(event) {
     event.preventDefault();
-    const index = $(this).data('tripid');
+    const index = $(this).data('tripnameid');
     console.log(index);
     $.ajax({ url: `/api/trips-schema/${index}`, method: "DELETE"})
     .then(function(data) {
@@ -157,13 +157,13 @@ $('#savedtrips').on('click','#deltrip', function(event) {
     });
 });
 
-$('#savedtrips').on('click','#delpiece', function(event) {
-    event.preventDefault();
-    const index = $(this).data('pieceid');
-    console.log(index);
-    $.ajax({ url: `/api/trips-schema/${index}`, method: "DELETE"})
-    .then(function(data) {
-        $('#savedtrips').empty();
-        myTrips();
-    });
-});
+// $('#savedtrips').on('click','#delpiece', function(event) {
+//     event.preventDefault();
+//     const index = $(this).data('pieceid');
+//     console.log(index);
+//     $.ajax({ url: `/api/trips-schema/${index}`, method: "DELETE"})
+//     .then(function(data) {
+//         $('#savedtrips').empty();
+//         myTrips();
+//     });
+// });
