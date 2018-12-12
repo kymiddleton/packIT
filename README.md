@@ -13,11 +13,11 @@ A secure log-in provides users with the ability to store and access their lists 
 
 The attached images illustrate a homescreen and sample packing list combinations: 
 
-![HomeScreen:](public/images/packIT HomeScreen.jpeg)
+![HomeScreen:](public/images/packIT-HomeScreen.jpeg)
 
-![MyTripsView:](public/images/packIT mytrips page.jpeg)
+![MyTripsView:](public/images/packIT-mytrips-page.jpeg)
 
-![ListView](public/images/packIT list view.jpeg)
+![ListView:](public/images/packIT-list-view.jpeg)
 
 # Testing
 The following applications need to be installed to verify testing for both front-end and back-end files.
