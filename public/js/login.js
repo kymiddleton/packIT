@@ -11,11 +11,13 @@ const myTrips = function () {
             console.log(e.tripList.clothing);
             htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripnameid=${e.tripName} data-tripid=${e._id}></i>`
            
-            htmlstr += `<li class="clothing category" class="fas fa-plus">Clothing`
+            htmlstr += `<li class="clothing category">Clothing`
             htmlstr += `<ul class="pieces">`
             e.tripList.clothing.forEach(element => {  
+                categories = (Object.keys(e.tripList));
+                console.log(categories[0]);   
                 console.log(element);           
-                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt" class="delpiece" data-pieceid=${element.id}></i></li>`             
+                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt" class="delpiece" data-piecename=${element} data-pieceid=${categories[0]}></i></li>`             
             });  
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
@@ -26,7 +28,8 @@ const myTrips = function () {
             htmlstr += `<li class="category">Footwear`
             htmlstr += `<ul class="pieces">`
             e.tripList.footwear.forEach(element =>  {  
-                console.log(element);   
+                console.log(element);  
+                console.log(categories[1]); 
                 htmlstr += `<li id="footwear" class="onepiece">${element}<i class="fas fa-trash-alt"></i></li>`   
             });  
             htmlstr += `<li class="addpiece onepiece">Add Item`

@@ -125,11 +125,10 @@ img {
     display: none;
 }
 .modal{
-    width: 200x;
     width:200px;
     height: 100px;
     background-color: gray;
-    margin-left: 200px;
+    margin:auto;
 }
 h2{
     padding-top: 5px;
@@ -142,9 +141,7 @@ h2{
 
 
 /* this sets up the design for preCompiled list */
-div#filteredList {
-    margin-top: -100px;
-}
+
 h3{ 
     background-color: rgba(43, 43, 43, 0.6);
     color: white;
@@ -162,8 +159,7 @@ li{
     padding: 5px;
 }
 input [type="checkbox"] {
-  border: none;
-  background: transparent;
+    background-color: transparent
 }
 /* roberts design */
 #tripname {
