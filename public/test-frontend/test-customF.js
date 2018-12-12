@@ -77,7 +77,7 @@ const showModal = function (e) {
     e.preventDefault();
     $('.modal-container').show();
 }
-//hides modal container
+// //hides modal container
 const hideModal = function (e) {
     e.preventDefault();
     $('.modal-container').hide();

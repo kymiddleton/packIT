@@ -3,41 +3,23 @@ const db = require('../models');
 
 // ROUTING
 module.exports = function (app) {
-
-    // GET request: Route for retrieving Packing List Items from the database.
-    app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
-        // console.log(req.params)
-        db.packingItem.find({
-                $and: [{
-                        weather: {
-                            $in: [req.params.weather]
-                        }
-                    },
-                    {
-                        packing: {
-                            $in: [req.params.packing]
-                        }
-                    },
-                    {
-                        destination: {
-                            $in: [req.params.destination]
-                        }
-                    },
-                    {
-                        travel: {
-                            $in: [req.params.travel]
-                        }
-                    }
-                ]
-            })
-            .then(function (dbpackingItem) {
-                console.log(dbpackingItem)
-                res.json(dbpackingItem);
-            })
-            .catch(function (err) {
-                res.json(err);
-            });
-    });
+// GET request: Route for retrieving Packing List Items from the database.
+app.get('/api/item-schema/:weather/:packing/:destination/:travel', function (req, res) { //Works
+    console.log(req.params)
+    db.packingItem.find({
+            $and: [{ weather: { $in: [req.params.weather]}},
+                {packing: {$in: [req.params.packing]} },
+                {destination: {$in: [req.params.destination]}},
+                {travel: {$in: [req.params.travel]}}]
+        })
+        .then(function (dbpackingItem) {
+            console.log(dbpackingItem)
+            res.json(dbpackingItem);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
 
     // POST request: Route for creating new Packing List Items in the database.
     app.post('/api/item-schema', function (req, res) { //Works
