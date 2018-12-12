@@ -46,10 +46,10 @@ describe('myTrips', function () {
         $('#showtrips').trigger('click');
         server.respond();
 
-        expect($('#tripname').text()).to.equal('Paris');
+        expect($('#tripname').text()).to.include('Paris');
     });
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
@@ -59,11 +59,11 @@ describe('myTrips', function () {
         $('#showtrips').trigger('click');
         server.respond();
 
-        expect($('#footwear').text()).to.equal('sneakers');
+        expect($('#tripname').text()).to.include('sneakers');
     });
 
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
@@ -77,7 +77,7 @@ describe('myTrips', function () {
     });
 
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
@@ -90,7 +90,7 @@ describe('myTrips', function () {
         expect($('#personal').text()).to.equal('lotion');
     });
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
@@ -104,7 +104,7 @@ describe('myTrips', function () {
     });
 
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
@@ -117,7 +117,7 @@ describe('myTrips', function () {
         expect($('#gadgets').text()).to.equal('luggage scale');
     });
     it('should display list when clicking on a category', function () {
-        server.respondWith('GET', '/myTrips', [
+        server.respondWith('GET', '/api/trips-schema', [
             200, {
                 'Content-Type': 'application/json'
             },
