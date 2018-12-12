@@ -1,0 +1,1669 @@
+/* 1 */
+{
+    "_id" : ObjectId("5c104d7ca5de1a43ef059e65"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors"
+    ],
+    "item" : "bug spray",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5c104e4ba5de1a43ef059e66"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors"
+    ],
+    "item" : "sunscreen",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5c104e62a5de1a43ef059e67"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors"
+    ],
+    "item" : "swim goggles",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5c104e79a5de1a43ef059e68"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "minimal"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors"
+    ],
+    "item" : "notebook",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5c104ff2a5de1a43ef059e6d"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car"
+    ],
+    "travel" : [ 
+        "beach"
+    ],
+    "item" : "surf board",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5c105004a5de1a43ef059e6e"),
+    "weather" : [ 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car"
+    ],
+    "travel" : [ 
+        "outdoors"
+    ],
+    "item" : "snow skis",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("5c1050bda5de1a43ef059e70"),
+    "weather" : [ 
+        "rainy"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "umbrella",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("5c10526705c40c443ee7f0d2"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [],
+    "item" : "lotion",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("5c10526f05c40c443ee7f0d3"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [],
+    "item" : "face wash",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("5c10530005c40c443ee7f0db"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [],
+    "item" : "sandals",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("5c105d2e6c76a744c0ed469b"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "plane tickets",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("5c105d436c76a744c0ed469c"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "visa",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("5c105d606c76a744c0ed469d"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "immunization record",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("5c105d8f6c76a744c0ed469e"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "travelers checks",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("5c104cdea5de1a43ef059e5a"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "laptop",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("5c104cf4a5de1a43ef059e5b"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "laptop charger",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("5c104d00a5de1a43ef059e5c"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "kindle",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("5c104d03a5de1a43ef059e5d"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "kindle charger",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 19 */
+{
+    "_id" : ObjectId("5c104d0aa5de1a43ef059e5e"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "ipad",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 20 */
+{
+    "_id" : ObjectId("5c104d0ea5de1a43ef059e5f"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "ipad charger",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 21 */
+{
+    "_id" : ObjectId("5c104d17a5de1a43ef059e60"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "iwatch",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 22 */
+{
+    "_id" : ObjectId("5c104d1aa5de1a43ef059e61"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "iwatch charger",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 23 */
+{
+    "_id" : ObjectId("5c104d29a5de1a43ef059e62"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "ear buds",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 24 */
+{
+    "_id" : ObjectId("5c104d41a5de1a43ef059e63"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "bose headphones",
+    "category" : "gadgets",
+    "__v" : 0
+}
+
+/* 25 */
+{
+    "_id" : ObjectId("5c104d69a5de1a43ef059e64"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "visor",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 26 */
+{
+    "_id" : ObjectId("5c104f27a5de1a43ef059e6a"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors"
+    ],
+    "item" : "pen",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 27 */
+{
+    "_id" : ObjectId("5c104fbfa5de1a43ef059e6b"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "minimal"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "neck pillow",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 28 */
+{
+    "_id" : ObjectId("5c104fcda5de1a43ef059e6c"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "minimal"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "water bottle",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 29 */
+{
+    "_id" : ObjectId("5c105047a5de1a43ef059e6f"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "tiara",
+    "category" : "miscellaneous",
+    "__v" : 0
+}
+
+/* 30 */
+{
+    "_id" : ObjectId("5c105133a5de1a43ef059e71"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "shampoo",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 31 */
+{
+    "_id" : ObjectId("5c10524c05c40c443ee7f0cf"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "conditioner",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 32 */
+{
+    "_id" : ObjectId("5c10525205c40c443ee7f0d0"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "deodorant",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 33 */
+{
+    "_id" : ObjectId("5c10525b05c40c443ee7f0d1"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "razor",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 34 */
+{
+    "_id" : ObjectId("5c10528505c40c443ee7f0d4"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "contacts",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 35 */
+{
+    "_id" : ObjectId("5c10528905c40c443ee7f0d5"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "contact solution",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 36 */
+{
+    "_id" : ObjectId("5c10528e05c40c443ee7f0d6"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [],
+    "item" : "contact case",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 37 */
+{
+    "_id" : ObjectId("5c10529c05c40c443ee7f0d7"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "eye glasses",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 38 */
+{
+    "_id" : ObjectId("5c1052a105c40c443ee7f0d8"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "eye glasses case",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 39 */
+{
+    "_id" : ObjectId("5c1052b005c40c443ee7f0d9"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "toothbrush",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 40 */
+{
+    "_id" : ObjectId("5c1052b505c40c443ee7f0da"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "toothpaste",
+    "category" : "personal",
+    "__v" : 0
+}
+
+/* 41 */
+{
+    "_id" : ObjectId("5c10538105c40c443ee7f0dd"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "sneakers",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 42 */
+{
+    "_id" : ObjectId("5c1053eb05c40c443ee7f0df"),
+    "weather" : [ 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "outdoors"
+    ],
+    "item" : "snow boots",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 43 */
+{
+    "_id" : ObjectId("5c1053d705c40c443ee7f0de"),
+    "weather" : [ 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "rain boots",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 44 */
+{
+    "_id" : ObjectId("5c10534405c40c443ee7f0dc"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "reef shoes",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 45 */
+{
+    "_id" : ObjectId("5c10590b6c76a744c0ed4687"),
+    "weather" : [ 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "car", 
+        "transit"
+    ],
+    "travel" : [],
+    "item" : "cowboy boots",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 46 */
+{
+    "_id" : ObjectId("5c10596d6c76a744c0ed4688"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "high heels",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 47 */
+{
+    "_id" : ObjectId("5c1059836c76a744c0ed4689"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "dress shoes",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 48 */
+{
+    "_id" : ObjectId("5c1059956c76a744c0ed468a"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "flip flops",
+    "category" : "footwear",
+    "__v" : 0
+}
+
+/* 49 */
+{
+    "_id" : ObjectId("5c1059dd6c76a744c0ed468b"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "tuxedo",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 50 */
+{
+    "_id" : ObjectId("5c1059e56c76a744c0ed468c"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "evening gown",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/*=============PAGE 2===========*/
+
+/* 1 */
+{
+    "_id" : ObjectId("5c1059ec6c76a744c0ed468d"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "cocktail dress",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5c105a396c76a744c0ed468e"),
+    "weather" : [ 
+        "rainy"
+    ],
+    "packing" : [ 
+        "typical"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "rain jacket",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5c105a5a6c76a744c0ed468f"),
+    "weather" : [ 
+        "cold"
+    ],
+    "packing" : [ 
+        "typical"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "fleece jacket",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5c105ae96c76a744c0ed4690"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "hoodie",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5c105b1d6c76a744c0ed4691"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "swim wear",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5c105b3c6c76a744c0ed4692"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "tank top",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("5c105b586c76a744c0ed4693"),
+    "weather" : [ 
+        "hot"
+    ],
+    "packing" : [ 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "maxi dress",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("5c105b936c76a744c0ed4694"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "t-shirt",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("5c105ba16c76a744c0ed4695"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "yoga pants",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("5c105bc06c76a744c0ed4696"),
+    "weather" : [ 
+        "hot", 
+        "rainy"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "shorts",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("5c105bf46c76a744c0ed4697"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "pajamas",
+    "category" : "clothing",
+    "__v" : 0
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("5c105c686c76a744c0ed4698"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "drivers license",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("5c105cc16c76a744c0ed4699"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "passport",
+    "category" : "documents",
+    "__v" : 0
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("5c105ced6c76a744c0ed469a"),
+    "weather" : [ 
+        "hot", 
+        "rainy", 
+        "cold"
+    ],
+    "packing" : [ 
+        "minimal", 
+        "typical", 
+        "diva"
+    ],
+    "destination" : [ 
+        "plane", 
+        "car", 
+        "transit"
+    ],
+    "travel" : [ 
+        "beach", 
+        "outdoors", 
+        "city"
+    ],
+    "item" : "hotel reservation",
+    "category" : "documents",
+    "__v" : 0
+}
