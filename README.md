@@ -13,13 +13,16 @@ A secure log-in provides users with the ability to store and access their lists 
 
 The attached images illustrate a homescreen and sample packing list combinations: 
 
-![HomeScreen:]()
+![HomeScreen:](public/images/packIT-HomeScreen.jpeg)
 
-![Sample1]()
+![MyTripsView:](public/images/packIT-mytrips-page.jpeg)
 
-![Sample2]()
+![ListView:](public/images/packIT-list-view.jpeg)
 
 # Testing
+The following applications need to be installed to verify testing for both front-end and back-end files.
+- Mocha
+- Chai
 
 # Dependencies
 The following applications need to be installed in order to run the `packIT` app.
@@ -92,16 +95,13 @@ Other
 
 # Authors
 - Robert Doughty - Login, Saving User Trip Profiles
-    * Seeded database: Documents
 - Pawan Jada - Customization / Adding & Deleting Packing List Items
 - Juliana Tyler - Pre-compiled Packing List
 - Kyla Middleton - Lead Architect
     * Created base HTML and CSS
     * Configured models and api routes.
     * Completed all back-end testing
-    * Seeded database: Clothing, Footwear, Gadgets, and Miscellaneous. 
-
-Seeded database: Personal
+    * Seeded and audited database. 
 
 # Acknowledgements
 - Unsplash Photos
