@@ -1,4 +1,10 @@
 // Login
+/*
+*  myTrips Will loop through all trips and render all saved trips to the savedtrips section
+*  when clicking suitcase but only the trip name will display.  
+*  
+*  
+*/
 
 const myTrips = function () {
     $('#savedtrips').empty();
@@ -9,20 +15,22 @@ const myTrips = function () {
         tripList.forEach(e => {
             console.log(e.tripName);
             console.log(e.tripList.clothing);
-            htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripnameid=${e.tripName} data-tripid=${e._id}></i>`
-
+            htmlstr += `<ul id="tripname">${e.tripName}
+                <i class="fas fa-trash-alt" id="deltrip" data-tripnameid=${e.tripName} data-tripid=${e._id}></i>`  
             htmlstr += `<li class="clothing category">Clothing`
             htmlstr += `<ul class="pieces">`
-            e.tripList.clothing.forEach(element => {
+            e.tripList.clothing.forEach(element => {  
+                console.log(Object.keys(e.tripList));
                 categories = (Object.keys(e.tripList));
-                console.log(categories[0]);
-                console.log(element);
-                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt" class="delpiece" data-piecename=${element} data-pieceid=${categories[0]}></i></li>`
-            });
+                console.log(categories[0]);   
+                console.log(element);           
+                htmlstr += `<li id="clothing" class="onepiece">${element}
+               <i class="fas fa-trash-alt delpiece" data-piecename=${element} data-pieceid=${categories[0]} data-tripid=${e._id}></i></li>`             
+            });  
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newcloth" name="newcloth" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitclothing"></button>
+                        <input id="newcloth" name="newcloth" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitclothing"></button>
                         </form></li>`
             htmlstr += `</ul></li>`
             htmlstr += `<li class="category">Footwear`
@@ -34,10 +42,10 @@ const myTrips = function () {
             });
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newfoot"  name="newfoot" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitfootwear"></button>
-                        </form></li>`
-            htmlstr += `</ul></li>`
+                        <input id="newfoot"  name="newfoot" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitfootwear"></button>
+                        </form></li>`  
+            htmlstr += `</ul></li>`   
             htmlstr += `<li class="category">Personal Care`
             htmlstr += `<ul class="pieces">`
             e.tripList.personal.forEach(element => {
@@ -46,8 +54,8 @@ const myTrips = function () {
             });
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newperson" name="newperson" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitperson"></button>
+                        <input id="newperson" name="newperson" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitperson"></button>
                         </form></li>`
             htmlstr += `</ul></li>`
             htmlstr += `<li class="category">Documents`
@@ -58,10 +66,10 @@ const myTrips = function () {
             });
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newdocument" name="newdocument" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitdocument"></button>
-                        </form></li>`
-            htmlstr += `</ul></li>`
+                        <input id="newdocument" name="newdocument" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitdocument"></button>
+                        </form></li>`   
+            htmlstr += `</ul></li>` 
             htmlstr += `<li class="category">Gadgets`
             htmlstr += `<ul class="pieces">`
             e.tripList.gadgets.forEach(element => {
@@ -70,11 +78,10 @@ const myTrips = function () {
             });
             htmlstr += `<li class="addpiece onepiece" >Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newgadget" name="newgadget" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitgadget"></button>
-                        </form></li>`
-
-            htmlstr += `</ul></li>`
+                        <input id="newgadget" name="newgadget" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitgadget"></button>
+                        </form></li>`             
+            htmlstr += `</ul></li>` 
             htmlstr += `<li class="category">Miscellaneous`
             htmlstr += `<ul class="pieces">`
             e.tripList.miscellaneous.forEach(element => {
@@ -83,19 +90,23 @@ const myTrips = function () {
             });
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
-                            <input id="newmisc" name="newmisc" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitmisc"></button>
-                        </form></li>`
-            htmlstr += `</ul></li>`
-            htmlstr += `</ul>`
-
+                        <input id="newmisc" name="newmisc" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
+                        <button type="submit" id="submitmisc"></button>
+                        </form></li>` 
+            htmlstr +=`</ul></li>`
+            htmlstr +=`</ul>`
+            
         });
         $('#savedtrips').append(htmlstr);
 
     });
 };
-//$('#showtrips').on('click', myTrips);
 
+
+/*
+*   handle functions provide a toggle feature to each trip name to display categories, items, and add new item
+*  
+*/
 
 function handleCategory(event) {
     var target = $(event.target);
@@ -126,6 +137,10 @@ function handleNewPiece(event) {
 $('#savedtrips').click(handleNewPiece).find('.newitem').hide();
 
 
+
+/*
+*  remove and add home functions add and hide home page to allow my trips or home page to display
+*/
 function removeHome() {
 
     $('.container').addClass('hide');
@@ -147,7 +162,9 @@ function addHome() {
 };
 $('.fa-home').on('click', addHome);
 
-
+/*
+*  function to delete a trip from the list
+*/
 
 $('#savedtrips').on('click', '#deltrip', function (event) {
     event.preventDefault();
@@ -163,13 +180,3 @@ $('#savedtrips').on('click', '#deltrip', function (event) {
         });
 });
 
-// $('#savedtrips').on('click','#delpiece', function(event) {
-//     event.preventDefault();
-//     const index = $(this).data('pieceid');
-//     console.log(index);
-//     $.ajax({ url: `/api/trips-schema/${index}`, method: "DELETE"})
-//     .then(function(data) {
-//         $('#savedtrips').empty();
-//         myTrips();
-//     });
-// });
