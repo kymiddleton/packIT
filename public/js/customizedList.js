@@ -57,7 +57,7 @@ toggleImgColor = function (rowName, imageValue) {
 
 const deleteItem = function (event) {
     event.preventDefault();
-    const id = $(this).data('itemid');
+    const id = $(this).data('tripid');
     const category = $(someSelectorThatGetsCategory).val()
     const item = $(someSelectorThatGetsItem).val()
     console.log(index);
@@ -66,6 +66,8 @@ const deleteItem = function (event) {
         method: "DELETE"
     })
 };
+
+$('#savedtrips').on('click','.delpiece', deleteItem);
 
 const updateItem = function (event) {
     event.preventDefault();

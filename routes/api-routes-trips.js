@@ -73,14 +73,14 @@ module.exports = function (app) {
     //     });        
     // });
 
-    // // Pawan needs for his piece to delete one single item instead of deleting all items. 
+    // Pawan needs for his piece to delete one single item instead of deleting all items. 
     // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) { //NOT working
     //     console.log('---> deleting <---');
-    //     db.trips.findByIdAndDelete(
+    //     db.trips.update(
     //         { _id: req.params.trips_id },
     //         {
-    //             $pullAll: {
-    //                 [req.params.category]: [req.params.item]
+    //             $pull: {
+                    
     //             }
     //         }
     //             .then(data => res.json(data))
