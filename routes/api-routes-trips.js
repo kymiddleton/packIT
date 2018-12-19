@@ -30,12 +30,14 @@ module.exports = function (app) {
     // PUT request: Route for updating Trips content / saving updates 
     app.put('/api/trips-schema', function (req, res) { //Working
         // console.log('----> updating trip <----');
-        db.trips.findOneAndUpdate({ _id: req.body.id }, {
-            $set: {
-                tripList: req.body.tripList,
-                tripName: req.body.tripName
-            }
-        })
+        db.trips.findOneAndUpdate({
+                _id: req.body.id
+            }, {
+                $set: {
+                    tripList: req.body.tripList,
+                    tripName: req.body.tripName
+                }
+            })
             .then(function (dbtrips) {
                 // console.log('updated trip', dbtrips)
                 res.json(dbtrips);
@@ -44,6 +46,23 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
+
+
+    // // // Pawan needs for his piece to delete one single item instead of deleting all items. 
+
+    // // Pawan needs for his piece to delete one single item instead of deleting all items. 
+
+    // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
+    //             console.log('--------deleting--------');
+    //             db.trips.update({
+    //                     _id: req.params.trips_id
+    //                 }, {
+    //                     $pullAll: {
+    //                         [req.params.category]: [req.params.item]
+    //                     }
+    //                 })
+    //                 .then(data => res.json(data))
+    //         }
 
     // DELETE request: Deletes Trip content
     app.delete('/api/trips-schema/:tripname', function (req, res) { //Working
@@ -74,16 +93,93 @@ module.exports = function (app) {
     // });
 
     // Pawan needs for his piece to delete one single item instead of deleting all items. 
-    // app.delete('/api/trips-schema/:trips_id/:category/:item', function (req, res) { //NOT working
-    //     console.log('---> deleting <---');
-    //     db.trips.update(
-    //         { _id: req.params.trips_id },
-    //         {
-    //             $pull: {
-                    
-    //             }
-    //         }
-    //             .then(data => res.json(data))
-    //     )
-    // });
+    app.put('/api/trips-schema/:trips_id/:category/:item', function (req, res) {
+        // working
+        const {
+            trips_id,
+            category,
+            item
+        } = req.params;
+        // const trip = await db.trips.findOne({
+        //     _id: trips_id
+        // });
+        // console.log("Im here")
+        // console.log(trip);
+        // trip.tripList[category].push(item);
+        // await trip.save();
+
+        db.trips.find({
+                _id: req.params.trips_id
+            })
+            .then(function (trip) {
+                trip[0].tripList[category].push(item);
+                console.log(trip[0].tripList[category]);
+                db.trips.findOneAndUpdate({
+                        _id: req.params.trips_id
+                    }, trip[0])
+                    .then(function (results) {
+                        res.json(results);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        res.json(err);
+                    });
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err);
+            });
+
+        // res.json(trip);
+    });
+
+
+    app.delete('/api/trips-schema/:trips_id/:category/:item', async function (req, res) {
+        // working
+        const {
+            trips_id,
+            category,
+            item
+        } = req.params;
+        // const trip = await db.trips.findOne({
+        //     _id: trips_id
+        // });
+        // console.log(trip);
+        // trip[0].tripList[category].splice(trip.tripList[category].indexOf(item), 1);
+        // await trip.save();
+        // res.json(trip);
+
+        db.trips.find({
+                _id: req.params.trips_id
+            })
+            .then(function (trip) {
+                trip[0].tripList[category].splice(trip[0].tripList[category].indexOf(item), 1);;
+                console.log(trip[0].tripList[category]);
+                db.trips.findOneAndUpdate({
+                        _id: req.params.trips_id
+                    }, trip[0])
+                    .then(function (results) {
+                        res.json(results);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                        res.json(err);
+                    });
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err);
+            });
+
+        // db.trips.updateOne({
+        //             _id: req.params.trips_id
+        //         }, {
+        //             $pullAll: {
+        //                 updateObj: [req.params.item]
+        //             }
+        //         }
+
+
+        //     )
+    });
 }

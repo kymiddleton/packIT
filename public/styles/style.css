@@ -125,8 +125,8 @@ img {
     display: none;
 }
 .modal{
-    width:200px;
-    height: 100px;
+    width:400px;
+    height: 200px;
     background-color: gray;
     margin:auto;
 }
@@ -137,6 +137,31 @@ h2{
 
 .hideItems {
     display: none;
+}
+
+.trip-button2 {
+    background-color: rgb(63, 62, 62);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+}
+.nameTrip {
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 25px;
+    font-size: 25px;
+}
+
+.modalName {
+    color: white;
+    font-size:30px;
+    padding-top: 15px;
 }
 
 
@@ -158,8 +183,10 @@ li{
     text-align: left;
     padding: 5px;
 }
-input [type="checkbox"] {
-    background-color: transparent
+.fa-square {
+    padding: 5px;
+    font-size: 20px;
+    padding-right: 10px;
 }
 /* roberts design */
 #tripname {
