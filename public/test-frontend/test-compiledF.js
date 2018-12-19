@@ -21,13 +21,23 @@ describe('selections', function () {
       });
 
   });
+
+  // it('should take 4 values based on users selection', function () {
+  //   $('.hot').trigger('click');
+  //   $('.plane').trigger('click');
+  //   $('.beach').trigger('click');
+  //   $('.diva').trigger('click');
+  //   expect($('.image').hasClass('hide')).to.equal(false);
+  // });
+
   it('should hide icons after 4 are selected', function () {
     $('.hot').trigger('click');
     $('.plane').trigger('click');
     $('.beach').trigger('click');
     $('.diva').trigger('click');
     expect($('.image').hasClass('hide')).to.equal(false);
-  })
+  });
+
   it('should return items in each category with corresponding selections', function () {
     expect({
       clothing: ['Jacket', 't-shirt', 'jeans', 'scarf'],
@@ -45,5 +55,5 @@ describe('selections', function () {
         gadgets: ['phone', 'camera', 'ipod'],
         miscellaneous: []
       });
-  })
-})
+  });
+});
