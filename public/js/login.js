@@ -9,20 +9,24 @@ const myTrips = function () {
         tripList.forEach(e => {
             console.log(e.tripName);
             console.log(e.tripList.clothing);
+            let item;
+            let group;
             htmlstr += `<ul id="tripname">${e.tripName}<i class="fas fa-trash-alt" id="deltrip" data-tripnameid=${e.tripName} data-tripid=${e._id}></i>`
 
             htmlstr += `<li class="clothing category">Clothing`
             htmlstr += `<ul class="pieces">`
             e.tripList.clothing.forEach(element => {
                 categories = (Object.keys(e.tripList));
+                item = element
+                group = categories[0]
                 console.log(categories[0]);
                 console.log(element);
-                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt" class="delpiece" data-piecename=${element} data-pieceid=${categories[0]}></i></li>`
+                htmlstr += `<li id="clothing" class="onepiece">${element}<i class="fas fa-trash-alt delpiece" data-piecename=${element} data-pieceid=${categories[0]}></i></li>`
             });
             htmlstr += `<li class="addpiece onepiece">Add Item`
             htmlstr += `<form class="newpiece">
                             <input id="newcloth" name="newcloth" class="inpiece" type="text" placeholder="New Item" autocomplete="off"/>
-                            <button type="submit" id="submitclothing"></button>
+                            <button type="submit" data-pieceid=${group} data-tripid=${e._id} class="submitclothing"> Add This Item </button>
                         </form></li>`
             htmlstr += `</ul></li>`
             htmlstr += `<li class="category">Footwear`
@@ -98,8 +102,9 @@ const myTrips = function () {
 
 
 function handleCategory(event) {
+    event.preventDefault()
     var target = $(event.target);
-    console.log(target);
+    // console.log(target);
     if (target.is('#tripname')) {
         target.children('.category').toggle();
     }
@@ -108,8 +113,9 @@ $('#savedtrips').click(handleCategory).find('.category').hide();
 
 
 function handlePieces(event) {
+    event.preventDefault()
     var target = $(event.target);
-    console.log(target);
+    // console.log(target);
     if (target.is('.category')) {
         target.children('.pieces').toggle();
     }
@@ -117,8 +123,9 @@ function handlePieces(event) {
 $('#savedtrips').click(handlePieces).find('.pieces').hide();
 
 function handleNewPiece(event) {
+    event.preventDefault()
     var target = $(event.target);
-    console.log(target);
+    // console.log(target);
     if (target.is('.addpiece')) {
         target.children('.newpiece').toggle();
     }
@@ -126,8 +133,8 @@ function handleNewPiece(event) {
 $('#savedtrips').click(handleNewPiece).find('.newitem').hide();
 
 
-function removeHome() {
-
+function removeHome(e) {
+e.preventDefault()
     $('.container').addClass('hide');
     $('#savedtrips').removeClass('hide');
     $('.existing').addClass('hide');
