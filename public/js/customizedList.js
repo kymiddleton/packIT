@@ -55,29 +55,57 @@ toggleImgColor = function (rowName, imageValue) {
     })
 };
 
-const deleteItem = function (event) {
+const deleteItem = function (buttonevent) {
     event.preventDefault();
-    const id = $(this).data('tripid');
-    const category = $(this).data('pieceid');
-    const item = $(this).data('piecename')
-    console.log(category);
+    const id = $(this).closest('.clothing.category').siblings('#deltrip').data('tripid');
+    const category = $(buttonevent.target).data('pieceid');
+const item = $(buttonevent.target).data('piecename')
+    console.log('category',category);
+    console.log('item', item)
     $.ajax({
         url: `/api/trips-schema/${id}/${category}/${item}`,
         method: "DELETE"
     })
-};
+    .then(function(){
+        myTrips()
+        $('body').toggleClass('.pieces');
+        $('body').toggleClass('.delpieces');
 
-const updateItem = function (event) {
-    event.preventDefault();
-    const id = $(this).data('tripid');
-    const category = $(this).data('pieceid');
-    const item = $(this).data('piecename')
-    console.log(item);
-    $.ajax({
-        url: `/api/trips-schema/${id}/${category}/${item}`,
-        method: "PUT"
     })
 };
+$('.box.one').on('click', '.delpiece', deleteItem) 
+
+// const updateItem = function (event) {
+//     //event.preventDefault();\
+//     console.log(event)
+//     const id =  $(buttonevent.target).data('tripid');
+//     console.log(`The trip id: ${id}`)
+//     const category = $(buttonevent.target).data('pieceid');
+//     console.log(`The piece id: ${category}`)
+//     const item = $(this).data('piecename')
+//     console.log(`The piecename : ${item}`)
+
+    //console.log(item);
+    // $.ajax({
+    //     url: `/api/trips-schema/${id}/${category}/${item}`,
+    //     method: "PUT"
+    // })
+
+
+$('#savedtrips').on('click', function (buttonevent) {
+    buttonevent.preventDefault();
+    const item = $(buttonevent.target).prev('input').val()
+const id = $(buttonevent.target).data('tripid')
+console.log(id)
+const category = $(buttonevent.target).data('pieceid')
+    if ( $(buttonevent.target).data('tripid')) {
+ $.ajax({
+        url: `/api/trips-schema/${id}/${category}/${item}`,
+        method: "PUT"
+    }).then(data => {console.log(data)})
+ }
+
+});
 
 const showPage2 = function (e) {
     e.preventDefault();
@@ -99,37 +127,9 @@ const hideModal = function (e) {
     $('.modal-container').hide();
 }
 
-//$('#home').on('click', hideModal, hidePage2)
-
 const checker = function (string) {
     const newstring = parseFloat(string)
     if (String.isString(newstring) && newstring.length > 0) {
         return string;
     }
 }
-
-
-//     return num1 + num2;
-//   }
-//   const addValue = function(total, newValue) {
-//     newValue = parseFloat(newValue);
-//     let sum = total + newValue;
-//     if(isNaN(sum)){
-//       return total;
-//     }
-//     return sum;
-//   }
-
-//   const setText = function(content){
-//     $('#total').text(content);
-//   }
-
-//   const clickHandler = function (event) {
-//     event.preventDefault();
-//     let value = $(this).val();
-//     total = addValue(total, value);
-//     const displayTotal = total.toFixed(2)
-//     setText(displayTotal);
-//   }
-
-//   $('.btn').on('click', clickHandler);
