@@ -149,7 +149,7 @@ $(document).ready(function () {
 
                         } else if (key == 'miscellaneous') {
                             for (let i = 0; i < categoryValue.length; i++) {
-                                $('.miscellaneous').append(`<li class = "itemsSix hideItems"><i class="far fa-square"></i>>${categoryValue[i]}</li>`)
+                                $('.miscellaneous').append(`<li class = "itemsSix hideItems"><i class="far fa-square"></i>${categoryValue[i]}</li>`)
                             }
                         }
                     }
