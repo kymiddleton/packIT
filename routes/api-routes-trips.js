@@ -116,7 +116,7 @@ module.exports = function (app) {
                 console.log(trip[0].tripList[category]);
                 db.trips.findOneAndUpdate({
                         _id: req.params.trips_id
-                    }, trip[0])
+                    }, trip[0], {new:true})
                     .then(function (results) {
                         res.json(results);
                     })
